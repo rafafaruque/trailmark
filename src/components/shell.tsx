@@ -95,7 +95,7 @@ export function Shell({ children }: { children: ReactNode }) {
             b<span>b</span>
           </div>
           <div>
-            <strong>Bob Builder</strong>
+            <strong>BobsBuildings</strong>
             <span>Infrastructure</span>
           </div>
         </div>
@@ -206,7 +206,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </main>
         <footer className="app-footer">
           <span>
-            <span className="live-dot" /> Bob Builder Infrastructure
+            <span className="live-dot" /> BobsBuildings
           </span>
           <Link href="/system/analysis">Analysis record</Link>
         </footer>

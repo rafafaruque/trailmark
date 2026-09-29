@@ -1,0 +1,46 @@
+[
+  {
+    "id": "bh-log",
+    "projectId": "blueberry-hill",
+    "sourceType": "daily_log",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "North trench rock encounter",
+    "author": "Sam Wilson · Superintendent",
+    "recordedAt": "2026-09-28T09:20:00-04:00",
+    "fields": {
+      "entries.0": "Unloaded standard duct banks at the west gate.",
+      "entries.1": "At north trench station 2+40, continuous rock exposed at 4 feet below grade. Excavator production stopped. Protected the cut and requested a hydraulic breaker pending engineer review. Crew began tracking affected quantities and idle time.",
+      "entries.2": "South parking curbs passed inspection."
+    }
+  },
+  {
+    "id": "bh-photos",
+    "projectId": "blueberry-hill",
+    "sourceType": "daily_log",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "Site photo register · north trench",
+    "author": "Sam Wilson · Superintendent",
+    "recordedAt": "2026-09-28T09:45:00-04:00",
+    "fields": {
+      "register.0": "IMG-141: continuous rock in the exposed north trench",
+      "register.1": "IMG-142: depth rod shows rock at 4 feet, station 2+40",
+      "register.2": "IMG-143: excavator bucket at the rock face",
+      "register.3": "IMG-144: protected excavation area",
+      "availability": "Register only; original image files are not included in these synthetic inputs."
+    }
+  },
+  {
+    "id": "bh-report",
+    "projectId": "blueberry-hill",
+    "sourceType": "rfi",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "Geotechnical engineer response · B-03",
+    "author": "Northstar Geotechnical · Reviewing engineer",
+    "recordedAt": "2026-09-28T11:10:00-04:00",
+    "fields": {
+      "question": "Please review the rock at station 2+40 against the contract investigation.",
+      "baselineExcerpt": "Contract boring B-03 indicates granular fill and sandy clay through 8 feet, with no rock or refusal at the planned utility trench depth.",
+      "response": "Station 2+40 is within the B-03 investigation area. The field rock differs from the indicated subsurface profile. Maintain protection, document quantities and seek PM direction before disturbing the condition further."
+    }
+  }
+]

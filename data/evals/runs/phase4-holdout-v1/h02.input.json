@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h02-r1",
+    "projectId": "copper-quay",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "Canopy steel adjustment",
+    "author": "Priya Moore · Client coordinator",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review."
+    }
+  },
+  {
+    "id": "h02-r2",
+    "projectId": "copper-quay",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "Fwd: Canopy steel adjustment",
+    "author": "Evan Hall · Site coordinator",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Forwarded message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review."
+    }
+  },
+  {
+    "id": "h02-r3",
+    "projectId": "copper-quay",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Coordination notebook",
+    "author": "Evan Hall · Site coordinator",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "Copied message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review. No field measurements or installation observations entered today."
+    }
+  }
+]

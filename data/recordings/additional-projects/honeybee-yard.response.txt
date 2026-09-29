@@ -1,0 +1,43 @@
+{
+  "possibleChange": true,
+  "title": "Additional Dock Door Bollards",
+  "eventType": "owner_directed_change",
+  "shortSummary": "The owner representative directed six additional bollards at dock doors 3–5, described as outside issued S-22 and the original tender schedule. Six positions were marked for review; installation awaits PM release.",
+  "projectId": "honeybee-yard",
+  "estimatedEventTime": "2026-09-28T01:43:00-04:00",
+  "responsiblePartyHypothesis": "The owner appears to have initiated the added scope through Avery Chen, whose authority and signed direction are documented in the supplied records. Contractual responsibility remains subject to review.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "hy-log",
+      "sourceType": "daily_log",
+      "fieldPath": "entries.1",
+      "excerpt": "Marked six positions for review; installation awaits PM release.",
+      "supports": "additional_work",
+      "explanation": "Documents preparatory marking only, with installation still pending release."
+    },
+    {
+      "sourceId": "hy-notes",
+      "sourceType": "daily_log",
+      "fieldPath": "item4",
+      "excerpt": "Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43.",
+      "supports": "scope_baseline",
+      "explanation": "Reports the original scope exclusion and signed direction received at 01:43, supporting the observed event-time hypothesis."
+    },
+    {
+      "sourceId": "hy-email",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together.",
+      "supports": "direction",
+      "explanation": "Provides owner-authored corroboration of the same six-bollard direction and reported scope addition."
+    }
+  ],
+  "missingEvidence": [
+    "Issued S-22 and the original tender quantity schedule to verify the reported scope exclusion.",
+    "Contract terms and authority directory to verify the representative's authority and applicable change procedure.",
+    "Approved bollard details and PM release for installation."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the six marked locations and pending installation status, and obtain S-22, the tender schedule, and approved installation details for PM scope review.",
+  "relevantContract": null
+}

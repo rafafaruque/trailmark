@@ -1,0 +1,41 @@
+{
+  "possibleChange": true,
+  "title": "East Alcove Fixture Deletion",
+  "eventType": "potential_credit",
+  "shortSummary": "Approved Rev D removes three east alcove fixtures from the original 18-light scope. The owner PM requested a credit proposal, and the superintendent confirmed the fixtures were neither ordered nor installed, with no replacement or offsetting work requested.",
+  "projectId": "larch-library",
+  "estimatedEventTime": "2026-09-29T10:15:00-04:00",
+  "responsiblePartyHypothesis": "The owner appears responsible for directing the scope reduction through its authorized PM. Any resulting credit remains subject to review.",
+  "confidence": "high",
+  "evidenceReferences": [
+    {
+      "sourceId": "h07-r1",
+      "sourceType": "drawing",
+      "fieldPath": "body",
+      "excerpt": "Original L-32 required 18 reading lights. Rev D removes fixtures R16-R18 at the east alcove; revised total is 15. All other lighting remains unchanged.",
+      "supports": "scope_baseline",
+      "explanation": "Identifies the original lighting scope and the specific deletion in Rev D."
+    },
+    {
+      "sourceId": "h07-r2",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "As the authorized owner PM, I confirm deletion of R16-R18 from the contracted 18-light installation. Rev D is approved and received by your PM. Please prepare a credit proposal for the three omitted fixtures.",
+      "supports": "direction",
+      "explanation": "Confirms owner approval, contractor PM receipt, and direction to prepare a credit proposal."
+    },
+    {
+      "sourceId": "h07-r3",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Compared original L-32 and Rev D: three east alcove lights deleted. Purchasing confirms R16-R18 were not ordered or installed; remaining 15 fixtures continue. No replacement fixtures or offsetting work requested.",
+      "supports": "scope_reduction",
+      "explanation": "Independently corroborates the deletion and confirms procurement and installation status without offsetting work."
+    }
+  ],
+  "missingEvidence": [
+    "Governing contract provisions for scope reductions and credit valuation."
+  ],
+  "recommendedNextStep": "Review the omission with the superintendent and obtain the governing contract provisions to support evaluation of the requested credit proposal.",
+  "relevantContract": null
+}

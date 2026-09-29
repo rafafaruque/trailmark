@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s · Trailmark",
   },
   description:
-    "A clear trail from field change to contractual notice. The operations workspace for Bob Builder Infrastructure.",
+    "A clear trail from field change to contractual notice. The operations workspace for BobsBuildings.",
 };
 
 export default function RootLayout({

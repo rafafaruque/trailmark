@@ -1,3 +1,4 @@
+import { currentOrganizationText } from "../branding";
 import noticeRecord from "../../../data/recordings/strawberry-fields-notice.json";
 import revalidation from "../../../data/recordings/strawberry-fields-notice.validation.json";
 import { validateNoticeNarrative, renderNotice } from "../ai/draft-notice";
@@ -26,6 +27,8 @@ export const strawberryNotice: DraftNotice = {
   recipientRole: contract.fields["recipient.role"],
   email: contract.fields["recipient.email"],
   subject: `Notice of potential change — ${strawberryWorkflow.analysis.title}`,
-  body: renderNotice(narrative, strawberryWorkflow, strawberrySources),
+  body: currentOrganizationText(
+    renderNotice(narrative, strawberryWorkflow, strawberrySources),
+  ),
 };
 export { noticeRecord, revalidation };

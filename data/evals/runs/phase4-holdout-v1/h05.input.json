@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h05-r1",
+    "projectId": "alpine-hub",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "C-14 east gate handholes",
+    "author": "Rae Bell · Authorized owner PM",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "For Alpine Hub, add two handholes at the east gate, beyond the zero shown on original C-14. I am the named owner PM on the project directory and authorize this revised scope for pricing and notice review. Receipt confirmed by the superintendent at 09:00."
+    }
+  },
+  {
+    "id": "h05-r2",
+    "projectId": "alpine-hub",
+    "sourceType": "drawing",
+    "system": "Synthetic project archive",
+    "title": "C-14 Rev 2, Alpine Hub",
+    "author": "Noor Ames · Design engineer",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Alpine Hub only: revision adds HH-1 and HH-2 at east gate. Original contract issue C-14 had no handholes there. Do not apply this sheet to Birch Hub."
+    }
+  },
+  {
+    "id": "h05-r3",
+    "projectId": "alpine-hub",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Alpine east gate shift",
+    "author": "Lee Porter · Superintendent",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "Checked original C-14 and Rev 2 with Rae. Crew excavated two new handhole pits at Alpine east gate following the received direction. Photographs and measured dimensions entered in the daily register; routine south-loop backfill also completed."
+    }
+  }
+]

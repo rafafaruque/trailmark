@@ -1,0 +1,43 @@
+[
+  {
+    "id": "h08-r1",
+    "projectId": "maple-market",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Roof progress report",
+    "author": "Jo Finch · Superintendent",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Completed 200 square feet of roof membrane to original W-06. Same material and detailing as tender; no extra work, owner direction or obstruction. Elevator vendor booked the planned annual inspection separately."
+    }
+  },
+  {
+    "id": "h08-r2",
+    "projectId": "maple-market",
+    "sourceType": "drawing",
+    "system": "Synthetic project archive",
+    "title": "W-06 original roof plan",
+    "author": "Morgan Vale · Architect",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Tender roof membrane area is 200 square feet at the upper landing. Product and lap details unchanged."
+    }
+  },
+  {
+    "id": "h08-r3",
+    "projectId": "maple-market",
+    "sourceType": "contract",
+    "system": "Synthetic project archive",
+    "title": "Selected administrative conditions",
+    "author": "Maple Market contract administrator",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "clauses.0.id": "9.1",
+      "clauses.0.title": "Elevator inspection appointment",
+      "clauses.0.text": "The Contractor shall give the building manager 48 hours written notice before a scheduled elevator inspection. This appointment requirement concerns access only and does not concern changes to scope, cost, or time.",
+      "clauses.1.id": "14.2",
+      "clauses.1.title": "Document copies",
+      "clauses.1.text": "Provide two electronic copies of operation manuals at closeout."
+    }
+  }
+]

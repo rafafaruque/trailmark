@@ -1,0 +1,39 @@
+{
+  "possibleChange": false,
+  "title": "Birch East Gate Planned Handholes",
+  "eventType": "planned_work",
+  "shortSummary": "Birch Hub installed two east gate handholes included in original drawing C-14. The owner PM confirmed that circulated additions apply only to Alpine Hub and require no Birch scope adjustment.",
+  "projectId": "birch-hub",
+  "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+  "responsiblePartyHypothesis": "The contractor appears to have performed its original Birch scope. The owner PM clarified project routing; no party-caused change to Birch is evidenced.",
+  "confidence": "high",
+  "evidenceReferences": [
+    {
+      "sourceId": "h06-r1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Installed two east gate handholes at Birch Hub under original C-14.",
+      "supports": "scope_baseline",
+      "explanation": "The superintendent records installation of the two handholes under the original drawing."
+    },
+    {
+      "sourceId": "h06-r2",
+      "sourceType": "drawing",
+      "fieldPath": "body",
+      "excerpt": "Birch Hub original contract drawing: two handholes HH-1 and HH-2 at east gate. No revision.",
+      "supports": "scope_baseline",
+      "explanation": "The original drawing independently confirms the installed quantity and location were included."
+    },
+    {
+      "sourceId": "h06-r3",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "The direction to add two east gate handholes is for Alpine Hub only. Birch Hub already has these two in its original scope; make no scope adjustment to Birch and do not charge Alpine work to this project.",
+      "supports": "direction",
+      "explanation": "The owner PM expressly limits the additions to Alpine and confirms unchanged Birch scope."
+    }
+  ],
+  "missingEvidence": [],
+  "recommendedNextStep": "Retain these records as planned Birch work and keep Alpine direction associated with its own project.",
+  "relevantContract": null
+}

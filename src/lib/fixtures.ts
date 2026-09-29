@@ -1,4 +1,8 @@
 import {
+  applyProjectDetection,
+  additionalProjectEvidence,
+} from "./workflow/project-detections";
+import {
   strawberryEvent,
   cloverEvent,
   derivedEvidence,
@@ -81,7 +85,7 @@ const blueberryId = "blueberry-hill-rock-excavation";
 const honeybeeId = "honeybee-yard-added-bollards";
 const moonbeamId = "moonbeam-garage-charger-revision";
 
-export const events: ChangeEvent[] = [
+const configuredEvents: ChangeEvent[] = [
   strawberryEvent,
   {
     id: blueberryId,
@@ -190,112 +194,12 @@ export const events: ChangeEvent[] = [
   },
 ];
 
+export const events: ChangeEvent[] = configuredEvents.map(
+  applyProjectDetection,
+);
 export const evidence: EvidenceItem[] = [
   ...derivedEvidence,
-  {
-    id: "bh-log",
-    eventId: blueberryId,
-    kind: "log",
-    label: "Daily log",
-    title: "Unexpected rock logged",
-    time: "09:20",
-    date: "Sept 28, 2026",
-    summary: "Continuous rock encountered at utility trench depth.",
-    content:
-      "Crew encountered rock at approximately 4 ft below grade along the utility trench. Standard excavator unable to maintain production. Hydraulic breaker requested. Quantities and delay hours are being tracked.",
-    author: "Sam Wilson · Superintendent",
-  },
-  {
-    id: "bh-photos",
-    eventId: blueberryId,
-    kind: "photo",
-    label: "4 photos",
-    title: "Site photo register added",
-    time: "09:45",
-    date: "Sept 28, 2026",
-    summary: "Four field images referenced in the daily report.",
-    content:
-      "Photo register (demo; original images not attached)\n\n01 — Exposed rock layer in north trench\n02 — Rock depth measurement at station 2+40\n03 — Excavator bucket against continuous rock\n04 — Overview of affected excavation area",
-    author: "Sam Wilson · Superintendent",
-  },
-  {
-    id: "bh-report",
-    eventId: blueberryId,
-    kind: "report",
-    label: "Geotech report",
-    title: "Geotechnical report referenced",
-    time: "11:10",
-    date: "Sept 28, 2026",
-    summary: "No rock indicated at the affected depth.",
-    content:
-      "Geotechnical investigation · Boring B-03\n\nSoil profile indicates granular fill and sandy clay to 8 ft below grade. No bedrock or refusal recorded at the planned utility trench depth. Field conditions require further review by the geotechnical engineer.",
-    author: "Northstar Geotechnical · Report excerpt",
-  },
-  {
-    id: "hy-log",
-    eventId: honeybeeId,
-    kind: "log",
-    label: "Daily log",
-    title: "Owner request recorded",
-    time: "01:43",
-    date: "Sept 28, 2026",
-    summary: "Six additional bollards requested.",
-    content:
-      "Owner representative requested six protective bollards at the loading dock during the overnight site walk. Work is outside the issued installation plan. Pricing prepared for PM review.",
-    author: "Pat Casey · Superintendent",
-  },
-  {
-    id: "hy-notes",
-    eventId: honeybeeId,
-    kind: "notes",
-    label: "Meeting notes",
-    title: "Site walk notes filed",
-    time: "08:30",
-    date: "Sept 28, 2026",
-    summary: "Additional loading dock protection confirmed.",
-    content:
-      "Action item 4: Bob Builder to provide six additional protective bollards at the loading dock. Owner representative agreed that this is additional scope. Submit notice and estimate for review.",
-    author: "Jordan Lee · Senior project manager",
-  },
-  {
-    id: "hy-email",
-    eventId: honeybeeId,
-    kind: "email",
-    label: "Email confirmation",
-    title: "Owner confirmation received",
-    time: "10:15",
-    date: "Sept 28, 2026",
-    summary: "Written owner direction received.",
-    content:
-      "Jordan, confirming our request for six additional bollards at the loading dock. Please submit the additional cost for review and coordinate the installation with the site team. — Avery Chen",
-    author: "Avery Chen · Owner representative",
-  },
-  {
-    id: "mg-drawing",
-    eventId: moonbeamId,
-    kind: "drawing",
-    label: "Drawing Rev F",
-    title: "Drawing revision received",
-    time: "08:45",
-    date: "Sept 28, 2026",
-    summary: "Charger count reduced from 42 to 40.",
-    content:
-      "Electrical plan · Revision F\n\nTwo charging positions removed from the east parking bay. Revised total: 40 chargers. Coordinate remaining circuit assignments with the panel schedule.",
-    author: "Taylor Reed · Design coordinator",
-  },
-  {
-    id: "mg-order",
-    eventId: moonbeamId,
-    kind: "order",
-    label: "Purchase order",
-    title: "Procurement quantity checked",
-    time: "13:30",
-    date: "Sept 28, 2026",
-    summary: "Purchase order still includes 42 chargers.",
-    content:
-      "PO-2419-008 · EV charging equipment\n\nQuantity: 42 units\nUnit cost: $3,100\nStatus: Order acknowledged\n\nRevised quantity and cancellation terms have not yet been confirmed with the supplier.",
-    author: "Robin Ellis · Procurement lead",
-  },
+  ...additionalProjectEvidence,
 ];
 
 export const notices: DraftNotice[] = [
@@ -314,7 +218,7 @@ export const notices: DraftNotice[] = [
             ? "avery.chen@example.com"
             : "morgan.ellis@example.com",
         subject: `Notice of potential change — ${event.title}`,
-        body: `Dear ${event.projectId === "honeybee-yard" ? "Avery" : "Morgan"},\n\nPursuant to ${event.contract!.clause} (${event.contract!.title}) of our agreement for ${project.name} — ${project.subtitle}, Bob Builder Infrastructure hereby provides written notice of a potential change to the contracted scope of work.\n\n${event.summary}\n\nOur preliminary estimate of additional cost is ${formatMoney(event.exposure)}. This estimate is subject to further substantiation, and any associated schedule impact is under review. Supporting field records, correspondence, and project documents are available for review.\n\nBob Builder Infrastructure reserves all rights under the contract to seek an adjustment to the contract sum and completion date. This notice does not constitute a final accounting of cost or schedule impact, nor a waiver of any contractual rights.\n\nPlease acknowledge receipt of this notice and advise on the next steps for change authorization.\n\nSincerely,\nJordan Lee\nSenior Project Manager\nBob Builder Infrastructure`,
+        body: `Dear ${event.projectId === "honeybee-yard" ? "Avery" : "Morgan"},\n\nPursuant to ${event.contract!.clause} (${event.contract!.title}) of our agreement for ${project.name} — ${project.subtitle}, BobsBuildings hereby provides written notice of a potential change to the contracted scope of work.\n\n${event.summary}\n\nOur preliminary estimate of additional cost is ${formatMoney(event.exposure)}. This estimate is subject to further substantiation, and any associated schedule impact is under review. Supporting field records, correspondence, and project documents are available for review.\n\nBobsBuildings reserves all rights under the contract to seek an adjustment to the contract sum and completion date. This notice does not constitute a final accounting of cost or schedule impact, nor a waiver of any contractual rights.\n\nPlease acknowledge receipt of this notice and advise on the next steps for change authorization.\n\nSincerely,\nJordan Lee\nSenior Project Manager\nBobsBuildings`,
       };
     }),
 ];

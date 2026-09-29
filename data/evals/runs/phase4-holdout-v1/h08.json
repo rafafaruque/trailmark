@@ -1,0 +1,66 @@
+{
+  "caseId": "h08",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:47:52.644Z",
+  "completedAt": "2026-09-29T20:48:08.102Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "h08-r1",
+    "h08-r2",
+    "h08-r3"
+  ],
+  "inputHash": "03a39213e792fa3490c30fd2e08f1c1510787be337e22d3c9e02ef30b06e9cbe",
+  "promptHash": "b5180922ca2636133399fd6c74cd4ef37d05693b884b18b22c734feb32225fe5",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "e76fb02983e4bf0c2789be1760745b6f3e13ac6298d6780f68d2fd1ddfd3819c",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": false,
+    "title": "Planned Roof Membrane Installation",
+    "eventType": "planned_work",
+    "shortSummary": "The reported 200 square feet of roof membrane matches the original W-06 tender scope. No changed detailing, extra work, owner direction or obstruction is reported. The separate planned elevator inspection does not indicate a scope change.",
+    "projectId": "maple-market",
+    "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+    "responsiblePartyHypothesis": "The work appears to be the contractor's original roof installation obligation; the records identify no party responsible for a change.",
+    "confidence": "high",
+    "evidenceReferences": [
+      {
+        "sourceId": "h08-r1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Completed 200 square feet of roof membrane to original W-06. Same material and detailing as tender; no extra work, owner direction or obstruction.",
+        "supports": "additional_work",
+        "explanation": "Documents performed work and expressly reports no additional work or change-related cause."
+      },
+      {
+        "sourceId": "h08-r2",
+        "sourceType": "drawing",
+        "fieldPath": "body",
+        "excerpt": "Tender roof membrane area is 200 square feet at the upper landing. Product and lap details unchanged.",
+        "supports": "scope_baseline",
+        "explanation": "The original W-06 scope matches the quantity and unchanged details reported in the daily log."
+      }
+    ],
+    "missingEvidence": [],
+    "recommendedNextStep": "Retain as planned-work documentation; no change investigation is indicated by these records.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Planned Roof Membrane Installation\",\n  \"eventType\": \"planned_work\",\n  \"shortSummary\": \"The reported 200 square feet of roof membrane matches the original W-06 tender scope. No changed detailing, extra work, owner direction or obstruction is reported. The separate planned elevator inspection does not indicate a scope change.\",\n  \"projectId\": \"maple-market\",\n  \"estimatedEventTime\": \"2026-09-29T09:15:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The work appears to be the contractor's original roof installation obligation; the records identify no party responsible for a change.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"h08-r1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Completed 200 square feet of roof membrane to original W-06. Same material and detailing as tender; no extra work, owner direction or obstruction.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents performed work and expressly reports no additional work or change-related cause.\"\n    },\n    {\n      \"sourceId\": \"h08-r2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Tender roof membrane area is 200 square feet at the upper landing. Product and lap details unchanged.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"The original W-06 scope matches the quantity and unchanged details reported in the daily log.\"\n    }\n  ],\n  \"missingEvidence\": [],\n  \"recommendedNextStep\": \"Retain as planned-work documentation; no change investigation is indicated by these records.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 15452,
+  "usage": {
+    "inputTokens": 11252,
+    "outputTokens": 393,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

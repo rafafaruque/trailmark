@@ -1,0 +1,86 @@
+{
+  "caseId": "blueberry-hill",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:50:02.676Z",
+  "completedAt": "2026-09-29T20:50:28.963Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "bh-log",
+    "bh-photos",
+    "bh-report"
+  ],
+  "inputHash": "034fae27a893a51382ab5441e265cd54c2df55bc9d5a37f8df7403a74695f7ff",
+  "promptHash": "6ae4e230d48482416694620dc2aaa2300d21e1390c66f9bd71045bd19606c805",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "19febdbe58b19599d0d51691bd0a11d96e04ed7e2bb4687788a67d64dd1cb467",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "North Trench Rock Encounter",
+    "eventType": "differing_site_condition",
+    "shortSummary": "Rock encountered at 4 feet at station 2+40 stopped excavation. The reviewing engineer confirmed a difference from the reported contract boring profile. Protection and tracking began; breaker work was requested but is not confirmed as performed or authorized.",
+    "projectId": "blueberry-hill",
+    "estimatedEventTime": "2026-09-28T09:20:00-04:00",
+    "responsiblePartyHypothesis": "The encounter may reflect a subsurface condition differing from the contract investigation. The engineer requested continued protection and PM direction; responsibility for resulting work remains unresolved pending review of the original scope and contract risk allocation.",
+    "confidence": "medium",
+    "evidenceReferences": [
+      {
+        "sourceId": "bh-log",
+        "sourceType": "daily_log",
+        "fieldPath": "entries.1",
+        "excerpt": "At north trench station 2+40, continuous rock exposed at 4 feet below grade. Excavator production stopped. Protected the cut and requested a hydraulic breaker pending engineer review. Crew began tracking affected quantities and idle time.",
+        "supports": "reason_for_change",
+        "explanation": "Documents the encounter, stoppage and protective measures; a breaker request does not establish performed rock removal."
+      },
+      {
+        "sourceId": "bh-photos",
+        "sourceType": "daily_log",
+        "fieldPath": "register.1",
+        "excerpt": "IMG-142: depth rod shows rock at 4 feet, station 2+40",
+        "supports": "reason_for_change",
+        "explanation": "Links the photo register to the same depth and station. The same superintendent authored it, and original images are unavailable."
+      },
+      {
+        "sourceId": "bh-report",
+        "sourceType": "rfi",
+        "fieldPath": "baselineExcerpt",
+        "excerpt": "Contract boring B-03 indicates granular fill and sandy clay through 8 feet, with no rock or refusal at the planned utility trench depth.",
+        "supports": "scope_baseline",
+        "explanation": "Provides the engineer's reported contract subsurface baseline against which the rock encounter can be reviewed."
+      },
+      {
+        "sourceId": "bh-report",
+        "sourceType": "rfi",
+        "fieldPath": "response",
+        "excerpt": "Station 2+40 is within the B-03 investigation area. The field rock differs from the indicated subsurface profile. Maintain protection, document quantities and seek PM direction before disturbing the condition further.",
+        "supports": "direction",
+        "explanation": "Connects the location to B-03 and supplies engineer instructions to preserve the condition and seek PM direction. Contractor receipt is not established."
+      }
+    ],
+    "missingEvidence": [
+      "Original contract boring B-03, excavation scope and applicable subsurface risk provisions.",
+      "Confirmed contractor receipt of the engineer response and subsequent PM direction.",
+      "Original photographs and records of any subsequent breaker use or rock removal."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the encounter and response receipt times, provide the original boring and photographs, and clarify PM direction and any subsequent work performed.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"North Trench Rock Encounter\",\n  \"eventType\": \"differing_site_condition\",\n  \"shortSummary\": \"Rock encountered at 4 feet at station 2+40 stopped excavation. The reviewing engineer confirmed a difference from the reported contract boring profile. Protection and tracking began; breaker work was requested but is not confirmed as performed or authorized.\",\n  \"projectId\": \"blueberry-hill\",\n  \"estimatedEventTime\": \"2026-09-28T09:20:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The encounter may reflect a subsurface condition differing from the contract investigation. The engineer requested continued protection and PM direction; responsibility for resulting work remains unresolved pending review of the original scope and contract risk allocation.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"bh-log\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"entries.1\",\n      \"excerpt\": \"At north trench station 2+40, continuous rock exposed at 4 feet below grade. Excavator production stopped. Protected the cut and requested a hydraulic breaker pending engineer review. Crew began tracking affected quantities and idle time.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Documents the encounter, stoppage and protective measures; a breaker request does not establish performed rock removal.\"\n    },\n    {\n      \"sourceId\": \"bh-photos\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"register.1\",\n      \"excerpt\": \"IMG-142: depth rod shows rock at 4 feet, station 2+40\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Links the photo register to the same depth and station. The same superintendent authored it, and original images are unavailable.\"\n    },\n    {\n      \"sourceId\": \"bh-report\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"baselineExcerpt\",\n      \"excerpt\": \"Contract boring B-03 indicates granular fill and sandy clay through 8 feet, with no rock or refusal at the planned utility trench depth.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Provides the engineer's reported contract subsurface baseline against which the rock encounter can be reviewed.\"\n    },\n    {\n      \"sourceId\": \"bh-report\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"response\",\n      \"excerpt\": \"Station 2+40 is within the B-03 investigation area. The field rock differs from the indicated subsurface profile. Maintain protection, document quantities and seek PM direction before disturbing the condition further.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Connects the location to B-03 and supplies engineer instructions to preserve the condition and seek PM direction. Contractor receipt is not established.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original contract boring B-03, excavation scope and applicable subsurface risk provisions.\",\n    \"Confirmed contractor receipt of the engineer response and subsequent PM direction.\",\n    \"Original photographs and records of any subsequent breaker use or rock removal.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the encounter and response receipt times, provide the original boring and photographs, and clarify PM direction and any subsequent work performed.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 26280,
+  "usage": {
+    "inputTokens": 11370,
+    "outputTokens": 717,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

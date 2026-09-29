@@ -2,10 +2,11 @@
 
 import { ArrowUpRight, FileText, ShieldCheck } from "lucide-react";
 import type { ChangeEvent, EvidenceItem } from "@/lib/types";
+import { reviewContext } from "@/lib/workflow/review-context";
 import { EvidenceIcon } from "./ui";
 
 const supportLabels = {
-  direction: "Direction to relocate",
+  direction: "Written direction",
   design_change: "Revised design",
   reason_for_change: "Reason for field change",
   additional_work: "Additional field work",
@@ -23,8 +24,8 @@ export function AnalysisEvidence({
   items: EvidenceItem[];
   onOpen: (item: EvidenceItem) => void;
 }) {
-  const workflow = event.workflow;
-  if (!workflow) return null;
+  const workflow = reviewContext(event);
+  if (!workflow.analysis) return null;
   const references = workflow.analysis.evidenceReferences;
   const uniqueSources = [
     ...new Set(references.map((reference) => reference.sourceId)),
@@ -102,7 +103,7 @@ export function AnalysisEvidence({
           <p>
             {workflow.draftEligible
               ? "A provisional notice can be reviewed. These uncertainties remain open and must be acknowledged by the PM before approval."
-              : "Notice preparation is blocked until the supporting evidence is sufficient."}
+              : "Confirm the missing evidence before taking commercial action."}
           </p>
         </details>
       )}

@@ -1,0 +1,78 @@
+{
+  "caseId": "h10",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:48:23.755Z",
+  "completedAt": "2026-09-29T20:48:46.687Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "h10-r1",
+    "h10-r2",
+    "h10-r3"
+  ],
+  "inputHash": "10626cdda2439a463b37782bba6b607326df72fe62f1c15c83a59ceb5fd7601a",
+  "promptHash": "ab0c60629082cf8f74dbaeb266661c100034552e35052c69344ba35feb724d25",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "22d617bfe35aae3390d46c6baf0ca81a2321b43e38a6042017b148d85c845294",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Unshown Water Main at T3",
+    "eventType": "differing_site_condition",
+    "shortSummary": "An active water main exposed at T3 conflicts with the original utilities survey and prevents planned dry excavation. Excavation stopped and the pipe was protected. The utility engineer confirmed the discrepancy and directed trench security pending a crossing support design.",
+    "projectId": "ashbrook-pumpstation",
+    "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+    "responsiblePartyHypothesis": "The records suggest an unshown existing utility and a contract survey discrepancy rather than contractor installation error. Responsibility for resulting protection, standby and any crossing support remains subject to review.",
+    "confidence": "high",
+    "evidenceReferences": [
+      {
+        "sourceId": "h10-r1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "At T3, 1.4 m below grade, exposed an active 150 mm water main crossing the pump feeder route. Stopped excavation and protected the pipe. Utility locator witnessed the crossing. Planned dry excavation cannot proceed safely.",
+        "supports": "additional_work",
+        "explanation": "Documents the encountered main, excavation stoppage and pipe protection; the recording time is the observed event-time proxy."
+      },
+      {
+        "sourceId": "h10-r2",
+        "sourceType": "drawing",
+        "fieldPath": "body",
+        "excerpt": "Original contract survey U-11 and bore logs for T3 show no utility crossing to 2 m depth. Survey envelope includes the exposed location.",
+        "supports": "scope_baseline",
+        "explanation": "Establishes that the contract survey covered the location and indicated no crossing at the encountered depth."
+      },
+      {
+        "sourceId": "h10-r3",
+        "sourceType": "rfi",
+        "fieldPath": "body",
+        "excerpt": "Confirmed in the field: active water main at T3 is absent from the contract utilities survey U-11. Keep the trench secure while we design a crossing support detail. No contractor installation error caused this conflict; track protection and standby records for project review.",
+        "supports": "direction",
+        "explanation": "Independently confirms the discrepancy, directs trench security and identifies support design as pending; contractor receipt is not documented."
+      }
+    ],
+    "missingEvidence": [
+      "Contract provisions allocating existing utility and survey risks.",
+      "Confirmation of when the contractor received the RFI response.",
+      "Issued crossing support detail and records establishing the extent of protection, standby and subsequent work."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm receipt of the RFI direction, document protection and standby activity, and obtain the crossing support detail for comparison with the original scope.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unshown Water Main at T3\",\n  \"eventType\": \"differing_site_condition\",\n  \"shortSummary\": \"An active water main exposed at T3 conflicts with the original utilities survey and prevents planned dry excavation. Excavation stopped and the pipe was protected. The utility engineer confirmed the discrepancy and directed trench security pending a crossing support design.\",\n  \"projectId\": \"ashbrook-pumpstation\",\n  \"estimatedEventTime\": \"2026-09-29T09:15:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The records suggest an unshown existing utility and a contract survey discrepancy rather than contractor installation error. Responsibility for resulting protection, standby and any crossing support remains subject to review.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"h10-r1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"At T3, 1.4 m below grade, exposed an active 150 mm water main crossing the pump feeder route. Stopped excavation and protected the pipe. Utility locator witnessed the crossing. Planned dry excavation cannot proceed safely.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents the encountered main, excavation stoppage and pipe protection; the recording time is the observed event-time proxy.\"\n    },\n    {\n      \"sourceId\": \"h10-r2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Original contract survey U-11 and bore logs for T3 show no utility crossing to 2 m depth. Survey envelope includes the exposed location.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Establishes that the contract survey covered the location and indicated no crossing at the encountered depth.\"\n    },\n    {\n      \"sourceId\": \"h10-r3\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Confirmed in the field: active water main at T3 is absent from the contract utilities survey U-11. Keep the trench secure while we design a crossing support detail. No contractor installation error caused this conflict; track protection and standby records for project review.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Independently confirms the discrepancy, directs trench security and identifies support design as pending; contractor receipt is not documented.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Contract provisions allocating existing utility and survey risks.\",\n    \"Confirmation of when the contractor received the RFI response.\",\n    \"Issued crossing support detail and records establishing the extent of protection, standby and subsequent work.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm receipt of the RFI direction, document protection and standby activity, and obtain the crossing support detail for comparison with the original scope.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 22929,
+  "usage": {
+    "inputTokens": 11222,
+    "outputTokens": 630,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

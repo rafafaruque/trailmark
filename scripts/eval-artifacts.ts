@@ -12,19 +12,24 @@ import {
 } from "../src/lib/evaluation/compare";
 import { evaluationRecordSchema } from "../src/lib/evaluation/records";
 
-const directory = "data/evals/runs/phase3-v1";
+const defaultDirectory = "data/evals/runs/phase3-v1";
 const json = (path: string) => JSON.parse(readFileSync(path, "utf8"));
 const hash = (value: unknown) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const bytesHash = (value: string | Buffer) =>
   createHash("sha256").update(value).digest("hex");
-export function readVerifiedEvaluation() {
+export function readVerifiedEvaluation(
+  evaluationDataset: { cases: unknown[] } = dataset,
+  directory = defaultDirectory,
+) {
   const manifest = json(`${directory}/manifest.json`);
   const completion = json(`${directory}/completion.json`);
-  const cases = dataset.cases.map((item) => evaluationCaseSchema.parse(item));
+  const cases = evaluationDataset.cases.map((item) =>
+    evaluationCaseSchema.parse(item),
+  );
   assert.equal(
     manifest.datasetHash,
-    hash(dataset),
+    hash(evaluationDataset),
     "Evaluation labels or source dataset changed",
   );
   assert.equal(manifest.scoringVersion, "phase3-v1");

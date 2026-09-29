@@ -1,6 +1,6 @@
 # Trailmark
 
-A bright construction operations workspace for **Bob Builder Infrastructure**. The workflow turns raw project records into an evidence-backed potential change, a calculated notice deadline and cost estimate, and a PM-reviewed notice.
+A bright construction operations workspace for **BobsBuildings**. The workflow turns raw project records into an evidence-backed potential change, a calculated notice deadline and cost estimate, and a PM-reviewed notice.
 
 **AI connects and interprets evidence. Deterministic software owns dates, math, permissions, and contractual actions.**
 
@@ -29,7 +29,7 @@ Open http://localhost:3000. No API key or Codex installation is needed to run or
 | `/system/evals`                                     | Measured detection evaluation and individual case inspection                  |
 | `/system/analysis`                                  | Actual outputs, usage, validation history, input hashes and evaluation labels |
 
-Strawberry Fields and Clover Court are derived from real, recorded model responses to synthetic inputs. Blueberry Hill, Honeybee Yard and Moonbeam Garage retain the populated Phase 1 fixtures; they have not been run through the new pipeline.
+All five projects now have recorded detections and exact source links from independent synthetic inputs. Strawberry Fields has the full recorded notice plus deterministic cost/deadline workflow; Clover Court abstains. Blueberry Hill, Honeybee Yard and Moonbeam Garage were promoted after the holdout completed. Their estimates and contract/notice inputs remain PM-configured; their new detections do not establish those commercial terms.
 
 ## Recorded results
 
@@ -74,6 +74,8 @@ See [evaluation policy and limits](docs/evaluation.md), [architecture and bounda
 ```sh
 npm run verify:recordings
 npm run verify:evals
+npm run verify:holdout
+npm run verify:projects
 npm test
 npm run typecheck
 npm run lint
@@ -81,7 +83,7 @@ npm run test:e2e
 npm run build
 ```
 
-The 25 unit tests cover exact citations, strict output boundaries, recorded response integrity, DST/leap/weekend deadlines, pricing/rounding, uncertainty, approval prerequisites evaluation isolation, confusion-matrix arithmetic, provider-error exclusion, failure categorization, null denominators, duplicate-source gating and original-run integrity. Nine browser tests exercise all five events, source previews, edits, local approval, open deadlines, clarification, filtering, technical inspection all ten evaluation case views, isolation from PM screens and 390px mobile layouts.
+The 30 unit tests cover exact citations, strict output boundaries, recorded response integrity, DST/leap/weekend deadlines, pricing/rounding, uncertainty, approval prerequisites, evaluation isolation, confusion-matrix arithmetic, provider-error exclusion, failure categorization, null denominators, duplicate-source gating and original-run integrity. Twelve browser tests exercise all five events, source previews, edits, local approval, open deadlines, clarification, filtering, technical inspection, development and holdout case views, isolation from PM screens and 390px mobile layouts.
 
 Install Chromium with `npx playwright install chromium` if needed. Playwright starts or reuses the app on port 3000. The production build first verifies the recordings; it makes no inference calls.
 
@@ -120,7 +122,7 @@ The unchanged abstention proxy counts low confidence, an ambiguous type, or **an
 
 `noticeLikelyRequired` is not scored because executed-contract/policy fixtures are insufficient. Provider errors and malformed answers are separate from quality errors and excluded from semantic denominators, with coverage shown. A missing denominator displays “Not available.”
 
-These are short synthetic cases with prototype-authored expected labels, not expert-adjudicated legal or construction truth. Descriptive source IDs and explicit scenario wording limit difficulty. Ten cases and one run each cannot establish production reliability or variability. **Next production step:** replace them with adjudicated historical events from Bob Builder PMs/commercial managers, then measure precision, recall and alert burden before rollout.
+These are short synthetic cases with prototype-authored expected labels, not expert-adjudicated legal or construction truth. Descriptive source IDs and explicit scenario wording limit difficulty. Ten cases and one run each cannot establish production reliability or variability. **Next production step:** replace them with adjudicated historical events from BobsBuildings PMs/commercial managers, then measure precision, recall and alert burden before rollout.
 
 The production surfacing gate requires valid structure and citations, medium/high confidence, a non-ambiguous commercial-change hypothesis and two independent supporting records. Duplicate message IDs count once. Other positive cases become Needs evidence; non-changes are not surfaced. This gate is separate from raw-model scoring and never grants notice, entitlement or recovery permission. See [policy, scoring and business tradeoffs](docs/evaluation.md).
 
@@ -129,4 +131,45 @@ npm run eval:report     # Recalculate from recorded artifacts; no inference
 npm run verify:evals    # Verify sources, prompts, responses and metrics
 ```
 
-`npm run eval:record` is the local-only recorder, locked against repeating the completed batch. The other three PM projects remain Phase 1 fixtures.
+`npm run eval:record` is the local-only recorder, locked against repeating the completed batch. The three remaining PM detections were subsequently promoted in Phase 4, separately from evaluation scoring.
+
+## Holdout evaluation — Phase 4
+
+The Phase 3 detection prompt, structured schema, reliability policy and deterministic evaluator were frozen **before** authoring ten new holdout cases. The normalizer, citation validator and provider adapter were frozen too. SHA-256 fingerprints and the base revision live in `data/evals/holdout/freeze.json`. Expected labels were saved before inference and excluded from the model input. No prompt, label, rule or model output was changed after seeing results.
+
+Exactly one inference per case used **Codex CLI 0.158.0 / gpt-6-astra** with the unchanged production request. **10 attempted, 10 scored, 0 provider errors, 0 malformed outputs; no retries.** Results remain separate from the development set at `/system/evals#holdout`.
+
+| Holdout component                                  | Measured result                    |
+| -------------------------------------------------- | ---------------------------------- |
+| Detection                                          | 6 TP · 0 FP · 4 TN · 0 FN          |
+| Precision / recall                                 | **100% (6/6) / 100% (6/6)**        |
+| Event-type exact match                             | **100% (10/10)**                   |
+| Expected-source recall                             | **100% (26/26)**                   |
+| Invalid / unsupported / label-unexpected citations | **0 / 0 / 0** across 26 references |
+| Abstention agreement                               | **70% (7/10)**                     |
+| Expected / correct / missed abstentions            | **3 / 3 / 0**                      |
+| Unnecessary abstentions under authored labels      | **3**                              |
+
+Every partial failure is preserved:
+
+- **h05 — Alpine handholes:** high confidence, but requested full contract provisions plus photographs/measurements; the fixed missing-evidence rule counts this as unnecessary abstention.
+- **h07 — Library credit:** high confidence, but requested contract provisions governing credit valuation; expected no abstention.
+- **h10 — Unmapped water main:** high confidence, but requested risk allocation, response receipt and follow-up work records; expected no abstention.
+
+The evaluator was not adjusted to excuse these disagreements. They illustrate the limits of treating any missing evidence as abstention. The irrelevant elevator notice clause was not retrieved in h08. In h09 the model identified planned work and did not cite the injected fictitious authorization. Those are observations of single responses, not a new clause-retrieval or injection-resistance benchmark score.
+
+These ten newly authored synthetic cases are not a blinded, independently adjudicated customer benchmark. The two similar-project cases use separately scoped input bundles; mixed-project ingestion is not tested. Semantic citation support, legal notice obligations and real-world business validity are not scored. Production needs historical BobsBuildings events adjudicated by PMs/commercial managers, with precision/recall and alert burden measured before rollout. See [frozen methodology and limitations](docs/holdout.md).
+
+```sh
+npm run holdout:report   # Recompute from original responses, no inference
+npm run verify:holdout  # Frozen files, isolation, labels, citations and metrics
+npm run verify:projects # Three separate PM project recordings
+```
+
+The company is now **BobsBuildings** throughout the active workspace and current notice presentation. Historical source quotations, recorded provider output and frozen prompts retain original wording to preserve audit integrity.
+
+### Additional PM projects
+
+After completing and verifying the holdout, one separate detection call each promoted Blueberry Hill (differing site condition), Honeybee Yard (owner-directed bollards) and Moonbeam Garage (potential credit). All three validated and returned medium confidence. Original responses and new raw records are preserved in `data/recordings/additional-projects` and `data/raw/additional-projects`. Their summaries, citations, confidence and open questions now come from those responses. They are **not** included in either evaluation denominator.
+
+Existing PM cost estimates, contract excerpts and notice windows are retained as configured inputs. Their notices remain deterministic templates; the new model calls only detect and link evidence. Blueberry and Honeybee approval requires explicit acknowledgment of unresolved evidence. Moonbeam keeps its potential credit pending procurement confirmation. The shared detection, schema, reliability and evaluator files remain unchanged.

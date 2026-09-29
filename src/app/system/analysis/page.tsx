@@ -1,3 +1,7 @@
+import {
+  additionalProjectRecords,
+  additionalProjectSources,
+} from "@/lib/workflow/project-detections";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -27,6 +31,10 @@ export default function AnalysisPage() {
     analysisRecords.strawberry,
     analysisRecords.clover,
     noticeRecord,
+    ...additionalProjectRecords.map((record) => ({
+      ...record,
+      id: `${record.caseId}-detection`,
+    })),
   ];
   return (
     <>
@@ -158,13 +166,29 @@ export default function AnalysisPage() {
       <section className="panel inspection-run">
         <h2>Raw inputs and calculations</h2>
         <p>
+          All five PM projects now have recorded detections and exact source
+          links. Blueberry Hill, Honeybee Yard and Moonbeam Garage retain
+          PM-configured estimates and contract/notice inputs; their new
+          detections do not calculate or establish those commercial terms. Their
+          notice letters use templates, with unresolved model questions
+          requiring explicit PM acknowledgment.
+        </p>
+        <p>
           The source fixtures do not import or embed a generated event. Pricing
           is withheld from detection and is never supplied by the model.
         </p>
         <details>
           <summary>Normalized source records</summary>
           <pre>
-            {JSON.stringify([...strawberrySources, ...cloverSources], null, 2)}
+            {JSON.stringify(
+              [
+                ...strawberrySources,
+                ...cloverSources,
+                ...additionalProjectSources,
+              ],
+              null,
+              2,
+            )}
           </pre>
         </details>
         <details>

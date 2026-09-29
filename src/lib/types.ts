@@ -1,3 +1,5 @@
+import type { Detection } from "./ai/schemas";
+import type { assessReliability } from "./workflow/reliability";
 import type { WorkflowResult } from "./workflow/derive";
 
 export type Priority = "high" | "medium" | "needs-evidence" | "low";
@@ -64,6 +66,10 @@ export interface ChangeEvent {
   recommendation: string;
   workflow?: WorkflowResult;
   analysisRecordId?: string;
+  recordedDetection?: {
+    analysis: Detection;
+    reliability: ReturnType<typeof assessReliability>;
+  };
 }
 
 export interface DraftNotice {

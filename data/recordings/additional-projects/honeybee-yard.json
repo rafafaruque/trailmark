@@ -1,0 +1,78 @@
+{
+  "caseId": "honeybee-yard",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:50:28.964Z",
+  "completedAt": "2026-09-29T20:50:50.582Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "hy-log",
+    "hy-notes",
+    "hy-email"
+  ],
+  "inputHash": "1237bcdd8e49792e5dd8fdfb56ff8613aa863b99a5b5182ccf8ba35b27162b98",
+  "promptHash": "d05f33ba3a2dd96616d4137715a14853db9b42cc63b86327e9607bf431827daa",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "3d75c073ccff651a6aa2fad9560055f216ba129418f8d60262579aa289587772",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Additional Dock Door Bollards",
+    "eventType": "owner_directed_change",
+    "shortSummary": "The owner representative directed six additional bollards at dock doors 3–5, described as outside issued S-22 and the original tender schedule. Six positions were marked for review; installation awaits PM release.",
+    "projectId": "honeybee-yard",
+    "estimatedEventTime": "2026-09-28T01:43:00-04:00",
+    "responsiblePartyHypothesis": "The owner appears to have initiated the added scope through Avery Chen, whose authority and signed direction are documented in the supplied records. Contractual responsibility remains subject to review.",
+    "confidence": "medium",
+    "evidenceReferences": [
+      {
+        "sourceId": "hy-log",
+        "sourceType": "daily_log",
+        "fieldPath": "entries.1",
+        "excerpt": "Marked six positions for review; installation awaits PM release.",
+        "supports": "additional_work",
+        "explanation": "Documents preparatory marking only, with installation still pending release."
+      },
+      {
+        "sourceId": "hy-notes",
+        "sourceType": "daily_log",
+        "fieldPath": "item4",
+        "excerpt": "Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43.",
+        "supports": "scope_baseline",
+        "explanation": "Reports the original scope exclusion and signed direction received at 01:43, supporting the observed event-time hypothesis."
+      },
+      {
+        "sourceId": "hy-email",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together.",
+        "supports": "direction",
+        "explanation": "Provides owner-authored corroboration of the same six-bollard direction and reported scope addition."
+      }
+    ],
+    "missingEvidence": [
+      "Issued S-22 and the original tender quantity schedule to verify the reported scope exclusion.",
+      "Contract terms and authority directory to verify the representative's authority and applicable change procedure.",
+      "Approved bollard details and PM release for installation."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the six marked locations and pending installation status, and obtain S-22, the tender schedule, and approved installation details for PM scope review.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Additional Dock Door Bollards\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"The owner representative directed six additional bollards at dock doors 3–5, described as outside issued S-22 and the original tender schedule. Six positions were marked for review; installation awaits PM release.\",\n  \"projectId\": \"honeybee-yard\",\n  \"estimatedEventTime\": \"2026-09-28T01:43:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner appears to have initiated the added scope through Avery Chen, whose authority and signed direction are documented in the supplied records. Contractual responsibility remains subject to review.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"hy-log\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"entries.1\",\n      \"excerpt\": \"Marked six positions for review; installation awaits PM release.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents preparatory marking only, with installation still pending release.\"\n    },\n    {\n      \"sourceId\": \"hy-notes\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"item4\",\n      \"excerpt\": \"Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Reports the original scope exclusion and signed direction received at 01:43, supporting the observed event-time hypothesis.\"\n    },\n    {\n      \"sourceId\": \"hy-email\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Provides owner-authored corroboration of the same six-bollard direction and reported scope addition.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Issued S-22 and the original tender quantity schedule to verify the reported scope exclusion.\",\n    \"Contract terms and authority directory to verify the representative's authority and applicable change procedure.\",\n    \"Approved bollard details and PM release for installation.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the six marked locations and pending installation status, and obtain S-22, the tender schedule, and approved installation details for PM scope review.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 21615,
+  "usage": {
+    "inputTokens": 11362,
+    "outputTokens": 589,
+    "cachedInputTokens": 8576
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

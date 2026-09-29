@@ -18,6 +18,7 @@ import { formatMoney, getProject } from "@/lib/fixtures";
 import type { ChangeEvent, DraftNotice } from "@/lib/types";
 import { updateEvent, useDemoState } from "@/lib/demo-store";
 import { Modal, ProjectIcon } from "./ui";
+import { reviewContext } from "@/lib/workflow/review-context";
 import { authorizeApproval } from "@/lib/workflow/approval";
 
 export function NoticeReview({
@@ -27,6 +28,7 @@ export function NoticeReview({
   event: ChangeEvent;
   draft: DraftNotice;
 }) {
+  const workflow = reviewContext(event);
   const state = useDemoState();
   const saved = state[event.id];
   const project = getProject(event.projectId);
@@ -55,7 +57,7 @@ export function NoticeReview({
       "Draft saved in this browser. You can come back to it anytime.",
     );
   }
-  if (saved?.status === "dismissed" || event.workflow?.draftEligible === false)
+  if (saved?.status === "dismissed" || workflow.draftEligible === false)
     return (
       <>
         <Link className="back-link" href={`/events/${event.id}`}>
@@ -130,24 +132,23 @@ export function NoticeReview({
           <span>{feedback}</span>
         </div>
       )}
-      {!!event.workflow?.reviewQuestions.length && (
+      {!!workflow.reviewQuestions.length && (
         <div className="notice-review-warning">
           <ShieldCheck size={19} />
           <div>
             <strong>
-              Provisional notice · {event.workflow.analysis.confidence}{" "}
-              confidence
+              Provisional notice · {workflow.analysis!.confidence} confidence
             </strong>
             <p>
-              The original scope, direction authority and earliest trigger time
-              still need confirmation. This draft preserves those uncertainties.
+              Review the open evidence and responsibility questions below before
+              approval.
             </p>
             <details>
               <summary>
-                Review {event.workflow.reviewQuestions.length} open items
+                Review {workflow.reviewQuestions.length} open items
               </summary>
               <ul>
-                {event.workflow.reviewQuestions.map((question) => (
+                {workflow.reviewQuestions.map((question) => (
                   <li key={question}>{question}</li>
                 ))}
               </ul>
@@ -163,7 +164,7 @@ export function NoticeReview({
                 b<span>b</span>
               </span>
               <div>
-                <strong>Bob Builder</strong>
+                <strong>BobsBuildings</strong>
                 <span>INFRASTRUCTURE</span>
               </div>
             </div>
@@ -360,7 +361,7 @@ export function NoticeReview({
             />
             I have reviewed the recipient, notice and supporting records.
           </label>
-          {event.workflow && !event.workflow.noticeEligible && (
+          {workflow && !workflow.noticeEligible && (
             <label className="review-checkbox">
               <input
                 type="checkbox"
@@ -389,8 +390,8 @@ export function NoticeReview({
               className="button primary"
               disabled={
                 !humanConfirmed ||
-                (!!event.workflow &&
-                  !event.workflow.noticeEligible &&
+                (!!workflow &&
+                  !workflow.noticeEligible &&
                   !uncertaintyAcknowledged)
               }
               onClick={() => {
@@ -398,10 +399,8 @@ export function NoticeReview({
                   authorizeApproval({
                     reviewerRole: "project_manager",
                     eventStatus: saved?.status,
-                    draftEligible:
-                      event.workflow?.draftEligible ?? !!event.contract,
-                    noticeEligible:
-                      event.workflow?.noticeEligible ?? !!event.contract,
+                    draftEligible: workflow.draftEligible ?? !!event.contract,
+                    noticeEligible: workflow.noticeEligible ?? !!event.contract,
                     humanConfirmed,
                     uncertaintyAcknowledged,
                     recipient: currentRecipient,

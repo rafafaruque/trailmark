@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h04-r1",
+    "projectId": "willow-clinic",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "North loop production",
+    "author": "Mara Li · Superintendent",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Crew called the last 80 feet of north-loop trench extra during toolbox talk because it was beyond yesterday’s stakes. Today we completed that 80 feet and used the scheduled excavator. No route or depth changed."
+    }
+  },
+  {
+    "id": "h04-r2",
+    "projectId": "willow-clinic",
+    "sourceType": "drawing",
+    "system": "Synthetic project archive",
+    "title": "C-08 issued tender plan",
+    "author": "Dana Cho · Civil designer",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Original issued C-08 includes 480 linear feet of north-loop trench, including the final 80 feet from station N4 to N5. Tender revision unchanged."
+    }
+  },
+  {
+    "id": "h04-r3",
+    "projectId": "willow-clinic",
+    "sourceType": "rfi",
+    "system": "Synthetic project archive",
+    "title": "RFI-009 quantity reconciliation",
+    "author": "Drew Park · Engineer",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "The 400 feet previously installed plus today’s 80 feet equals the original 480-foot scope. No additional alignment, quantity or method has been instructed. N4-N5 was missed in the crew’s daily stakeout, not the contract."
+    }
+  }
+]

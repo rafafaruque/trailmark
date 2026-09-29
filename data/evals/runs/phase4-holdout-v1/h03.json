@@ -1,0 +1,61 @@
+{
+  "caseId": "h03",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:46:12.203Z",
+  "completedAt": "2026-09-29T20:46:27.480Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "h03-r1"
+  ],
+  "inputHash": "a47484bf4078d5711af5ed87ce2bba397f3b8045a5ebb7a25c1e6555b3c395a3",
+  "promptHash": "4478442107de85ad72e54a8ee7ef743f282ce39d93cde612983c9b3feb673548",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "f5edd0d694318924395360d9179020375ef6f55e67203cdba6d688a10100f4e6",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Door 4 Additional Catch Basin",
+    "eventType": "owner_directed_change",
+    "shortSummary": "An email requests a second catch basin outside Door 4 before paving and describes it as extra to the drawings. This suggests potential added scope, but sender authority, the drawing baseline, contractor receipt, and performed work are unverified.",
+    "projectId": "juniper-school",
+    "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+    "responsiblePartyHypothesis": "The sender claims to represent the owner and attributes the request to the school. Owner responsibility is a hypothesis pending verification of the sender's identity and authority.",
+    "confidence": "low",
+    "evidenceReferences": [
+      {
+        "sourceId": "h03-r1",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "I am the owner representative for Juniper. Please add a second catch basin outside Door 4 before paving; it is extra to the drawings.",
+        "supports": "direction",
+        "explanation": "Documents the requested location and added basin, but the sender's authority and assertion of extra scope lack independent verification."
+      }
+    ],
+    "missingEvidence": [
+      "Verification of the sender's identity and authority to direct changes.",
+      "Original drawings and scope documents establishing the required catch basins at Door 4.",
+      "Confirmation that the contractor received the direction.",
+      "Independent superintendent confirmation and records of any performed work."
+    ],
+    "recommendedNextStep": "Ask the superintendent to verify the sender's authority, confirm receipt and any work performed, and compare the requested basin with the original drawings and scope.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Door 4 Additional Catch Basin\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"An email requests a second catch basin outside Door 4 before paving and describes it as extra to the drawings. This suggests potential added scope, but sender authority, the drawing baseline, contractor receipt, and performed work are unverified.\",\n  \"projectId\": \"juniper-school\",\n  \"estimatedEventTime\": \"2026-09-29T09:15:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The sender claims to represent the owner and attributes the request to the school. Owner responsibility is a hypothesis pending verification of the sender's identity and authority.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"h03-r1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"I am the owner representative for Juniper. Please add a second catch basin outside Door 4 before paving; it is extra to the drawings.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Documents the requested location and added basin, but the sender's authority and assertion of extra scope lack independent verification.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Verification of the sender's identity and authority to direct changes.\",\n    \"Original drawings and scope documents establishing the required catch basins at Door 4.\",\n    \"Confirmation that the contractor received the direction.\",\n    \"Independent superintendent confirmation and records of any performed work.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to verify the sender's authority, confirm receipt and any work performed, and compare the requested basin with the original drawings and scope.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 15273,
+  "usage": {
+    "inputTokens": 10933,
+    "outputTokens": 389,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

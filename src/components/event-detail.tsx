@@ -22,11 +22,13 @@ import type { ChangeEvent, EvidenceItem } from "@/lib/types";
 import { EvidenceIcon, Modal, PriorityBadge, ProjectIcon } from "./ui";
 import { EvidenceViewer } from "./evidence-viewer";
 import { AnalysisEvidence } from "./analysis-evidence";
+import { reviewContext } from "@/lib/workflow/review-context";
 import { evidence } from "@/lib/fixtures";
 import { moneyFromCents } from "@/lib/calculations/cost";
 
 export function EventDetail({ event }: { event: ChangeEvent }) {
   const project = getProject(event.projectId);
+  const review = reviewContext(event);
   const items = getEventEvidence(event);
   const [selectedEvidence, setSelectedEvidence] = useState<EvidenceItem | null>(
     null,
@@ -38,8 +40,8 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
   const note =
     editedNote ??
     state[event.id]?.note ??
-    (event.workflow?.reviewQuestions.length
-      ? `Please confirm the following for ${project.name}:\n\n${event.workflow.reviewQuestions.map((question) => `• ${question}`).join("\n")}`
+    (review.reviewQuestions.length
+      ? `Please confirm the following for ${project.name}:\n\n${review.reviewQuestions.map((question) => `• ${question}`).join("\n")}`
       : null) ??
     "Please confirm who directed the conduit reroute and share the written direction, email, or RFI response. We also need confirmation of responsibility for the obstruction.";
   const status = state[event.id]?.status;
@@ -257,8 +259,8 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                   </button>
                 )}
                 {!resolved &&
-                  event.workflow?.draftEligible &&
-                  event.workflow.reviewQuestions.length > 0 && (
+                  review.draftEligible &&
+                  review.reviewQuestions.length > 0 && (
                     <button
                       className="button secondary"
                       onClick={() => setClarificationOpen(true)}
@@ -376,14 +378,14 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                     Open contract <ArrowUpRight size={13} />
                   </button>
                 ) : (
-                  <span>Bob Builder subcontract</span>
+                  <span>BobsBuildings subcontract</span>
                 )}
               </div>
               <div className="contract-note">
                 <InfoMark />
                 {event.workflow
                   ? "Calculated from the documented receipt timestamp, not a definitive legal determination. Confirm the trigger and executed agreement."
-                  : "Calculated from the first confirmed field direction. Verify against the executed agreement."}
+                  : "PM-configured notice window and contract excerpt. Verify the triggering record and executed agreement before use."}
               </div>
             </section>
           ) : (
@@ -502,9 +504,13 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
         >
           <p className="modal-description">
             To{" "}
-            {event.projectId === "strawberry-fields"
-              ? "Marcus Reed"
-              : "Jamie Brooks"}{" "}
+            {{
+              "strawberry-fields": "Marcus Reed",
+              "clover-court": "Jamie Brooks",
+              "blueberry-hill": "Sam Wilson",
+              "honeybee-yard": "Pat Casey",
+              "moonbeam-garage": "Robin Ellis",
+            }[event.projectId] || "Project field team"}{" "}
             · Superintendent
             <br />
             {project.name}

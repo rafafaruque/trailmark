@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h06-r1",
+    "projectId": "birch-hub",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Birch east gate shift",
+    "author": "Tess Reed · Superintendent",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Installed two east gate handholes at Birch Hub under original C-14. A message about Alpine Hub’s additions circulated, but we have received no changes for Birch. Work matches our tender locations and quantities."
+    }
+  },
+  {
+    "id": "h06-r2",
+    "projectId": "birch-hub",
+    "sourceType": "drawing",
+    "system": "Synthetic project archive",
+    "title": "C-14 original issue, Birch Hub",
+    "author": "Noor Ames · Design engineer",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Birch Hub original contract drawing: two handholes HH-1 and HH-2 at east gate. No revision. This is not Alpine Hub C-14."
+    }
+  },
+  {
+    "id": "h06-r3",
+    "projectId": "birch-hub",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "Project routing correction",
+    "author": "Rae Bell · Owner PM",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "The direction to add two east gate handholes is for Alpine Hub only. Birch Hub already has these two in its original scope; make no scope adjustment to Birch and do not charge Alpine work to this project."
+    }
+  }
+]

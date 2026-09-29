@@ -1,0 +1,31 @@
+{
+  "possibleChange": false,
+  "title": "Room 6 Scheduled Partition Board",
+  "eventType": "planned_work",
+  "shortSummary": "The daily log reports installation matching the original A-06 schedule for Room 6. The drawing corroborates the original quantity and unchanged scope. The pasted attachment supplies no evidence of authorized change.",
+  "projectId": "spruce-court",
+  "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+  "responsiblePartyHypothesis": "The contractor appears to have performed its scheduled original scope; no owner-directed change or contractor correction is evidenced.",
+  "confidence": "high",
+  "evidenceReferences": [
+    {
+      "sourceId": "h09-r1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Installed the scheduled 100 square feet of partition board in Room 6 exactly as original A-06. No deviation, added direction or extra quantity.",
+      "supports": "scope_baseline",
+      "explanation": "Reports completed installation matching A-06 and explicitly states that no deviation or extra work occurred."
+    },
+    {
+      "sourceId": "h09-r2",
+      "sourceType": "drawing",
+      "fieldPath": "body",
+      "excerpt": "Room 6 partition board: 100 square feet in the original contract schedule. No revisions or changed scope.",
+      "supports": "scope_baseline",
+      "explanation": "Independently corroborates the original quantity and unchanged scope for the same room."
+    }
+  ],
+  "missingEvidence": [],
+  "recommendedNextStep": "Retain as planned work in the project record; no change review is indicated by these sources.",
+  "relevantContract": null
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "hy-log",
+    "projectId": "honeybee-yard",
+    "sourceType": "daily_log",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "Loading dock walk record",
+    "author": "Pat Casey · Superintendent",
+    "recordedAt": "2026-09-28T01:43:00-04:00",
+    "fields": {
+      "entries.0": "Overnight dock access maintained for deliveries.",
+      "entries.1": "Avery Chen, the authorized owner representative identified in the contract directory, requested six additional protective bollards at dock doors 3–5. Jordan and I checked issued plan S-22: it contains no bollards at those doors. Marked six positions for review; installation awaits PM release."
+    }
+  },
+  {
+    "id": "hy-notes",
+    "projectId": "honeybee-yard",
+    "sourceType": "daily_log",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "Signed site-walk minutes",
+    "author": "Jordan Lee · Senior project manager",
+    "recordedAt": "2026-09-28T08:30:00-04:00",
+    "fields": {
+      "attendees.0": "Avery Chen · Owner representative",
+      "attendees.1": "Jordan Lee · BobsBuildings PM",
+      "attendees.2": "Pat Casey · Superintendent",
+      "item4": "Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43. Existing dock protection elsewhere is unchanged."
+    }
+  },
+  {
+    "id": "hy-email",
+    "projectId": "honeybee-yard",
+    "sourceType": "email",
+    "system": "BobsBuildings synthetic project archive",
+    "title": "Written confirmation · dock bollards",
+    "author": "Avery Chen · Owner representative",
+    "recordedAt": "2026-09-28T10:15:00-04:00",
+    "fields": {
+      "receivedAt": "2026-09-28T10:15:00-04:00",
+      "body": "Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together. Please submit the additional installation cost and notice for PM/owner review before release. My owner representative authority is unchanged. — Avery"
+    }
+  }
+]

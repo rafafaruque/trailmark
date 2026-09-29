@@ -1,0 +1,44 @@
+{
+  "possibleChange": true,
+  "title": "East Bay Charger Scope Reduction",
+  "eventType": "potential_credit",
+  "shortSummary": "Records indicate an approved reduction from 42 to 40 chargers, omitting east bay positions 41 and 42 without replacement work. The omitted chargers are reportedly uninstalled; procurement cancellation remains unconfirmed.",
+  "projectId": "moonbeam-garage",
+  "estimatedEventTime": "2026-09-28T13:30:00-04:00",
+  "responsiblePartyHypothesis": "The owner appears to have authorized the reduction. Procurement is coordinating the supplier adjustment; any credit remains subject to verification of cancellation terms and incurred commitments.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "mg-drawing",
+      "sourceType": "drawing",
+      "fieldPath": "originalIssue",
+      "excerpt": "E-201 original contract issue: 42 chargers including east bay positions 41 and 42.",
+      "supports": "scope_baseline",
+      "explanation": "Establishes that both east bay chargers were included in the original drawing scope."
+    },
+    {
+      "sourceId": "mg-drawing",
+      "sourceType": "drawing",
+      "fieldPath": "revisionNotes.1",
+      "excerpt": "Owner-approved scope reduction; no replacement chargers or offsetting work.",
+      "supports": "scope_reduction",
+      "explanation": "Attributes the reduction to owner approval and identifies no offsetting scope."
+    },
+    {
+      "sourceId": "mg-order",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "The purchase order acknowledgment still shows 42 chargers. Rev F has been approved and issued to reduce the original 42 to 40. The two omitted east bay chargers have not been installed. We have asked the supplier to confirm the reduced procurement quantity and cancellation terms before recognizing any credit.",
+      "supports": "scope_reduction",
+      "explanation": "Connects Rev F to procurement and reported installation status. Its timestamp reflects an observed reconciliation report, not confirmed contractor receipt of direction."
+    }
+  ],
+  "missingEvidence": [
+    "Confirmation of when the contractor received the authorized Rev F direction.",
+    "Supplier confirmation of reduced quantity, cancellation terms, and existing commitments.",
+    "Superintendent verification of omitted work and any related work already performed.",
+    "Applicable contract provisions governing scope reductions and credits."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm receipt of Rev F and the omitted work status, then reconcile PO-2419-008 with the supplier before determining any credit.",
+  "relevantContract": null
+}

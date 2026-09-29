@@ -1,0 +1,78 @@
+{
+  "caseId": "h02",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:45:50.284Z",
+  "completedAt": "2026-09-29T20:46:12.202Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "h02-r1",
+    "h02-r2",
+    "h02-r3"
+  ],
+  "inputHash": "3c34f74bbf86d2246077bd94953a7d3619c423c85d9912be6ba547ace95a025f",
+  "promptHash": "26648a8d27b69a6f06cd3851d1a5e2c8716e2e5ba8a29bb15c318817d583cd31",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "23e04b08d2eb3255a4f6c954293ca1344ff29fd5caad7511bbb5127b8ccdd9b3",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Additional Canopy Bay",
+    "eventType": "owner_directed_change",
+    "shortSummary": "An email requests one additional canopy bay beyond the referenced issued A-17 edge for owner-requested coverage. The forward and notebook repeat the same message; they do not independently confirm scope or performed work.",
+    "projectId": "copper-quay",
+    "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+    "responsiblePartyHypothesis": "The owner may be the initiating party through the client coordinator. The coordinator's authority and contractor receipt remain unconfirmed.",
+    "confidence": "medium",
+    "evidenceReferences": [
+      {
+        "sourceId": "h02-r1",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review.",
+        "supports": "direction",
+        "explanation": "Records the extension request and owner-related reason, with A-17 identifying the asserted original edge. The drawing itself is not supplied."
+      },
+      {
+        "sourceId": "h02-r2",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Forwarded message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge.",
+        "supports": "direction",
+        "explanation": "Links the forward to the same request; it is duplicate evidence, not independent corroboration or proof of contractor receipt."
+      },
+      {
+        "sourceId": "h02-r3",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Copied message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review. No field measurements or installation observations entered today.",
+        "supports": "direction",
+        "explanation": "Repeats the original direction and explicitly provides no field measurements or installation observations."
+      }
+    ],
+    "missingEvidence": [
+      "Issued A-17 and original scope documents establishing the canopy boundary.",
+      "Confirmation of the coordinator's authority and contractor receipt of the request.",
+      "Independent field verification, measurements, or records of added steel work."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the original A-17 boundary, who received and authorized the extension request, and whether any added work has been performed.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Additional Canopy Bay\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"An email requests one additional canopy bay beyond the referenced issued A-17 edge for owner-requested coverage. The forward and notebook repeat the same message; they do not independently confirm scope or performed work.\",\n  \"projectId\": \"copper-quay\",\n  \"estimatedEventTime\": \"2026-09-29T09:15:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner may be the initiating party through the client coordinator. The coordinator's authority and contractor receipt remain unconfirmed.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"h02-r1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Records the extension request and owner-related reason, with A-17 identifying the asserted original edge. The drawing itself is not supplied.\"\n    },\n    {\n      \"sourceId\": \"h02-r2\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Forwarded message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Links the forward to the same request; it is duplicate evidence, not independent corroboration or proof of contractor receipt.\"\n    },\n    {\n      \"sourceId\": \"h02-r3\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Copied message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review. No field measurements or installation observations entered today.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Repeats the original direction and explicitly provides no field measurements or installation observations.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Issued A-17 and original scope documents establishing the canopy boundary.\",\n    \"Confirmation of the coordinator's authority and contractor receipt of the request.\",\n    \"Independent field verification, measurements, or records of added steel work.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the original A-17 boundary, who received and authorized the extension request, and whether any added work has been performed.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 21914,
+  "usage": {
+    "inputTokens": 11209,
+    "outputTokens": 581,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

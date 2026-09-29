@@ -162,7 +162,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         </span>
         <span>
           <FolderKanban size={15} />
-          Bob Builder Infrastructure
+          BobsBuildings
         </span>
       </div>
       {project.pendingExposure > 0 && (

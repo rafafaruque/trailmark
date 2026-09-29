@@ -1,0 +1,77 @@
+{
+  "caseId": "h05",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:46:48.430Z",
+  "completedAt": "2026-09-29T20:47:11.882Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "h05-r1",
+    "h05-r2",
+    "h05-r3"
+  ],
+  "inputHash": "1c43e372bf5ed7c03b6544f875e9a35fbc4d89d48a1172e20fbac3f1e03889a0",
+  "promptHash": "9f3853dcc272ee3cb927b3cb0eee5dacb431caa30bed1aa46436109ede1e5df7",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "c542ac3fefdc8ecb36ca29d16ce5937f4862af0adc6b705a5ed70f4988f38606",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "East Gate Handhole Addition",
+    "eventType": "owner_directed_change",
+    "shortSummary": "Alpine Hub records link owner direction and C-14 Rev 2 to two added east gate handholes beyond the original drawing scope. The superintendent records excavation of two pits following that direction. Routine south-loop backfill is separate planned work.",
+    "projectId": "alpine-hub",
+    "estimatedEventTime": "2026-09-29T09:00:00-04:00",
+    "responsiblePartyHypothesis": "The owner appears to have initiated the added scope through its identified authorized PM; the contractor's excavation appears responsive to that direction. This supports review as a potential change, without establishing entitlement.",
+    "confidence": "high",
+    "evidenceReferences": [
+      {
+        "sourceId": "h05-r1",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "For Alpine Hub, add two handholes at the east gate, beyond the zero shown on original C-14. I am the named owner PM on the project directory and authorize this revised scope for pricing and notice review. Receipt confirmed by the superintendent at 09:00.",
+        "supports": "direction",
+        "explanation": "Identifies owner authorization, location, quantity and reported receipt time; the event time is inferred from this same-day receipt statement."
+      },
+      {
+        "sourceId": "h05-r2",
+        "sourceType": "drawing",
+        "fieldPath": "body",
+        "excerpt": "Alpine Hub only: revision adds HH-1 and HH-2 at east gate. Original contract issue C-14 had no handholes there.",
+        "supports": "scope_baseline",
+        "explanation": "Corroborates the original zero-handhole baseline and the revised addition specifically for Alpine Hub."
+      },
+      {
+        "sourceId": "h05-r3",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Checked original C-14 and Rev 2 with Rae. Crew excavated two new handhole pits at Alpine east gate following the received direction.",
+        "supports": "additional_work",
+        "explanation": "Connects the drawing comparison and received direction to actual excavation of two pits."
+      }
+    ],
+    "missingEvidence": [
+      "Full contract scope and change provisions to assess whether other requirements included these handholes.",
+      "Referenced photographs and measured dimensions to verify the performed excavation."
+    ],
+    "recommendedNextStep": "Have the superintendent assemble the original C-14, Rev 2, receipt record and daily-register measurements for scope and performed-work review.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"East Gate Handhole Addition\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"Alpine Hub records link owner direction and C-14 Rev 2 to two added east gate handholes beyond the original drawing scope. The superintendent records excavation of two pits following that direction. Routine south-loop backfill is separate planned work.\",\n  \"projectId\": \"alpine-hub\",\n  \"estimatedEventTime\": \"2026-09-29T09:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner appears to have initiated the added scope through its identified authorized PM; the contractor's excavation appears responsive to that direction. This supports review as a potential change, without establishing entitlement.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"h05-r1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"For Alpine Hub, add two handholes at the east gate, beyond the zero shown on original C-14. I am the named owner PM on the project directory and authorize this revised scope for pricing and notice review. Receipt confirmed by the superintendent at 09:00.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Identifies owner authorization, location, quantity and reported receipt time; the event time is inferred from this same-day receipt statement.\"\n    },\n    {\n      \"sourceId\": \"h05-r2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Alpine Hub only: revision adds HH-1 and HH-2 at east gate. Original contract issue C-14 had no handholes there.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Corroborates the original zero-handhole baseline and the revised addition specifically for Alpine Hub.\"\n    },\n    {\n      \"sourceId\": \"h05-r3\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Checked original C-14 and Rev 2 with Rae. Crew excavated two new handhole pits at Alpine east gate following the received direction.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Connects the drawing comparison and received direction to actual excavation of two pits.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Full contract scope and change provisions to assess whether other requirements included these handholes.\",\n    \"Referenced photographs and measured dimensions to verify the performed excavation.\"\n  ],\n  \"recommendedNextStep\": \"Have the superintendent assemble the original C-14, Rev 2, receipt record and daily-register measurements for scope and performed-work review.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 23448,
+  "usage": {
+    "inputTokens": 11238,
+    "outputTokens": 597,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

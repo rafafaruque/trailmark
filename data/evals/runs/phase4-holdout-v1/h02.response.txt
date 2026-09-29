@@ -1,0 +1,43 @@
+{
+  "possibleChange": true,
+  "title": "Additional Canopy Bay",
+  "eventType": "owner_directed_change",
+  "shortSummary": "An email requests one additional canopy bay beyond the referenced issued A-17 edge for owner-requested coverage. The forward and notebook repeat the same message; they do not independently confirm scope or performed work.",
+  "projectId": "copper-quay",
+  "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+  "responsiblePartyHypothesis": "The owner may be the initiating party through the client coordinator. The coordinator's authority and contractor receipt remain unconfirmed.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "h02-r1",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review.",
+      "supports": "direction",
+      "explanation": "Records the extension request and owner-related reason, with A-17 identifying the asserted original edge. The drawing itself is not supplied."
+    },
+    {
+      "sourceId": "h02-r2",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Forwarded message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge.",
+      "supports": "direction",
+      "explanation": "Links the forward to the same request; it is duplicate evidence, not independent corroboration or proof of contractor receipt."
+    },
+    {
+      "sourceId": "h02-r3",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Copied message ID cq-778: Please extend the canopy by one bay beyond the issued A-17 edge. Owner asked for additional coverage. Keep the added steel separate for review. No field measurements or installation observations entered today.",
+      "supports": "direction",
+      "explanation": "Repeats the original direction and explicitly provides no field measurements or installation observations."
+    }
+  ],
+  "missingEvidence": [
+    "Issued A-17 and original scope documents establishing the canopy boundary.",
+    "Confirmation of the coordinator's authority and contractor receipt of the request.",
+    "Independent field verification, measurements, or records of added steel work."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the original A-17 boundary, who received and authorized the extension request, and whether any added work has been performed.",
+  "relevantContract": null
+}

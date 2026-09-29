@@ -67,9 +67,9 @@ Higher recall catches more potential revenue but may waste PM attention. Higher 
 
 Ten concise synthetic cases are too small to estimate production reliability. Their scenario-revealing IDs and explicit wording were retained from Phase 2, so this is not a blinded benchmark. Cases and expected labels were authored within this prototype; they have not been independently reviewed by construction experts. One run per case does not measure variability, and the abstention proxy treats any missing evidence as caution, even when requesting it may be commercially prudent.
 
-Replace synthetic cases with adjudicated historical project events from Bob Builder PMs and commercial managers. Include missed changes, normal daily activity, disputed authority, incomplete records, duplicates, credits and real notice obligations. Agree on labels and useful abstention behavior before measuring precision/recall, alert burden per project and PM review time on held-out cases. Review uncertain disagreements with subject-matter experts before rollout.
+Replace synthetic cases with adjudicated historical project events from BobsBuildings PMs and commercial managers. Include missed changes, normal daily activity, disputed authority, incomplete records, duplicates, credits and real notice obligations. Agree on labels and useful abstention behavior before measuring precision/recall, alert burden per project and PM review time on held-out cases. Review uncertain disagreements with subject-matter experts before rollout.
 
-Blueberry Hill, Honeybee Yard and Moonbeam Garage remain clearly documented Phase 1 fixtures; no extra inference was spent promoting them during this evaluation phase.
+Blueberry Hill, Honeybee Yard and Moonbeam Garage remained fixtures during Phase 3. They were promoted after the Phase 4 holdout, with separate detection recordings excluded from all evaluation metrics.
 
 ## Reproduce scoring without inference
 

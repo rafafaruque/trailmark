@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h01-r1",
+    "projectId": "cedar-wharf",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "West apron barrier request",
+    "author": "Mina Shah · Owner representative",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Please install eight concrete barriers along the west apron. These are additional to our current package. I have asked the field crew to start setting out tomorrow. Submit the additional scope for review."
+    }
+  },
+  {
+    "id": "h01-r2",
+    "projectId": "cedar-wharf",
+    "sourceType": "rfi",
+    "system": "Synthetic project archive",
+    "title": "RFI-118 response",
+    "author": "Luis Vega · Architect",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "Eight west apron barriers are already included in the tender scope, detail C-21. The owner email refers to the same eight locations, not eight further units. Proceed to C-21; we do not consider this additional work."
+    }
+  },
+  {
+    "id": "h01-r3",
+    "projectId": "cedar-wharf",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Sept 29 superintendent report",
+    "author": "Chris Lane · Superintendent",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "Marked eight west apron positions after reading the email and RFI-118. The tender drawing referenced in the response was not available on site; our current takeoff has zero barriers here. PM asked us not to place concrete until the discrepancy is reconciled. South stair inspection passed."
+    }
+  }
+]

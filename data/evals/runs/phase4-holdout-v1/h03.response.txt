@@ -1,0 +1,28 @@
+{
+  "possibleChange": true,
+  "title": "Door 4 Additional Catch Basin",
+  "eventType": "owner_directed_change",
+  "shortSummary": "An email requests a second catch basin outside Door 4 before paving and describes it as extra to the drawings. This suggests potential added scope, but sender authority, the drawing baseline, contractor receipt, and performed work are unverified.",
+  "projectId": "juniper-school",
+  "estimatedEventTime": "2026-09-29T09:15:00-04:00",
+  "responsiblePartyHypothesis": "The sender claims to represent the owner and attributes the request to the school. Owner responsibility is a hypothesis pending verification of the sender's identity and authority.",
+  "confidence": "low",
+  "evidenceReferences": [
+    {
+      "sourceId": "h03-r1",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "I am the owner representative for Juniper. Please add a second catch basin outside Door 4 before paving; it is extra to the drawings.",
+      "supports": "direction",
+      "explanation": "Documents the requested location and added basin, but the sender's authority and assertion of extra scope lack independent verification."
+    }
+  ],
+  "missingEvidence": [
+    "Verification of the sender's identity and authority to direct changes.",
+    "Original drawings and scope documents establishing the required catch basins at Door 4.",
+    "Confirmation that the contractor received the direction.",
+    "Independent superintendent confirmation and records of any performed work."
+  ],
+  "recommendedNextStep": "Ask the superintendent to verify the sender's authority, confirm receipt and any work performed, and compare the requested basin with the original drawings and scope.",
+  "relevantContract": null
+}

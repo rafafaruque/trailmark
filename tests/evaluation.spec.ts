@@ -13,24 +13,23 @@ test("evaluation shows measured components and preserves every partial failure",
   await expect(
     page.getByRole("heading", {
       name: "Authored synthetic evaluation ground truth",
+      level: 2,
     }),
   ).toBeVisible();
-  await expect(page.locator(".eval-table tbody tr")).toHaveCount(
+  await expect(page.locator(".development-table tbody tr")).toHaveCount(
     bundle.records.length,
   );
   await expect(
-    page
-      .locator(".eval-metric")
-      .filter({
-        has: page.getByRole("heading", {
-          name: "Abstention accuracy",
-          exact: true,
-        }),
+    page.locator(".eval-metric").filter({
+      has: page.getByRole("heading", {
+        name: "Abstention accuracy",
+        exact: true,
       }),
+    }),
   ).toContainText("60.0%");
   await expect(
     page
-      .locator(".eval-table tbody tr")
+      .locator(".development-table tbody tr")
       .filter({ hasText: "unrelated-records" }),
   ).toContainText("unexpected evidence");
   await page

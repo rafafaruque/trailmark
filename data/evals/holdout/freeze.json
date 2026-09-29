@@ -1,0 +1,16 @@
+{
+  "id": "phase4-frozen-system",
+  "frozenAt": "2026-09-29T20:43:29.596332+00:00",
+  "baseCommit": "3c2e604a45bd4c7faaba869d0e2ca2ebc8f1cb09",
+  "scoringVersion": "phase3-v1",
+  "fileHashes": {
+    "src/lib/ai/detect-change-event.ts": "15820ef0a2b27f9d58ec10418435d98c23e1beab62b6c93c1449406b9a485eaf",
+    "src/lib/ai/schemas.ts": "0f6cf21e66db11bd4024456f34ab784f54a9f58d6549eeb9adfe035c26b13a82",
+    "src/lib/workflow/reliability.ts": "dc6c60fc1e9f165db0f57606b63300cc2e487b2a3936aa8ed6be899c844b5c07",
+    "src/lib/evaluation/compare.ts": "4493514bfba9f8be4498beea3a9c11704923943534fd1168c3c50a7f864cec24",
+    "src/lib/ai/link-evidence.ts": "976e917f71bc3af2846f816b921d16ea3b5f52310849152fd3501ede7915d9c3",
+    "src/lib/sources/normalize.ts": "8a272a86632db2fe4e9d01aac2a423cf843619a5a98b38a5df064a8704073f5e",
+    "scripts/providers/codex-cli.ts": "6c5d1d8c2819c9530529631c4a0bafd10c6ad7105fc8b4360504e0bd53aaed49"
+  },
+  "policy": "No changes to these files, prompts, schemas, model settings or scoring after holdout inference. No retries or relabeling."
+}

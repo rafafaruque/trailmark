@@ -1,0 +1,38 @@
+[
+  {
+    "id": "h07-r1",
+    "projectId": "larch-library",
+    "sourceType": "drawing",
+    "system": "Synthetic project archive",
+    "title": "L-32 Rev D",
+    "author": "Ari Cole · Electrical designer",
+    "recordedAt": "2026-09-29T09:15:00-04:00",
+    "fields": {
+      "body": "Original L-32 required 18 reading lights. Rev D removes fixtures R16-R18 at the east alcove; revised total is 15. All other lighting remains unchanged."
+    }
+  },
+  {
+    "id": "h07-r2",
+    "projectId": "larch-library",
+    "sourceType": "email",
+    "system": "Synthetic project archive",
+    "title": "Approved alcove deletion",
+    "author": "Remy Chen · Owner PM",
+    "recordedAt": "2026-09-29T10:15:00-04:00",
+    "fields": {
+      "body": "As the authorized owner PM, I confirm deletion of R16-R18 from the contracted 18-light installation. Rev D is approved and received by your PM. Please prepare a credit proposal for the three omitted fixtures."
+    }
+  },
+  {
+    "id": "h07-r3",
+    "projectId": "larch-library",
+    "sourceType": "daily_log",
+    "system": "Synthetic project archive",
+    "title": "Lighting procurement coordination",
+    "author": "Sky Hart · Superintendent",
+    "recordedAt": "2026-09-29T11:15:00-04:00",
+    "fields": {
+      "body": "Compared original L-32 and Rev D: three east alcove lights deleted. Purchasing confirms R16-R18 were not ordered or installed; remaining 15 fixtures continue. No replacement fixtures or offsetting work requested."
+    }
+  }
+]

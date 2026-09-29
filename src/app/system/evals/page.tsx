@@ -1,3 +1,4 @@
+import { HoldoutEvaluation } from "@/components/holdout-evaluation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import {
@@ -41,6 +42,12 @@ export default function EvaluationPage() {
         </div>
         <span className="badge neutral-badge">{manifest.id}</span>
       </div>
+      <p>
+        <a href="#holdout" className="text-link">
+          Jump to holdout evaluation
+        </a>
+      </p>
+      <h2>Development evaluation</h2>
       <section className="panel inspection-run">
         <h2>Authored synthetic evaluation ground truth</h2>
         <p>
@@ -146,7 +153,7 @@ export default function EvaluationPage() {
           and deterministic comparison.
         </p>
         <div className="eval-table-scroll">
-          <table className="eval-table">
+          <table className="eval-table development-table">
             <thead>
               <tr>
                 {[
@@ -295,10 +302,11 @@ export default function EvaluationPage() {
           Higher recall may capture more revenue opportunities but increase
           alert burden. Higher precision reduces noise but can miss legitimate
           changes. Next: replace these fixtures with adjudicated historical
-          events from Bob Builder PMs and commercial managers; measure
+          events from BobsBuildings PMs and commercial managers; measure
           precision, recall and alerts per project before rollout.
         </p>
       </section>
+      <HoldoutEvaluation />
     </div>
   );
 }

@@ -1,0 +1,276 @@
+{
+  "manifest": {
+    "id": "phase4-project-detections",
+    "purpose": "PM project detection; excluded from evaluation metrics",
+    "freezeHash": "a5fdbc3f9b5b10ebb4f15494d5250c8c0a8e26201fbc60cdbc7420edc2d722d6",
+    "startedAt": "2026-09-29T20:50:02.674Z",
+    "provider": "codex-cli",
+    "model": "gpt-6-astra",
+    "cliVersion": "codex-cli 0.158.0",
+    "caseIds": [
+      "blueberry-hill",
+      "honeybee-yard",
+      "moonbeam-garage"
+    ],
+    "datasetHash": "c1cfbc87f2f82e4e7e151c032d43e14cc87cb7e242edbb76b91d9de1a4edf24b",
+    "fileHashes": {
+      "src/lib/ai/detect-change-event.ts": "15820ef0a2b27f9d58ec10418435d98c23e1beab62b6c93c1449406b9a485eaf",
+      "src/lib/ai/schemas.ts": "0f6cf21e66db11bd4024456f34ab784f54a9f58d6549eeb9adfe035c26b13a82",
+      "src/lib/workflow/reliability.ts": "dc6c60fc1e9f165db0f57606b63300cc2e487b2a3936aa8ed6be899c844b5c07",
+      "src/lib/evaluation/compare.ts": "4493514bfba9f8be4498beea3a9c11704923943534fd1168c3c50a7f864cec24",
+      "src/lib/ai/link-evidence.ts": "976e917f71bc3af2846f816b921d16ea3b5f52310849152fd3501ede7915d9c3",
+      "src/lib/sources/normalize.ts": "8a272a86632db2fe4e9d01aac2a423cf843619a5a98b38a5df064a8704073f5e",
+      "scripts/providers/codex-cli.ts": "6c5d1d8c2819c9530529631c4a0bafd10c6ad7105fc8b4360504e0bd53aaed49"
+    },
+    "scoringVersion": "phase3-v1",
+    "attemptsPerCase": 1
+  },
+  "completion": {
+    "completedAt": "2026-09-29T20:51:16.154Z",
+    "casesAttempted": 3
+  },
+  "records": [
+    {
+      "caseId": "blueberry-hill",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:50:02.676Z",
+      "completedAt": "2026-09-29T20:50:28.963Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "bh-log",
+        "bh-photos",
+        "bh-report"
+      ],
+      "inputHash": "034fae27a893a51382ab5441e265cd54c2df55bc9d5a37f8df7403a74695f7ff",
+      "promptHash": "6ae4e230d48482416694620dc2aaa2300d21e1390c66f9bd71045bd19606c805",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "19febdbe58b19599d0d51691bd0a11d96e04ed7e2bb4687788a67d64dd1cb467",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "North Trench Rock Encounter",
+        "eventType": "differing_site_condition",
+        "shortSummary": "Rock encountered at 4 feet at station 2+40 stopped excavation. The reviewing engineer confirmed a difference from the reported contract boring profile. Protection and tracking began; breaker work was requested but is not confirmed as performed or authorized.",
+        "projectId": "blueberry-hill",
+        "estimatedEventTime": "2026-09-28T09:20:00-04:00",
+        "responsiblePartyHypothesis": "The encounter may reflect a subsurface condition differing from the contract investigation. The engineer requested continued protection and PM direction; responsibility for resulting work remains unresolved pending review of the original scope and contract risk allocation.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "bh-log",
+            "sourceType": "daily_log",
+            "fieldPath": "entries.1",
+            "excerpt": "At north trench station 2+40, continuous rock exposed at 4 feet below grade. Excavator production stopped. Protected the cut and requested a hydraulic breaker pending engineer review. Crew began tracking affected quantities and idle time.",
+            "supports": "reason_for_change",
+            "explanation": "Documents the encounter, stoppage and protective measures; a breaker request does not establish performed rock removal."
+          },
+          {
+            "sourceId": "bh-photos",
+            "sourceType": "daily_log",
+            "fieldPath": "register.1",
+            "excerpt": "IMG-142: depth rod shows rock at 4 feet, station 2+40",
+            "supports": "reason_for_change",
+            "explanation": "Links the photo register to the same depth and station. The same superintendent authored it, and original images are unavailable."
+          },
+          {
+            "sourceId": "bh-report",
+            "sourceType": "rfi",
+            "fieldPath": "baselineExcerpt",
+            "excerpt": "Contract boring B-03 indicates granular fill and sandy clay through 8 feet, with no rock or refusal at the planned utility trench depth.",
+            "supports": "scope_baseline",
+            "explanation": "Provides the engineer's reported contract subsurface baseline against which the rock encounter can be reviewed."
+          },
+          {
+            "sourceId": "bh-report",
+            "sourceType": "rfi",
+            "fieldPath": "response",
+            "excerpt": "Station 2+40 is within the B-03 investigation area. The field rock differs from the indicated subsurface profile. Maintain protection, document quantities and seek PM direction before disturbing the condition further.",
+            "supports": "direction",
+            "explanation": "Connects the location to B-03 and supplies engineer instructions to preserve the condition and seek PM direction. Contractor receipt is not established."
+          }
+        ],
+        "missingEvidence": [
+          "Original contract boring B-03, excavation scope and applicable subsurface risk provisions.",
+          "Confirmed contractor receipt of the engineer response and subsequent PM direction.",
+          "Original photographs and records of any subsequent breaker use or rock removal."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the encounter and response receipt times, provide the original boring and photographs, and clarify PM direction and any subsequent work performed.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"North Trench Rock Encounter\",\n  \"eventType\": \"differing_site_condition\",\n  \"shortSummary\": \"Rock encountered at 4 feet at station 2+40 stopped excavation. The reviewing engineer confirmed a difference from the reported contract boring profile. Protection and tracking began; breaker work was requested but is not confirmed as performed or authorized.\",\n  \"projectId\": \"blueberry-hill\",\n  \"estimatedEventTime\": \"2026-09-28T09:20:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The encounter may reflect a subsurface condition differing from the contract investigation. The engineer requested continued protection and PM direction; responsibility for resulting work remains unresolved pending review of the original scope and contract risk allocation.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"bh-log\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"entries.1\",\n      \"excerpt\": \"At north trench station 2+40, continuous rock exposed at 4 feet below grade. Excavator production stopped. Protected the cut and requested a hydraulic breaker pending engineer review. Crew began tracking affected quantities and idle time.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Documents the encounter, stoppage and protective measures; a breaker request does not establish performed rock removal.\"\n    },\n    {\n      \"sourceId\": \"bh-photos\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"register.1\",\n      \"excerpt\": \"IMG-142: depth rod shows rock at 4 feet, station 2+40\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Links the photo register to the same depth and station. The same superintendent authored it, and original images are unavailable.\"\n    },\n    {\n      \"sourceId\": \"bh-report\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"baselineExcerpt\",\n      \"excerpt\": \"Contract boring B-03 indicates granular fill and sandy clay through 8 feet, with no rock or refusal at the planned utility trench depth.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Provides the engineer's reported contract subsurface baseline against which the rock encounter can be reviewed.\"\n    },\n    {\n      \"sourceId\": \"bh-report\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"response\",\n      \"excerpt\": \"Station 2+40 is within the B-03 investigation area. The field rock differs from the indicated subsurface profile. Maintain protection, document quantities and seek PM direction before disturbing the condition further.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Connects the location to B-03 and supplies engineer instructions to preserve the condition and seek PM direction. Contractor receipt is not established.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original contract boring B-03, excavation scope and applicable subsurface risk provisions.\",\n    \"Confirmed contractor receipt of the engineer response and subsequent PM direction.\",\n    \"Original photographs and records of any subsequent breaker use or rock removal.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the encounter and response receipt times, provide the original boring and photographs, and clarify PM direction and any subsequent work performed.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 26280,
+      "usage": {
+        "inputTokens": 11370,
+        "outputTokens": 717,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "honeybee-yard",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:50:28.964Z",
+      "completedAt": "2026-09-29T20:50:50.582Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "hy-log",
+        "hy-notes",
+        "hy-email"
+      ],
+      "inputHash": "1237bcdd8e49792e5dd8fdfb56ff8613aa863b99a5b5182ccf8ba35b27162b98",
+      "promptHash": "d05f33ba3a2dd96616d4137715a14853db9b42cc63b86327e9607bf431827daa",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "3d75c073ccff651a6aa2fad9560055f216ba129418f8d60262579aa289587772",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Additional Dock Door Bollards",
+        "eventType": "owner_directed_change",
+        "shortSummary": "The owner representative directed six additional bollards at dock doors 3–5, described as outside issued S-22 and the original tender schedule. Six positions were marked for review; installation awaits PM release.",
+        "projectId": "honeybee-yard",
+        "estimatedEventTime": "2026-09-28T01:43:00-04:00",
+        "responsiblePartyHypothesis": "The owner appears to have initiated the added scope through Avery Chen, whose authority and signed direction are documented in the supplied records. Contractual responsibility remains subject to review.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "hy-log",
+            "sourceType": "daily_log",
+            "fieldPath": "entries.1",
+            "excerpt": "Marked six positions for review; installation awaits PM release.",
+            "supports": "additional_work",
+            "explanation": "Documents preparatory marking only, with installation still pending release."
+          },
+          {
+            "sourceId": "hy-notes",
+            "sourceType": "daily_log",
+            "fieldPath": "item4",
+            "excerpt": "Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43.",
+            "supports": "scope_baseline",
+            "explanation": "Reports the original scope exclusion and signed direction received at 01:43, supporting the observed event-time hypothesis."
+          },
+          {
+            "sourceId": "hy-email",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together.",
+            "supports": "direction",
+            "explanation": "Provides owner-authored corroboration of the same six-bollard direction and reported scope addition."
+          }
+        ],
+        "missingEvidence": [
+          "Issued S-22 and the original tender quantity schedule to verify the reported scope exclusion.",
+          "Contract terms and authority directory to verify the representative's authority and applicable change procedure.",
+          "Approved bollard details and PM release for installation."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the six marked locations and pending installation status, and obtain S-22, the tender schedule, and approved installation details for PM scope review.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Additional Dock Door Bollards\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"The owner representative directed six additional bollards at dock doors 3–5, described as outside issued S-22 and the original tender schedule. Six positions were marked for review; installation awaits PM release.\",\n  \"projectId\": \"honeybee-yard\",\n  \"estimatedEventTime\": \"2026-09-28T01:43:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner appears to have initiated the added scope through Avery Chen, whose authority and signed direction are documented in the supplied records. Contractual responsibility remains subject to review.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"hy-log\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"entries.1\",\n      \"excerpt\": \"Marked six positions for review; installation awaits PM release.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents preparatory marking only, with installation still pending release.\"\n    },\n    {\n      \"sourceId\": \"hy-notes\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"item4\",\n      \"excerpt\": \"Owner requests six new bollards at dock doors 3–5 beyond the issued S-22 scope. Original tender schedule has no bollards at these doors. Avery confirmed authority, signed this direction, and acknowledged contractor receipt at 01:43.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Reports the original scope exclusion and signed direction received at 01:43, supporting the observed event-time hypothesis.\"\n    },\n    {\n      \"sourceId\": \"hy-email\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Jordan, confirming my signed direction during our site walk for six additional bollards at dock doors 3–5. They are outside original S-22 and the tender quantity schedule we reviewed together.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Provides owner-authored corroboration of the same six-bollard direction and reported scope addition.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Issued S-22 and the original tender quantity schedule to verify the reported scope exclusion.\",\n    \"Contract terms and authority directory to verify the representative's authority and applicable change procedure.\",\n    \"Approved bollard details and PM release for installation.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the six marked locations and pending installation status, and obtain S-22, the tender schedule, and approved installation details for PM scope review.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 21615,
+      "usage": {
+        "inputTokens": 11362,
+        "outputTokens": 589,
+        "cachedInputTokens": 8576
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "moonbeam-garage",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:50:50.583Z",
+      "completedAt": "2026-09-29T20:51:16.153Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "mg-drawing",
+        "mg-order"
+      ],
+      "inputHash": "c0c5cf5ca274db9b482007876e54cd376235fe13a4e0a85a3f49a681abe1846d",
+      "promptHash": "91f86296aa38466ae226f4fa0517d290980c7166980d47a19582b36872f5718a",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "4d5267e0b534d32f69b26b247e15b78904357d33f859ddb84322ca53ed0e1a97",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "East Bay Charger Scope Reduction",
+        "eventType": "potential_credit",
+        "shortSummary": "Records indicate an approved reduction from 42 to 40 chargers, omitting east bay positions 41 and 42 without replacement work. The omitted chargers are reportedly uninstalled; procurement cancellation remains unconfirmed.",
+        "projectId": "moonbeam-garage",
+        "estimatedEventTime": "2026-09-28T13:30:00-04:00",
+        "responsiblePartyHypothesis": "The owner appears to have authorized the reduction. Procurement is coordinating the supplier adjustment; any credit remains subject to verification of cancellation terms and incurred commitments.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "mg-drawing",
+            "sourceType": "drawing",
+            "fieldPath": "originalIssue",
+            "excerpt": "E-201 original contract issue: 42 chargers including east bay positions 41 and 42.",
+            "supports": "scope_baseline",
+            "explanation": "Establishes that both east bay chargers were included in the original drawing scope."
+          },
+          {
+            "sourceId": "mg-drawing",
+            "sourceType": "drawing",
+            "fieldPath": "revisionNotes.1",
+            "excerpt": "Owner-approved scope reduction; no replacement chargers or offsetting work.",
+            "supports": "scope_reduction",
+            "explanation": "Attributes the reduction to owner approval and identifies no offsetting scope."
+          },
+          {
+            "sourceId": "mg-order",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "The purchase order acknowledgment still shows 42 chargers. Rev F has been approved and issued to reduce the original 42 to 40. The two omitted east bay chargers have not been installed. We have asked the supplier to confirm the reduced procurement quantity and cancellation terms before recognizing any credit.",
+            "supports": "scope_reduction",
+            "explanation": "Connects Rev F to procurement and reported installation status. Its timestamp reflects an observed reconciliation report, not confirmed contractor receipt of direction."
+          }
+        ],
+        "missingEvidence": [
+          "Confirmation of when the contractor received the authorized Rev F direction.",
+          "Supplier confirmation of reduced quantity, cancellation terms, and existing commitments.",
+          "Superintendent verification of omitted work and any related work already performed.",
+          "Applicable contract provisions governing scope reductions and credits."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm receipt of Rev F and the omitted work status, then reconcile PO-2419-008 with the supplier before determining any credit.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"East Bay Charger Scope Reduction\",\n  \"eventType\": \"potential_credit\",\n  \"shortSummary\": \"Records indicate an approved reduction from 42 to 40 chargers, omitting east bay positions 41 and 42 without replacement work. The omitted chargers are reportedly uninstalled; procurement cancellation remains unconfirmed.\",\n  \"projectId\": \"moonbeam-garage\",\n  \"estimatedEventTime\": \"2026-09-28T13:30:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner appears to have authorized the reduction. Procurement is coordinating the supplier adjustment; any credit remains subject to verification of cancellation terms and incurred commitments.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"mg-drawing\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"originalIssue\",\n      \"excerpt\": \"E-201 original contract issue: 42 chargers including east bay positions 41 and 42.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Establishes that both east bay chargers were included in the original drawing scope.\"\n    },\n    {\n      \"sourceId\": \"mg-drawing\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"revisionNotes.1\",\n      \"excerpt\": \"Owner-approved scope reduction; no replacement chargers or offsetting work.\",\n      \"supports\": \"scope_reduction\",\n      \"explanation\": \"Attributes the reduction to owner approval and identifies no offsetting scope.\"\n    },\n    {\n      \"sourceId\": \"mg-order\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"The purchase order acknowledgment still shows 42 chargers. Rev F has been approved and issued to reduce the original 42 to 40. The two omitted east bay chargers have not been installed. We have asked the supplier to confirm the reduced procurement quantity and cancellation terms before recognizing any credit.\",\n      \"supports\": \"scope_reduction\",\n      \"explanation\": \"Connects Rev F to procurement and reported installation status. Its timestamp reflects an observed reconciliation report, not confirmed contractor receipt of direction.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Confirmation of when the contractor received the authorized Rev F direction.\",\n    \"Supplier confirmation of reduced quantity, cancellation terms, and existing commitments.\",\n    \"Superintendent verification of omitted work and any related work already performed.\",\n    \"Applicable contract provisions governing scope reductions and credits.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm receipt of Rev F and the omitted work status, then reconcile PO-2419-008 with the supplier before determining any credit.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 25566,
+      "usage": {
+        "inputTokens": 11175,
+        "outputTokens": 685,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  ]
+}
