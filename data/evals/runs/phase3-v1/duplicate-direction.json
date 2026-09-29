@@ -1,0 +1,70 @@
+{
+  "caseId": "duplicate-direction",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:32:37.464Z",
+  "completedAt": "2026-09-29T20:32:54.124Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "duplicate-direction-1",
+    "duplicate-direction-2"
+  ],
+  "inputHash": "54fa957f0f5f4bcafd7f1538a43bc769a0edd4753c5544e12ac7aba12f130e39",
+  "promptHash": "6ff209ad13078ba763d650d8f6dca1cd1406a260ff01674dcb5acf65c1f32093",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "a3f0a79af621567a67ee74fc04745b92e7c42864d1f305e3d8c6e2f80e059c4e",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Island Shift per Rev C",
+    "eventType": "owner_directed_change",
+    "shortSummary": "An email requests shifting the island east of the transformer per Rev C and tracking additional work separately. The forwarded email repeats the same message, providing no independent corroboration. Original scope and performed work are unverified.",
+    "projectId": "duplicate-direction",
+    "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+    "responsiblePartyHypothesis": "The request may originate from the owner, as the original record title suggests, but the sender's authority and contractor receipt are unconfirmed.",
+    "confidence": "low",
+    "evidenceReferences": [
+      {
+        "sourceId": "duplicate-direction-1",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+        "supports": "direction",
+        "explanation": "Documents the requested relocation and separate tracking; it does not establish a departure from original scope or completed work."
+      },
+      {
+        "sourceId": "duplicate-direction-2",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+        "supports": "direction",
+        "explanation": "Repeats orig-102 and is not independent corroboration."
+      }
+    ],
+    "missingEvidence": [
+      "Original scope and baseline island location.",
+      "Rev C drawing and comparison with the original design.",
+      "Confirmation of requesting party authority and contractor receipt.",
+      "Independent field records documenting any work performed."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the request's origin and receipt, compare Rev C with the original scope, and identify any relocation work performed. Treat the recorded email time only as an observed event-time hypothesis.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Island Shift per Rev C\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"An email requests shifting the island east of the transformer per Rev C and tracking additional work separately. The forwarded email repeats the same message, providing no independent corroboration. Original scope and performed work are unverified.\",\n  \"projectId\": \"duplicate-direction\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The request may originate from the owner, as the original record title suggests, but the sender's authority and contractor receipt are unconfirmed.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"duplicate-direction-1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Documents the requested relocation and separate tracking; it does not establish a departure from original scope or completed work.\"\n    },\n    {\n      \"sourceId\": \"duplicate-direction-2\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Repeats orig-102 and is not independent corroboration.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original scope and baseline island location.\",\n    \"Rev C drawing and comparison with the original design.\",\n    \"Confirmation of requesting party authority and contractor receipt.\",\n    \"Independent field records documenting any work performed.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the request's origin and receipt, compare Rev C with the original scope, and identify any relocation work performed. Treat the recorded email time only as an observed event-time hypothesis.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 16658,
+  "usage": {
+    "inputTokens": 11024,
+    "outputTokens": 454,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

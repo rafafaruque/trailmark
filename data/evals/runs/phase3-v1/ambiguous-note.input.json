@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ambiguous-note-1",
+    "projectId": "ambiguous-note",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Field note",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available."
+    }
+  }
+]

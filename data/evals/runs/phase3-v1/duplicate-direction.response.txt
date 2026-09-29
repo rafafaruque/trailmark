@@ -1,0 +1,36 @@
+{
+  "possibleChange": true,
+  "title": "Island Shift per Rev C",
+  "eventType": "owner_directed_change",
+  "shortSummary": "An email requests shifting the island east of the transformer per Rev C and tracking additional work separately. The forwarded email repeats the same message, providing no independent corroboration. Original scope and performed work are unverified.",
+  "projectId": "duplicate-direction",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The request may originate from the owner, as the original record title suggests, but the sender's authority and contractor receipt are unconfirmed.",
+  "confidence": "low",
+  "evidenceReferences": [
+    {
+      "sourceId": "duplicate-direction-1",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+      "supports": "direction",
+      "explanation": "Documents the requested relocation and separate tracking; it does not establish a departure from original scope or completed work."
+    },
+    {
+      "sourceId": "duplicate-direction-2",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+      "supports": "direction",
+      "explanation": "Repeats orig-102 and is not independent corroboration."
+    }
+  ],
+  "missingEvidence": [
+    "Original scope and baseline island location.",
+    "Rev C drawing and comparison with the original design.",
+    "Confirmation of requesting party authority and contractor receipt.",
+    "Independent field records documenting any work performed."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the request's origin and receipt, compare Rev C with the original scope, and identify any relocation work performed. Treat the recorded email time only as an observed event-time hypothesis.",
+  "relevantContract": null
+}

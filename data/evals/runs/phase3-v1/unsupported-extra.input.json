@@ -1,0 +1,14 @@
+[
+  {
+    "id": "unsupported-extra-1",
+    "projectId": "unsupported-extra",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Material note",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached."
+    }
+  }
+]

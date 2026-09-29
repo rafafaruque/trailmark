@@ -184,11 +184,15 @@ export default function AnalysisPage() {
         </details>
       </section>
       <section className="panel inspection-run">
-        <h2>Evaluation foundation</h2>
+        <h2>Detection evaluation</h2>
         <p>
-          {dataset.cases.length} synthetic cases with expected labels. Dataset
-          status: not run. No aggregate accuracy is claimed.
+          {dataset.cases.length} synthetic cases with preserved inference
+          results and deterministic component metrics. Expected labels are
+          prototype fixtures.
         </p>
+        <Link href="/system/evals" className="text-link">
+          Open measured evaluation <ArrowUpRight size={14} />
+        </Link>
         <div className="eval-labels">
           {dataset.cases.map((item) => (
             <span className="badge neutral-badge" key={item.id}>

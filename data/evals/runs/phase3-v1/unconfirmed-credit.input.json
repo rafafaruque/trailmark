@@ -1,0 +1,26 @@
+[
+  {
+    "id": "unconfirmed-credit-1",
+    "projectId": "unconfirmed-credit",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "Value engineering option",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Could we omit the two east chargers? This is a pricing exercise only; do not revise procurement until owner approval."
+    }
+  },
+  {
+    "id": "unconfirmed-credit-2",
+    "projectId": "unconfirmed-credit",
+    "sourceType": "drawing",
+    "system": "Synthetic evaluation fixture",
+    "title": "Current issued plan",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Current construction issue still includes 42 chargers. No revised drawing issued."
+    }
+  }
+]

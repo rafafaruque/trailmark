@@ -5081,3 +5081,85 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
+
+/* Engineering review stays under /system; reuse the workspace's restrained panels. */
+.evaluation-page {
+  min-width: 0;
+}
+.eval-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.eval-metric {
+  padding: 22px;
+}
+.eval-metric h2 {
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.eval-metric strong {
+  display: block;
+  font-size: 30px;
+  color: var(--ink);
+  letter-spacing: -1px;
+}
+.eval-metric p {
+  margin: 8px 0;
+}
+.eval-metric small {
+  color: var(--muted);
+  line-height: 1.5;
+}
+.eval-table-scroll {
+  overflow-x: auto;
+}
+.eval-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+}
+.eval-table th,
+.eval-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.eval-table th {
+  font-weight: 600;
+}
+.eval-table thead {
+  color: var(--muted);
+}
+.eval-table small {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.5;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.eval-table a {
+  display: inline-flex;
+  gap: 6px;
+  color: var(--green-dark);
+}
+.eval-consequences {
+  padding-left: 22px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .eval-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .eval-metrics {
+    grid-template-columns: 1fr;
+  }
+  .evaluation-page .inspection-run {
+    padding: 18px;
+  }
+}

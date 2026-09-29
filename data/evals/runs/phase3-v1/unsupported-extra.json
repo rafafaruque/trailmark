@@ -1,0 +1,61 @@
+{
+  "caseId": "unsupported-extra",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:32:23.045Z",
+  "completedAt": "2026-09-29T20:32:37.464Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "unsupported-extra-1"
+  ],
+  "inputHash": "3e0237e33067ca6516254f07195dc4f6edda0a075083032cf1ed8f25a2347081",
+  "promptHash": "80f8c68774c342281ef1186db624e96261ed33d3cbc6c40bddd319b78d8debd0",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "48ad3c6c9787e7c355117c0cdfd419f6594355256055e9f2ee6a4569d6e647ea",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Unverified Extra Conduit",
+    "eventType": "ambiguous",
+    "shortSummary": "The crew reported using approximately 70 ft more conduit than expected. The record does not establish whether this exceeds original scope, reflects planned work, or results from contractor rework.",
+    "projectId": "unsupported-extra",
+    "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+    "responsiblePartyHypothesis": "Responsibility is undetermined; no direction, verified baseline, or reason for the additional conduit is documented.",
+    "confidence": "low",
+    "evidenceReferences": [
+      {
+        "sourceId": "unsupported-extra-1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached.",
+        "supports": "additional_work",
+        "explanation": "Reports additional conduit relative to crew expectations, but the quantity and scope variance remain unverified."
+      }
+    ],
+    "missingEvidence": [
+      "Original conduit scope, drawings, and quantity takeoff.",
+      "Measured installed quantity and work location.",
+      "Direction authorizing any changed routing or quantity.",
+      "Reason for increased conduit use and independent corroboration."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the location, measured quantity, baseline scope, and reason for increased conduit use, including whether any direction or rework was involved.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unverified Extra Conduit\",\n  \"eventType\": \"ambiguous\",\n  \"shortSummary\": \"The crew reported using approximately 70 ft more conduit than expected. The record does not establish whether this exceeds original scope, reflects planned work, or results from contractor rework.\",\n  \"projectId\": \"unsupported-extra\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"Responsibility is undetermined; no direction, verified baseline, or reason for the additional conduit is documented.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"unsupported-extra-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Reports additional conduit relative to crew expectations, but the quantity and scope variance remain unverified.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original conduit scope, drawings, and quantity takeoff.\",\n    \"Measured installed quantity and work location.\",\n    \"Direction authorizing any changed routing or quantity.\",\n    \"Reason for increased conduit use and independent corroboration.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the location, measured quantity, baseline scope, and reason for increased conduit use, including whether any direction or rework was involved.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 14415,
+  "usage": {
+    "inputTokens": 10914,
+    "outputTokens": 354,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

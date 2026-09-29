@@ -1,0 +1,35 @@
+{
+  "possibleChange": true,
+  "title": "East Bay Charger Deletion",
+  "eventType": "potential_credit",
+  "shortSummary": "Revision F omits east bay charger positions 41 and 42, reducing the count from 42 to 40. An email confirms the deletion and requests procurement coordination and an associated credit for review.",
+  "projectId": "credit-reduction",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The deletion appears owner-directed based on the scope confirmation email. Sender authority and contractor receipt remain unverified.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "credit-reduction-1",
+      "sourceType": "drawing",
+      "fieldPath": "body",
+      "excerpt": "Charger count reduced from 42 to 40; omit east bay positions 41 and 42.",
+      "supports": "scope_reduction",
+      "explanation": "Identifies the reduced quantity and specific east bay positions omitted by Revision F."
+    },
+    {
+      "sourceId": "credit-reduction-2",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Confirming the deletion of two chargers shown on Rev F. Please coordinate procurement and submit the associated credit for review.",
+      "supports": "direction",
+      "explanation": "Explicitly connects the confirmed deletion and procurement direction to Revision F."
+    }
+  ],
+  "missingEvidence": [
+    "Original contract scope or accepted drawing establishing that all 42 chargers were included.",
+    "Confirmation of the email sender's authority and contractor receipt.",
+    "Procurement and installation status of the two deleted chargers."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the original charger scope, authorized direction and receipt, and procurement or installation status before reviewing the potential credit.",
+  "relevantContract": null
+}

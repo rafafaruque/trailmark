@@ -1,0 +1,61 @@
+{
+  "caseId": "ambiguous-note",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:31:48.900Z",
+  "completedAt": "2026-09-29T20:32:03.611Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "ambiguous-note-1"
+  ],
+  "inputHash": "1ab7b4af7fbdb4d09bb398e96efdfaaa3e75af554ebac0dd8523b401c45ae9f1",
+  "promptHash": "45f2723b7b0ee9c307fb8271f166074aa18b77fa48a567e100311b3f60e2d2b2",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "26bedee1925f380dded9a23961316eabd41a84a220e597417d57df749fe59def",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Bay 14 Conduit Reroute",
+    "eventType": "ambiguous",
+    "shortSummary": "Conduit was moved around an obstruction at bay 14. The note suggests possible additional scope, but the original route and authority for the change are unverified.",
+    "projectId": "ambiguous-note",
+    "estimatedEventTime": null,
+    "responsiblePartyHypothesis": "Responsibility is unresolved: an unidentified person reportedly suggested changing the route, but the record does not establish authorized direction or whether routing around the obstruction was already required.",
+    "confidence": "low",
+    "evidenceReferences": [
+      {
+        "sourceId": "ambiguous-note-1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available.",
+        "supports": "additional_work",
+        "explanation": "Records performed rerouting and its stated cause, but does not establish that the work exceeded the original scope or followed authorized direction."
+      }
+    ],
+    "missingEvidence": [
+      "Original sketch or other scope baseline establishing the required conduit route.",
+      "Identity and authority of the person suggesting the route change, and confirmation of direction received.",
+      "Independent corroboration of the obstruction and performed rerouting.",
+      "Date and time of the direction and performed work; the recording timestamp alone does not establish either."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the original route, obstruction, who directed the reroute, and when the work occurred, with supporting drawings and field records.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Bay 14 Conduit Reroute\",\n  \"eventType\": \"ambiguous\",\n  \"shortSummary\": \"Conduit was moved around an obstruction at bay 14. The note suggests possible additional scope, but the original route and authority for the change are unverified.\",\n  \"projectId\": \"ambiguous-note\",\n  \"estimatedEventTime\": null,\n  \"responsiblePartyHypothesis\": \"Responsibility is unresolved: an unidentified person reportedly suggested changing the route, but the record does not establish authorized direction or whether routing around the obstruction was already required.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"ambiguous-note-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Records performed rerouting and its stated cause, but does not establish that the work exceeded the original scope or followed authorized direction.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original sketch or other scope baseline establishing the required conduit route.\",\n    \"Identity and authority of the person suggesting the route change, and confirmation of direction received.\",\n    \"Independent corroboration of the obstruction and performed rerouting.\",\n    \"Date and time of the direction and performed work; the recording timestamp alone does not establish either.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the original route, obstruction, who directed the reroute, and when the work occurred, with supporting drawings and field records.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 14708,
+  "usage": {
+    "inputTokens": 10917,
+    "outputTokens": 382,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

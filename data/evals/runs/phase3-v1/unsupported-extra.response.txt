@@ -1,0 +1,28 @@
+{
+  "possibleChange": true,
+  "title": "Unverified Extra Conduit",
+  "eventType": "ambiguous",
+  "shortSummary": "The crew reported using approximately 70 ft more conduit than expected. The record does not establish whether this exceeds original scope, reflects planned work, or results from contractor rework.",
+  "projectId": "unsupported-extra",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "Responsibility is undetermined; no direction, verified baseline, or reason for the additional conduit is documented.",
+  "confidence": "low",
+  "evidenceReferences": [
+    {
+      "sourceId": "unsupported-extra-1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached.",
+      "supports": "additional_work",
+      "explanation": "Reports additional conduit relative to crew expectations, but the quantity and scope variance remain unverified."
+    }
+  ],
+  "missingEvidence": [
+    "Original conduit scope, drawings, and quantity takeoff.",
+    "Measured installed quantity and work location.",
+    "Direction authorizing any changed routing or quantity.",
+    "Reason for increased conduit use and independent corroboration."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the location, measured quantity, baseline scope, and reason for increased conduit use, including whether any direction or rework was involved.",
+  "relevantContract": null
+}

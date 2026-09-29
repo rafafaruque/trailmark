@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0",
-    "prebuild": "npm run verify:recordings",
+    "prebuild": "npm run verify:recordings && npm run verify:evals",
     "build": "next build",
     "start": "next start --hostname 0.0.0.0",
     "lint": "eslint .",
@@ -14,7 +14,10 @@
     "record:phase2": "node --import tsx scripts/record-analysis.mts",
     "record:notice": "node --import tsx scripts/record-notice.mts",
     "verify:recordings": "node --import tsx scripts/verify-recordings.ts",
-    "eval:compare": "node --import tsx scripts/compare-evals.ts"
+    "eval:compare": "node --import tsx scripts/compare-evals.ts",
+    "eval:record": "node --import tsx scripts/record-evals.mts",
+    "eval:report": "node --import tsx scripts/report-evals.ts",
+    "verify:evals": "node --import tsx scripts/verify-evals.ts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

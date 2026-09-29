@@ -1,0 +1,28 @@
+{
+  "possibleChange": true,
+  "title": "Bay 14 Conduit Reroute",
+  "eventType": "ambiguous",
+  "shortSummary": "Conduit was moved around an obstruction at bay 14. The note suggests possible additional scope, but the original route and authority for the change are unverified.",
+  "projectId": "ambiguous-note",
+  "estimatedEventTime": null,
+  "responsiblePartyHypothesis": "Responsibility is unresolved: an unidentified person reportedly suggested changing the route, but the record does not establish authorized direction or whether routing around the obstruction was already required.",
+  "confidence": "low",
+  "evidenceReferences": [
+    {
+      "sourceId": "ambiguous-note-1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available.",
+      "supports": "additional_work",
+      "explanation": "Records performed rerouting and its stated cause, but does not establish that the work exceeded the original scope or followed authorized direction."
+    }
+  ],
+  "missingEvidence": [
+    "Original sketch or other scope baseline establishing the required conduit route.",
+    "Identity and authority of the person suggesting the route change, and confirmation of direction received.",
+    "Independent corroboration of the obstruction and performed rerouting.",
+    "Date and time of the direction and performed work; the recording timestamp alone does not establish either."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the original route, obstruction, who directed the reroute, and when the work occurred, with supporting drawings and field records.",
+  "relevantContract": null
+}

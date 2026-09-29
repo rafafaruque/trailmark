@@ -1,0 +1,65 @@
+{
+  "caseId": "planned-trenching",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:31:17.558Z",
+  "completedAt": "2026-09-29T20:31:33.824Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "planned-trenching-1",
+    "planned-trenching-2"
+  ],
+  "inputHash": "e019add8ac40999c087c8b4b4d4ede38cf3fc6b4518cfd98b2f094869cabe3c5",
+  "promptHash": "981e0ff4f5de710bfd8b64807046f5b1de2cae3a6e3592b5ccd14275d22a788a",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "99cfbb1b65f6d6e82a2fc3a8de9b897d9b270aa100d61e68a5d9792e2560e031",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": false,
+    "title": "Planned East Run Trenching",
+    "eventType": "planned_work",
+    "shortSummary": "The daily log reports 70 ft of east run trench and conduit installed under original drawing E-104 Rev B, within its 400 ft scope. No added direction or rerouting is reported.",
+    "projectId": "planned-trenching",
+    "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+    "responsiblePartyHypothesis": "The contractor appears to be performing its original installation scope; these records identify no change attributable to another party.",
+    "confidence": "high",
+    "evidenceReferences": [
+      {
+        "sourceId": "planned-trenching-1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting.",
+        "supports": "additional_work",
+        "explanation": "Documents performed work and explicitly identifies it as within the original quantity, with no added direction."
+      },
+      {
+        "sourceId": "planned-trenching-2",
+        "sourceType": "drawing",
+        "fieldPath": "body",
+        "excerpt": "E-104 Rev B includes 400 linear ft trench and conduit on east run.",
+        "supports": "scope_baseline",
+        "explanation": "Confirms the drawing scope for the same east run and drawing revision referenced in the daily log."
+      }
+    ],
+    "missingEvidence": [],
+    "recommendedNextStep": "Track the installation as planned production against E-104 Rev B.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Planned East Run Trenching\",\n  \"eventType\": \"planned_work\",\n  \"shortSummary\": \"The daily log reports 70 ft of east run trench and conduit installed under original drawing E-104 Rev B, within its 400 ft scope. No added direction or rerouting is reported.\",\n  \"projectId\": \"planned-trenching\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The contractor appears to be performing its original installation scope; these records identify no change attributable to another party.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"planned-trenching-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents performed work and explicitly identifies it as within the original quantity, with no added direction.\"\n    },\n    {\n      \"sourceId\": \"planned-trenching-2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"E-104 Rev B includes 400 linear ft trench and conduit on east run.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Confirms the drawing scope for the same east run and drawing revision referenced in the daily log.\"\n    }\n  ],\n  \"missingEvidence\": [],\n  \"recommendedNextStep\": \"Track the installation as planned production against E-104 Rev B.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 16261,
+  "usage": {
+    "inputTokens": 11040,
+    "outputTokens": 394,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

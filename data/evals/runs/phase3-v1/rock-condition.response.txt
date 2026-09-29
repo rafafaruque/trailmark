@@ -1,0 +1,36 @@
+{
+  "possibleChange": true,
+  "title": "Unexpected Rock in Trench",
+  "eventType": "differing_site_condition",
+  "shortSummary": "The daily log records continuous rock at 4 ft and stopped excavation. The RFI reports sand and clay through 8 ft in boring B-03 and engineer confirmation that the rock was absent from the baseline investigation. This supports a potential differing site condition; additional work is not yet documented.",
+  "projectId": "rock-condition",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The records suggest an unexpected subsurface condition rather than contractor rework. Responsibility for resulting work remains unresolved without contractual risk allocation and confirmed engineer direction.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "rock-condition-1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further.",
+      "supports": "reason_for_change",
+      "explanation": "Documents the encountered condition and excavation stoppage, but no rock removal or direction to proceed."
+    },
+    {
+      "sourceId": "rock-condition-2",
+      "sourceType": "rfi",
+      "fieldPath": "body",
+      "excerpt": "Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation.",
+      "supports": "scope_baseline",
+      "explanation": "Reports a baseline discrepancy and engineer confirmation; the underlying boring report and its connection to the trench are not supplied."
+    }
+  ],
+  "missingEvidence": [
+    "Original boring report B-03 and confirmation that it applies to the affected trench location.",
+    "Contract scope and subsurface risk allocation.",
+    "Confirmed engineer direction received by the contractor.",
+    "Records of any subsequent additional work or effects on progress."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the trench location against B-03, obtain the baseline report and engineer direction, and document any subsequent work and progress effects for review.",
+  "relevantContract": null
+}

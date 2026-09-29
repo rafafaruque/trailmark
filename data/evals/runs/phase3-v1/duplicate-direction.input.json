@@ -1,0 +1,26 @@
+[
+  {
+    "id": "duplicate-direction-1",
+    "projectId": "duplicate-direction",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "Owner request",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately."
+    }
+  },
+  {
+    "id": "duplicate-direction-2",
+    "projectId": "duplicate-direction",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "Forwarded request",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately."
+    }
+  }
+]

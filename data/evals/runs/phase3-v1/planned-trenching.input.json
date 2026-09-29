@@ -1,0 +1,26 @@
+[
+  {
+    "id": "planned-trenching-1",
+    "projectId": "planned-trenching",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Daily production",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting."
+    }
+  },
+  {
+    "id": "planned-trenching-2",
+    "projectId": "planned-trenching",
+    "sourceType": "drawing",
+    "system": "Synthetic evaluation fixture",
+    "title": "Issued scope",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "E-104 Rev B includes 400 linear ft trench and conduit on east run."
+    }
+  }
+]

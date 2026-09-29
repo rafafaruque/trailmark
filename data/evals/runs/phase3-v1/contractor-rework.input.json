@@ -1,0 +1,26 @@
+[
+  {
+    "id": "contractor-rework-1",
+    "projectId": "contractor-rework",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Quality correction",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision."
+    }
+  },
+  {
+    "id": "contractor-rework-2",
+    "projectId": "contractor-rework",
+    "sourceType": "rfi",
+    "system": "Synthetic evaluation fixture",
+    "title": "Quality clarification",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work."
+    }
+  }
+]

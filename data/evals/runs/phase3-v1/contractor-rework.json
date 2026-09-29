@@ -1,0 +1,65 @@
+{
+  "caseId": "contractor-rework",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:31:33.824Z",
+  "completedAt": "2026-09-29T20:31:48.899Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "contractor-rework-1",
+    "contractor-rework-2"
+  ],
+  "inputHash": "c3e628577d9a577e8a3ff67f8e19b2a73ee79cd22d1c9338bdd0b61ee73cb7fb",
+  "promptHash": "e1da3fd1deaac9d4d6af3e8d6767b91985fc1244100ea71c707e9de85efc717f",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "d15aade956a5a24d6de5cb800e402faa7fe535c635da222bfc6c56d1088bb51d",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": false,
+    "title": "Conduit Installation Correction",
+    "eventType": "contractor_rework",
+    "shortSummary": "The crew removed and reinstalled conduit placed on the wrong side of a footing. The RFI confirms unchanged dimensions and directs correction to E-104, supporting contractor rework.",
+    "projectId": "contractor-rework",
+    "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+    "responsiblePartyHypothesis": "The contractor appears responsible because the recorded installation departed from the issued drawing and was corrected to the original location.",
+    "confidence": "high",
+    "evidenceReferences": [
+      {
+        "sourceId": "contractor-rework-1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision.",
+        "supports": "reason_for_change",
+        "explanation": "Records the installation error and completed correction, with no owner direction or design revision."
+      },
+      {
+        "sourceId": "contractor-rework-2",
+        "sourceType": "rfi",
+        "fieldPath": "body",
+        "excerpt": "Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work.",
+        "supports": "scope_baseline",
+        "explanation": "Confirms the unchanged drawing requirement and corroborates correction of nonconforming work."
+      }
+    ],
+    "missingEvidence": [],
+    "recommendedNextStep": "Document the correction and verify the reinstalled conduit conforms to E-104.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Conduit Installation Correction\",\n  \"eventType\": \"contractor_rework\",\n  \"shortSummary\": \"The crew removed and reinstalled conduit placed on the wrong side of a footing. The RFI confirms unchanged dimensions and directs correction to E-104, supporting contractor rework.\",\n  \"projectId\": \"contractor-rework\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The contractor appears responsible because the recorded installation departed from the issued drawing and was corrected to the original location.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"contractor-rework-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Records the installation error and completed correction, with no owner direction or design revision.\"\n    },\n    {\n      \"sourceId\": \"contractor-rework-2\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Confirms the unchanged drawing requirement and corroborates correction of nonconforming work.\"\n    }\n  ],\n  \"missingEvidence\": [],\n  \"recommendedNextStep\": \"Document the correction and verify the reinstalled conduit conforms to E-104.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 15071,
+  "usage": {
+    "inputTokens": 11035,
+    "outputTokens": 386,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "possibleChange": true,
+  "title": "Six Additional West Dock Bollards",
+  "eventType": "owner_directed_change",
+  "shortSummary": "An owner representative requested six additional west dock bollards beyond the four reportedly shown on the issued plan. The site log records marking six new positions and awaiting PM release; installation is not documented.",
+  "projectId": "owner-bollards",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The owner representative appears to have initiated the added scope. Their authority and the issued-plan baseline require verification before responsibility is confirmed.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "owner-bollards-1",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Please add six steel bollards at the west dock. These are in addition to the four on the issued plan.",
+      "supports": "direction",
+      "explanation": "Expressly requests six added bollards at the same location and describes them as beyond the issued-plan quantity."
+    },
+    {
+      "sourceId": "owner-bollards-2",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Owner rep requested six extra bollards at west dock. Issued plan has four; marked six new positions with the rep. Awaiting PM release.",
+      "supports": "additional_work",
+      "explanation": "Corroborates the request and documents marking additional positions, with PM release still pending."
+    }
+  ],
+  "missingEvidence": [
+    "Issued drawing and revision confirming the original four-bollard scope.",
+    "Confirmation of the owner representative's authority and contractor receipt of direction.",
+    "PM release and any subsequent installation record."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the issued-plan baseline, receipt and authority of the owner's direction, and whether work progressed beyond marking positions.",
+  "relevantContract": null
+}

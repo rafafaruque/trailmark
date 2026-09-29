@@ -1,0 +1,26 @@
+[
+  {
+    "id": "credit-reduction-1",
+    "projectId": "credit-reduction",
+    "sourceType": "drawing",
+    "system": "Synthetic evaluation fixture",
+    "title": "Revision F",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Charger count reduced from 42 to 40; omit east bay positions 41 and 42."
+    }
+  },
+  {
+    "id": "credit-reduction-2",
+    "projectId": "credit-reduction",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "Owner scope confirmation",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Confirming the deletion of two chargers shown on Rev F. Please coordinate procurement and submit the associated credit for review."
+    }
+  }
+]

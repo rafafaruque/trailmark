@@ -1,6 +1,6 @@
 # Trailmark
 
-A bright construction operations workspace for **Bob Builder Infrastructure**. Phase 2 turns raw project records into an evidence-backed potential change, a calculated notice deadline and cost estimate, and a PM-reviewed notice.
+A bright construction operations workspace for **Bob Builder Infrastructure**. The workflow turns raw project records into an evidence-backed potential change, a calculated notice deadline and cost estimate, and a PM-reviewed notice.
 
 **AI connects and interprets evidence. Deterministic software owns dates, math, permissions, and contractual actions.**
 
@@ -26,6 +26,7 @@ Open http://localhost:3000. No API key or Codex installation is needed to run or
 | `/notices/strawberry-fields-transformer-relocation` | Editable provisional notice and explicit PM approval                          |
 | `/events/clover-court-conduit-reroute`              | Insufficient evidence and prepared clarification request                      |
 | `/projects`, `/evidence`, `/notices`                | Project, source and notice libraries                                          |
+| `/system/evals`                                     | Measured detection evaluation and individual case inspection                  |
 | `/system/analysis`                                  | Actual outputs, usage, validation history, input hashes and evaluation labels |
 
 Strawberry Fields and Clover Court are derived from real, recorded model responses to synthetic inputs. Blueberry Hill, Honeybee Yard and Moonbeam Garage retain the populated Phase 1 fixtures; they have not been run through the new pipeline.
@@ -55,9 +56,9 @@ The preliminary estimate is **$18,420**: $16,380 direct cost + $2,040 markup (12
 - `src/lib/calculations/`: elapsed-time deadline and integer-cent cost calculations.
 - `src/lib/workflow/`: validated replay, deterministic prerequisites, presentation and PM approval policy.
 - `scripts/providers/`: local Codex adapter; never imported into the hosted app.
-- `data/evals/`: ten labeled synthetic cases; evaluation status **not run**.
+- `data/evals/`: ten labeled synthetic cases with one real inference per case and preserved component scores.
 
-See [architecture and boundaries](docs/architecture.md), [recording audit](data/recordings/README.md), and [evaluation format](data/evals/README.md).
+See [evaluation policy and limits](docs/evaluation.md), [architecture and boundaries](docs/architecture.md), [recording audit](data/recordings/README.md), and [evaluation format](data/evals/README.md).
 
 ## Workflow semantics
 
@@ -72,6 +73,7 @@ See [architecture and boundaries](docs/architecture.md), [recording audit](data/
 
 ```sh
 npm run verify:recordings
+npm run verify:evals
 npm test
 npm run typecheck
 npm run lint
@@ -79,12 +81,52 @@ npm run test:e2e
 npm run build
 ```
 
-The 17 unit tests cover exact citations, strict output boundaries, recorded response integrity, DST/leap/weekend deadlines, pricing/rounding, uncertainty, approval prerequisites and evaluation labels. Six browser tests exercise all five events, source previews, edits, local approval, open deadlines, clarification, filtering, technical inspection and a 390px mobile flow.
+The 25 unit tests cover exact citations, strict output boundaries, recorded response integrity, DST/leap/weekend deadlines, pricing/rounding, uncertainty, approval prerequisites evaluation isolation, confusion-matrix arithmetic, provider-error exclusion, failure categorization, null denominators, duplicate-source gating and original-run integrity. Nine browser tests exercise all five events, source previews, edits, local approval, open deadlines, clarification, filtering, technical inspection all ten evaluation case views, isolation from PM screens and 390px mobile layouts.
 
 Install Chromium with `npx playwright install chromium` if needed. Playwright starts or reuses the app on port 3000. The production build first verifies the recordings; it makes no inference calls.
 
 ## Vercel
 
-Import the `trailmark` Git repository, use the **Next.js** preset and repository root, and keep the default install command and `npm run build`. No provider credentials or environment variables are required for this phase. Include `data/raw` and `data/recordings` in the commit. Approval state stays in each browser, with no shared database.
+Import the `trailmark` Git repository, use the **Next.js** preset and repository root, and keep the default install command and `npm run build`. No provider credentials or environment variables are required for this phase. Include `data/raw`, `data/recordings` and `data/evals` in the commit. Approval state stays in each browser, with no shared database.
 
 The recording commands are developer-only. Their exclusive attempt files deliberately prevent rerunning the preserved Phase 2 examples. Do not delete those locks or overwrite the original audit artifacts; use new IDs for future experiments.
+
+## Evaluation — Phase 3
+
+The existing ten synthetic cases test whether detection generalizes beyond the hero example. One call per case used **Codex CLI 0.158.0 / gpt-6-astra**, with the unchanged production prompt/schema and normalized source records only. Expected labels, scorer logic and other cases’ answers were withheld. Scoring rules and dataset fingerprints were saved before inference; no model call was retried and no LLM judge was used.
+
+**10 attempted, 10 scored, 0 provider errors, 0 malformed outputs, 0 tool-boundary violations.**
+
+| Measured component                                | Result                                     |
+| ------------------------------------------------- | ------------------------------------------ |
+| Change detection                                  | 7 TP · 0 FP · 3 TN · 0 FN                  |
+| Precision / recall                                | **100% (7/7) / 100% (7/7)**                |
+| Event-type exact match                            | **100% (10/10)**                           |
+| Expected-source recall                            | **100% (17/17 distinct expected sources)** |
+| Label-unexpected / unsupported source IDs         | **1 / 0**                                  |
+| Invalid citations                                 | **0 of 18 references**                     |
+| Abstention agreement                              | **60% (6/10)**                             |
+| Expected / correct / missed abstentions           | **4 / 4 / 0**                              |
+| Unnecessary abstentions under the authored labels | **4**                                      |
+
+All partial failures are retained:
+
+- **owner-bollards:** requested baseline, authority and release/installation confirmation; the expected label required no abstention.
+- **rock-condition:** requested the original boring report, risk allocation, direction and later work records; expected no abstention.
+- **credit-reduction:** requested scope baseline, authority/receipt and procurement status; expected no abstention.
+- **unrelated-records:** requested scope/corroboration despite the expected non-abstention label, and cited the supplied north-gate email outside the expected source list. Its citation is valid; it is label-unexpected evidence, not an invented source.
+
+The unchanged abstention proxy counts low confidence, an ambiguous type, or **any** missing evidence. Thus commercially reasonable caution can still disagree with this dataset. Labels and scoring were not adjusted after seeing results. The weak abstention result is visible at `/system/evals`; there is no manufactured overall score.
+
+`noticeLikelyRequired` is not scored because executed-contract/policy fixtures are insufficient. Provider errors and malformed answers are separate from quality errors and excluded from semantic denominators, with coverage shown. A missing denominator displays “Not available.”
+
+These are short synthetic cases with prototype-authored expected labels, not expert-adjudicated legal or construction truth. Descriptive source IDs and explicit scenario wording limit difficulty. Ten cases and one run each cannot establish production reliability or variability. **Next production step:** replace them with adjudicated historical events from Bob Builder PMs/commercial managers, then measure precision, recall and alert burden before rollout.
+
+The production surfacing gate requires valid structure and citations, medium/high confidence, a non-ambiguous commercial-change hypothesis and two independent supporting records. Duplicate message IDs count once. Other positive cases become Needs evidence; non-changes are not surfaced. This gate is separate from raw-model scoring and never grants notice, entitlement or recovery permission. See [policy, scoring and business tradeoffs](docs/evaluation.md).
+
+```sh
+npm run eval:report     # Recalculate from recorded artifacts; no inference
+npm run verify:evals    # Verify sources, prompts, responses and metrics
+```
+
+`npm run eval:record` is the local-only recorder, locked against repeating the completed batch. The other three PM projects remain Phase 1 fixtures.

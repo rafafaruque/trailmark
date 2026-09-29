@@ -1,0 +1,29 @@
+{
+  "id": "phase3-v1",
+  "startedAt": "2026-09-29T20:30:41.369Z",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "cliVersion": "codex-cli 0.158.0",
+  "caseIds": [
+    "owner-bollards",
+    "rock-condition",
+    "planned-trenching",
+    "contractor-rework",
+    "ambiguous-note",
+    "credit-reduction",
+    "unsupported-extra",
+    "duplicate-direction",
+    "unrelated-records",
+    "unconfirmed-credit"
+  ],
+  "datasetHash": "cd8be6e4eac36f14ddb121806a0b102b393f49401201a628c169bf0af0d46b03",
+  "fileHashes": {
+    "src/lib/evaluation/compare.ts": "4493514bfba9f8be4498beea3a9c11704923943534fd1168c3c50a7f864cec24",
+    "src/lib/ai/detect-change-event.ts": "15820ef0a2b27f9d58ec10418435d98c23e1beab62b6c93c1449406b9a485eaf",
+    "src/lib/ai/schemas.ts": "0f6cf21e66db11bd4024456f34ab784f54a9f58d6549eeb9adfe035c26b13a82",
+    "scripts/providers/codex-cli.ts": "6c5d1d8c2819c9530529631c4a0bafd10c6ad7105fc8b4360504e0bd53aaed49",
+    "src/lib/workflow/reliability.ts": "dc6c60fc1e9f165db0f57606b63300cc2e487b2a3936aa8ed6be899c844b5c07"
+  },
+  "scoringVersion": "phase3-v1",
+  "attemptsPerCase": 1
+}

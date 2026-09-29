@@ -1,0 +1,70 @@
+{
+  "caseId": "rock-condition",
+  "attempt": 1,
+  "startedAt": "2026-09-29T20:30:58.971Z",
+  "completedAt": "2026-09-29T20:31:17.557Z",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "rock-condition-1",
+    "rock-condition-2"
+  ],
+  "inputHash": "9f186c55df2bc4bbe208f2e0c10f6f74d3b94ac7114682a78e8e7527a8b47ee2",
+  "promptHash": "bce86143a4bc9b0e25a29bb6ff6d8598c74784dca7cc663a758e165a3c92fec6",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "responseHash": "d09e649ca62320b041d7a4e6d192ccf445c518c0bd6df3d73313a9bc82a6eed2",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "output": {
+    "possibleChange": true,
+    "title": "Unexpected Rock in Trench",
+    "eventType": "differing_site_condition",
+    "shortSummary": "The daily log records continuous rock at 4 ft and stopped excavation. The RFI reports sand and clay through 8 ft in boring B-03 and engineer confirmation that the rock was absent from the baseline investigation. This supports a potential differing site condition; additional work is not yet documented.",
+    "projectId": "rock-condition",
+    "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+    "responsiblePartyHypothesis": "The records suggest an unexpected subsurface condition rather than contractor rework. Responsibility for resulting work remains unresolved without contractual risk allocation and confirmed engineer direction.",
+    "confidence": "medium",
+    "evidenceReferences": [
+      {
+        "sourceId": "rock-condition-1",
+        "sourceType": "daily_log",
+        "fieldPath": "body",
+        "excerpt": "Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further.",
+        "supports": "reason_for_change",
+        "explanation": "Documents the encountered condition and excavation stoppage, but no rock removal or direction to proceed."
+      },
+      {
+        "sourceId": "rock-condition-2",
+        "sourceType": "rfi",
+        "fieldPath": "body",
+        "excerpt": "Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation.",
+        "supports": "scope_baseline",
+        "explanation": "Reports a baseline discrepancy and engineer confirmation; the underlying boring report and its connection to the trench are not supplied."
+      }
+    ],
+    "missingEvidence": [
+      "Original boring report B-03 and confirmation that it applies to the affected trench location.",
+      "Contract scope and subsurface risk allocation.",
+      "Confirmed engineer direction received by the contractor.",
+      "Records of any subsequent additional work or effects on progress."
+    ],
+    "recommendedNextStep": "Ask the superintendent to confirm the trench location against B-03, obtain the baseline report and engineer direction, and document any subsequent work and progress effects for review.",
+    "relevantContract": null
+  },
+  "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unexpected Rock in Trench\",\n  \"eventType\": \"differing_site_condition\",\n  \"shortSummary\": \"The daily log records continuous rock at 4 ft and stopped excavation. The RFI reports sand and clay through 8 ft in boring B-03 and engineer confirmation that the rock was absent from the baseline investigation. This supports a potential differing site condition; additional work is not yet documented.\",\n  \"projectId\": \"rock-condition\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The records suggest an unexpected subsurface condition rather than contractor rework. Responsibility for resulting work remains unresolved without contractual risk allocation and confirmed engineer direction.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"rock-condition-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Documents the encountered condition and excavation stoppage, but no rock removal or direction to proceed.\"\n    },\n    {\n      \"sourceId\": \"rock-condition-2\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Reports a baseline discrepancy and engineer confirmation; the underlying boring report and its connection to the trench are not supplied.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original boring report B-03 and confirmation that it applies to the affected trench location.\",\n    \"Contract scope and subsurface risk allocation.\",\n    \"Confirmed engineer direction received by the contractor.\",\n    \"Records of any subsequent additional work or effects on progress.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the trench location against B-03, obtain the baseline report and engineer direction, and document any subsequent work and progress effects for review.\",\n  \"relevantContract\": null\n}",
+  "latencyMs": 18582,
+  "usage": {
+    "inputTokens": 11036,
+    "outputTokens": 496,
+    "cachedInputTokens": 8576
+  },
+  "toolCalls": 0,
+  "error": null,
+  "schemaValidation": {
+    "valid": true,
+    "errors": []
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

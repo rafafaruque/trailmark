@@ -1,0 +1,36 @@
+{
+  "possibleChange": true,
+  "title": "Unapproved East Charger Omission",
+  "eventType": "potential_credit",
+  "shortSummary": "Omitting two east chargers is proposed for pricing only. The current construction issue still includes 42 chargers, and no scope reduction is confirmed.",
+  "projectId": "unconfirmed-credit",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The project team is exploring a reduction subject to owner approval. The records do not establish owner authorization or contractor responsibility for any changed work.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "unconfirmed-credit-1",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Could we omit the two east chargers? This is a pricing exercise only; do not revise procurement until owner approval.",
+      "supports": "scope_reduction",
+      "explanation": "Identifies a proposed omission while expressly withholding authorization to revise procurement."
+    },
+    {
+      "sourceId": "unconfirmed-credit-2",
+      "sourceType": "drawing",
+      "fieldPath": "body",
+      "excerpt": "Current construction issue still includes 42 chargers. No revised drawing issued.",
+      "supports": "scope_baseline",
+      "explanation": "Confirms the current issued scope retains all 42 chargers."
+    }
+  ],
+  "missingEvidence": [
+    "Owner approval and confirmed direction received by the contractor.",
+    "Original contractual scope confirming the east chargers are included.",
+    "Revised drawing or other documentation formalizing the omission.",
+    "Evidence of any procurement or performed-work changes."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm whether the omission remains a pricing option and obtain any subsequent owner approval, contractor direction, or revised scope documentation.",
+  "relevantContract": null
+}

@@ -241,7 +241,7 @@ test("mobile layout has no page overflow and navigation reaches the notice flow"
   ).toBe(true);
 });
 
-test("technical inspection reports the real run and does not claim unrun evaluation accuracy", async ({
+test("technical inspection preserves the original run and links to measured evaluation", async ({
   page,
 }) => {
   await page.goto("/system/analysis");
@@ -255,6 +255,6 @@ test("technical inspection reports the real run and does not claim unrun evaluat
     page.getByText("Original failure retained · revalidated"),
   ).toBeVisible();
   await expect(
-    page.getByText("Dataset status: not run", { exact: false }),
+    page.getByRole("link", { name: "Open measured evaluation" }),
   ).toBeVisible();
 });

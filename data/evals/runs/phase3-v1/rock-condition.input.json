@@ -1,0 +1,26 @@
+[
+  {
+    "id": "rock-condition-1",
+    "projectId": "rock-condition",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Trench condition",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further."
+    }
+  },
+  {
+    "id": "rock-condition-2",
+    "projectId": "rock-condition",
+    "sourceType": "rfi",
+    "system": "Synthetic evaluation fixture",
+    "title": "Geotechnical review",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation."
+    }
+  }
+]

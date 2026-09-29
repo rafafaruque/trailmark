@@ -131,9 +131,14 @@ export class CodexCliProvider implements AnalysisProvider {
     let output: unknown = null;
     try {
       rawResponse = await readFile(outputFile, "utf8");
-      output = JSON.parse(rawResponse);
     } catch (error) {
-      failure ||= `No valid final JSON: ${error instanceof Error ? error.message : String(error)}`;
+      failure ||= `No final response: ${error instanceof Error ? error.message : String(error)}`;
+    }
+    // A completed but malformed answer is model output failure, not provider transport failure.
+    try {
+      output = JSON.parse(rawResponse);
+    } catch {
+      output = null;
     }
     if (exitCode !== 0)
       failure ||= `Codex exited ${exitCode}: ${stderr.slice(-1500)}`;

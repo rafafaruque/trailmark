@@ -1,0 +1,1493 @@
+{
+  "manifest": {
+    "id": "phase3-v1",
+    "startedAt": "2026-09-29T20:30:41.369Z",
+    "provider": "codex-cli",
+    "model": "gpt-6-astra",
+    "cliVersion": "codex-cli 0.158.0",
+    "caseIds": [
+      "owner-bollards",
+      "rock-condition",
+      "planned-trenching",
+      "contractor-rework",
+      "ambiguous-note",
+      "credit-reduction",
+      "unsupported-extra",
+      "duplicate-direction",
+      "unrelated-records",
+      "unconfirmed-credit"
+    ],
+    "datasetHash": "cd8be6e4eac36f14ddb121806a0b102b393f49401201a628c169bf0af0d46b03",
+    "fileHashes": {
+      "src/lib/evaluation/compare.ts": "4493514bfba9f8be4498beea3a9c11704923943534fd1168c3c50a7f864cec24",
+      "src/lib/ai/detect-change-event.ts": "15820ef0a2b27f9d58ec10418435d98c23e1beab62b6c93c1449406b9a485eaf",
+      "src/lib/ai/schemas.ts": "0f6cf21e66db11bd4024456f34ab784f54a9f58d6549eeb9adfe035c26b13a82",
+      "scripts/providers/codex-cli.ts": "6c5d1d8c2819c9530529631c4a0bafd10c6ad7105fc8b4360504e0bd53aaed49",
+      "src/lib/workflow/reliability.ts": "dc6c60fc1e9f165db0f57606b63300cc2e487b2a3936aa8ed6be899c844b5c07"
+    },
+    "scoringVersion": "phase3-v1",
+    "attemptsPerCase": 1
+  },
+  "completion": {
+    "completedAt": "2026-09-29T20:33:28.627Z",
+    "casesAttempted": 10
+  },
+  "records": [
+    {
+      "caseId": "owner-bollards",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:30:41.371Z",
+      "completedAt": "2026-09-29T20:30:58.970Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "owner-bollards-1",
+        "owner-bollards-2"
+      ],
+      "inputHash": "6b5f6447d7bf9939359db303b14ce569b649a985ebcf811d9b4325796b656d87",
+      "promptHash": "8d1d1c8558f6ca950cb08ed9d57672dfbb74228058095143d02e22a0e302975c",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "a3255baacd7b86e1ceeb94eb1f092c4f33d42f496ec68b99cc09d9d0c2e8b273",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Six Additional West Dock Bollards",
+        "eventType": "owner_directed_change",
+        "shortSummary": "An owner representative requested six additional west dock bollards beyond the four reportedly shown on the issued plan. The site log records marking six new positions and awaiting PM release; installation is not documented.",
+        "projectId": "owner-bollards",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The owner representative appears to have initiated the added scope. Their authority and the issued-plan baseline require verification before responsibility is confirmed.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "owner-bollards-1",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Please add six steel bollards at the west dock. These are in addition to the four on the issued plan.",
+            "supports": "direction",
+            "explanation": "Expressly requests six added bollards at the same location and describes them as beyond the issued-plan quantity."
+          },
+          {
+            "sourceId": "owner-bollards-2",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Owner rep requested six extra bollards at west dock. Issued plan has four; marked six new positions with the rep. Awaiting PM release.",
+            "supports": "additional_work",
+            "explanation": "Corroborates the request and documents marking additional positions, with PM release still pending."
+          }
+        ],
+        "missingEvidence": [
+          "Issued drawing and revision confirming the original four-bollard scope.",
+          "Confirmation of the owner representative's authority and contractor receipt of direction.",
+          "PM release and any subsequent installation record."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the issued-plan baseline, receipt and authority of the owner's direction, and whether work progressed beyond marking positions.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Six Additional West Dock Bollards\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"An owner representative requested six additional west dock bollards beyond the four reportedly shown on the issued plan. The site log records marking six new positions and awaiting PM release; installation is not documented.\",\n  \"projectId\": \"owner-bollards\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The owner representative appears to have initiated the added scope. Their authority and the issued-plan baseline require verification before responsibility is confirmed.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"owner-bollards-1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Please add six steel bollards at the west dock. These are in addition to the four on the issued plan.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Expressly requests six added bollards at the same location and describes them as beyond the issued-plan quantity.\"\n    },\n    {\n      \"sourceId\": \"owner-bollards-2\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Owner rep requested six extra bollards at west dock. Issued plan has four; marked six new positions with the rep. Awaiting PM release.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Corroborates the request and documents marking additional positions, with PM release still pending.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Issued drawing and revision confirming the original four-bollard scope.\",\n    \"Confirmation of the owner representative's authority and contractor receipt of direction.\",\n    \"PM release and any subsequent installation record.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the issued-plan baseline, receipt and authority of the owner's direction, and whether work progressed beyond marking positions.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 17593,
+      "usage": {
+        "inputTokens": 11054,
+        "outputTokens": 456,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "rock-condition",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:30:58.971Z",
+      "completedAt": "2026-09-29T20:31:17.557Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "rock-condition-1",
+        "rock-condition-2"
+      ],
+      "inputHash": "9f186c55df2bc4bbe208f2e0c10f6f74d3b94ac7114682a78e8e7527a8b47ee2",
+      "promptHash": "bce86143a4bc9b0e25a29bb6ff6d8598c74784dca7cc663a758e165a3c92fec6",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "d09e649ca62320b041d7a4e6d192ccf445c518c0bd6df3d73313a9bc82a6eed2",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Unexpected Rock in Trench",
+        "eventType": "differing_site_condition",
+        "shortSummary": "The daily log records continuous rock at 4 ft and stopped excavation. The RFI reports sand and clay through 8 ft in boring B-03 and engineer confirmation that the rock was absent from the baseline investigation. This supports a potential differing site condition; additional work is not yet documented.",
+        "projectId": "rock-condition",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The records suggest an unexpected subsurface condition rather than contractor rework. Responsibility for resulting work remains unresolved without contractual risk allocation and confirmed engineer direction.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "rock-condition-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further.",
+            "supports": "reason_for_change",
+            "explanation": "Documents the encountered condition and excavation stoppage, but no rock removal or direction to proceed."
+          },
+          {
+            "sourceId": "rock-condition-2",
+            "sourceType": "rfi",
+            "fieldPath": "body",
+            "excerpt": "Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation.",
+            "supports": "scope_baseline",
+            "explanation": "Reports a baseline discrepancy and engineer confirmation; the underlying boring report and its connection to the trench are not supplied."
+          }
+        ],
+        "missingEvidence": [
+          "Original boring report B-03 and confirmation that it applies to the affected trench location.",
+          "Contract scope and subsurface risk allocation.",
+          "Confirmed engineer direction received by the contractor.",
+          "Records of any subsequent additional work or effects on progress."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the trench location against B-03, obtain the baseline report and engineer direction, and document any subsequent work and progress effects for review.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unexpected Rock in Trench\",\n  \"eventType\": \"differing_site_condition\",\n  \"shortSummary\": \"The daily log records continuous rock at 4 ft and stopped excavation. The RFI reports sand and clay through 8 ft in boring B-03 and engineer confirmation that the rock was absent from the baseline investigation. This supports a potential differing site condition; additional work is not yet documented.\",\n  \"projectId\": \"rock-condition\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The records suggest an unexpected subsurface condition rather than contractor rework. Responsibility for resulting work remains unresolved without contractual risk allocation and confirmed engineer direction.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"rock-condition-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Documents the encountered condition and excavation stoppage, but no rock removal or direction to proceed.\"\n    },\n    {\n      \"sourceId\": \"rock-condition-2\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Reports a baseline discrepancy and engineer confirmation; the underlying boring report and its connection to the trench are not supplied.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original boring report B-03 and confirmation that it applies to the affected trench location.\",\n    \"Contract scope and subsurface risk allocation.\",\n    \"Confirmed engineer direction received by the contractor.\",\n    \"Records of any subsequent additional work or effects on progress.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the trench location against B-03, obtain the baseline report and engineer direction, and document any subsequent work and progress effects for review.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 18582,
+      "usage": {
+        "inputTokens": 11036,
+        "outputTokens": 496,
+        "cachedInputTokens": 8576
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "planned-trenching",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:31:17.558Z",
+      "completedAt": "2026-09-29T20:31:33.824Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "planned-trenching-1",
+        "planned-trenching-2"
+      ],
+      "inputHash": "e019add8ac40999c087c8b4b4d4ede38cf3fc6b4518cfd98b2f094869cabe3c5",
+      "promptHash": "981e0ff4f5de710bfd8b64807046f5b1de2cae3a6e3592b5ccd14275d22a788a",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "99cfbb1b65f6d6e82a2fc3a8de9b897d9b270aa100d61e68a5d9792e2560e031",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": false,
+        "title": "Planned East Run Trenching",
+        "eventType": "planned_work",
+        "shortSummary": "The daily log reports 70 ft of east run trench and conduit installed under original drawing E-104 Rev B, within its 400 ft scope. No added direction or rerouting is reported.",
+        "projectId": "planned-trenching",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The contractor appears to be performing its original installation scope; these records identify no change attributable to another party.",
+        "confidence": "high",
+        "evidenceReferences": [
+          {
+            "sourceId": "planned-trenching-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting.",
+            "supports": "additional_work",
+            "explanation": "Documents performed work and explicitly identifies it as within the original quantity, with no added direction."
+          },
+          {
+            "sourceId": "planned-trenching-2",
+            "sourceType": "drawing",
+            "fieldPath": "body",
+            "excerpt": "E-104 Rev B includes 400 linear ft trench and conduit on east run.",
+            "supports": "scope_baseline",
+            "explanation": "Confirms the drawing scope for the same east run and drawing revision referenced in the daily log."
+          }
+        ],
+        "missingEvidence": [],
+        "recommendedNextStep": "Track the installation as planned production against E-104 Rev B.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Planned East Run Trenching\",\n  \"eventType\": \"planned_work\",\n  \"shortSummary\": \"The daily log reports 70 ft of east run trench and conduit installed under original drawing E-104 Rev B, within its 400 ft scope. No added direction or rerouting is reported.\",\n  \"projectId\": \"planned-trenching\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The contractor appears to be performing its original installation scope; these records identify no change attributable to another party.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"planned-trenching-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents performed work and explicitly identifies it as within the original quantity, with no added direction.\"\n    },\n    {\n      \"sourceId\": \"planned-trenching-2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"E-104 Rev B includes 400 linear ft trench and conduit on east run.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Confirms the drawing scope for the same east run and drawing revision referenced in the daily log.\"\n    }\n  ],\n  \"missingEvidence\": [],\n  \"recommendedNextStep\": \"Track the installation as planned production against E-104 Rev B.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 16261,
+      "usage": {
+        "inputTokens": 11040,
+        "outputTokens": 394,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "contractor-rework",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:31:33.824Z",
+      "completedAt": "2026-09-29T20:31:48.899Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "contractor-rework-1",
+        "contractor-rework-2"
+      ],
+      "inputHash": "c3e628577d9a577e8a3ff67f8e19b2a73ee79cd22d1c9338bdd0b61ee73cb7fb",
+      "promptHash": "e1da3fd1deaac9d4d6af3e8d6767b91985fc1244100ea71c707e9de85efc717f",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "d15aade956a5a24d6de5cb800e402faa7fe535c635da222bfc6c56d1088bb51d",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": false,
+        "title": "Conduit Installation Correction",
+        "eventType": "contractor_rework",
+        "shortSummary": "The crew removed and reinstalled conduit placed on the wrong side of a footing. The RFI confirms unchanged dimensions and directs correction to E-104, supporting contractor rework.",
+        "projectId": "contractor-rework",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The contractor appears responsible because the recorded installation departed from the issued drawing and was corrected to the original location.",
+        "confidence": "high",
+        "evidenceReferences": [
+          {
+            "sourceId": "contractor-rework-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision.",
+            "supports": "reason_for_change",
+            "explanation": "Records the installation error and completed correction, with no owner direction or design revision."
+          },
+          {
+            "sourceId": "contractor-rework-2",
+            "sourceType": "rfi",
+            "fieldPath": "body",
+            "excerpt": "Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work.",
+            "supports": "scope_baseline",
+            "explanation": "Confirms the unchanged drawing requirement and corroborates correction of nonconforming work."
+          }
+        ],
+        "missingEvidence": [],
+        "recommendedNextStep": "Document the correction and verify the reinstalled conduit conforms to E-104.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Conduit Installation Correction\",\n  \"eventType\": \"contractor_rework\",\n  \"shortSummary\": \"The crew removed and reinstalled conduit placed on the wrong side of a footing. The RFI confirms unchanged dimensions and directs correction to E-104, supporting contractor rework.\",\n  \"projectId\": \"contractor-rework\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The contractor appears responsible because the recorded installation departed from the issued drawing and was corrected to the original location.\",\n  \"confidence\": \"high\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"contractor-rework-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision.\",\n      \"supports\": \"reason_for_change\",\n      \"explanation\": \"Records the installation error and completed correction, with no owner direction or design revision.\"\n    },\n    {\n      \"sourceId\": \"contractor-rework-2\",\n      \"sourceType\": \"rfi\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Confirms the unchanged drawing requirement and corroborates correction of nonconforming work.\"\n    }\n  ],\n  \"missingEvidence\": [],\n  \"recommendedNextStep\": \"Document the correction and verify the reinstalled conduit conforms to E-104.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 15071,
+      "usage": {
+        "inputTokens": 11035,
+        "outputTokens": 386,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "ambiguous-note",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:31:48.900Z",
+      "completedAt": "2026-09-29T20:32:03.611Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "ambiguous-note-1"
+      ],
+      "inputHash": "1ab7b4af7fbdb4d09bb398e96efdfaaa3e75af554ebac0dd8523b401c45ae9f1",
+      "promptHash": "45f2723b7b0ee9c307fb8271f166074aa18b77fa48a567e100311b3f60e2d2b2",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "26bedee1925f380dded9a23961316eabd41a84a220e597417d57df749fe59def",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Bay 14 Conduit Reroute",
+        "eventType": "ambiguous",
+        "shortSummary": "Conduit was moved around an obstruction at bay 14. The note suggests possible additional scope, but the original route and authority for the change are unverified.",
+        "projectId": "ambiguous-note",
+        "estimatedEventTime": null,
+        "responsiblePartyHypothesis": "Responsibility is unresolved: an unidentified person reportedly suggested changing the route, but the record does not establish authorized direction or whether routing around the obstruction was already required.",
+        "confidence": "low",
+        "evidenceReferences": [
+          {
+            "sourceId": "ambiguous-note-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available.",
+            "supports": "additional_work",
+            "explanation": "Records performed rerouting and its stated cause, but does not establish that the work exceeded the original scope or followed authorized direction."
+          }
+        ],
+        "missingEvidence": [
+          "Original sketch or other scope baseline establishing the required conduit route.",
+          "Identity and authority of the person suggesting the route change, and confirmation of direction received.",
+          "Independent corroboration of the obstruction and performed rerouting.",
+          "Date and time of the direction and performed work; the recording timestamp alone does not establish either."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the original route, obstruction, who directed the reroute, and when the work occurred, with supporting drawings and field records.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Bay 14 Conduit Reroute\",\n  \"eventType\": \"ambiguous\",\n  \"shortSummary\": \"Conduit was moved around an obstruction at bay 14. The note suggests possible additional scope, but the original route and authority for the change are unverified.\",\n  \"projectId\": \"ambiguous-note\",\n  \"estimatedEventTime\": null,\n  \"responsiblePartyHypothesis\": \"Responsibility is unresolved: an unidentified person reportedly suggested changing the route, but the record does not establish authorized direction or whether routing around the obstruction was already required.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"ambiguous-note-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Records performed rerouting and its stated cause, but does not establish that the work exceeded the original scope or followed authorized direction.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original sketch or other scope baseline establishing the required conduit route.\",\n    \"Identity and authority of the person suggesting the route change, and confirmation of direction received.\",\n    \"Independent corroboration of the obstruction and performed rerouting.\",\n    \"Date and time of the direction and performed work; the recording timestamp alone does not establish either.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the original route, obstruction, who directed the reroute, and when the work occurred, with supporting drawings and field records.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 14708,
+      "usage": {
+        "inputTokens": 10917,
+        "outputTokens": 382,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "credit-reduction",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:32:03.611Z",
+      "completedAt": "2026-09-29T20:32:23.044Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "credit-reduction-1",
+        "credit-reduction-2"
+      ],
+      "inputHash": "b151de7f462adb805821920493c04fb31137e5ee96fe0af82066da8dcc53b2cd",
+      "promptHash": "dbb3b1d692f6b332eb9fa5fbf94d90c8c23ded15712bf2714b971d18a0825de4",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "5f1ad386ef472414b1b9b10e06bfa22f783ecdd6d0258f88acb5e1d2a689068e",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "East Bay Charger Deletion",
+        "eventType": "potential_credit",
+        "shortSummary": "Revision F omits east bay charger positions 41 and 42, reducing the count from 42 to 40. An email confirms the deletion and requests procurement coordination and an associated credit for review.",
+        "projectId": "credit-reduction",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The deletion appears owner-directed based on the scope confirmation email. Sender authority and contractor receipt remain unverified.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "credit-reduction-1",
+            "sourceType": "drawing",
+            "fieldPath": "body",
+            "excerpt": "Charger count reduced from 42 to 40; omit east bay positions 41 and 42.",
+            "supports": "scope_reduction",
+            "explanation": "Identifies the reduced quantity and specific east bay positions omitted by Revision F."
+          },
+          {
+            "sourceId": "credit-reduction-2",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Confirming the deletion of two chargers shown on Rev F. Please coordinate procurement and submit the associated credit for review.",
+            "supports": "direction",
+            "explanation": "Explicitly connects the confirmed deletion and procurement direction to Revision F."
+          }
+        ],
+        "missingEvidence": [
+          "Original contract scope or accepted drawing establishing that all 42 chargers were included.",
+          "Confirmation of the email sender's authority and contractor receipt.",
+          "Procurement and installation status of the two deleted chargers."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the original charger scope, authorized direction and receipt, and procurement or installation status before reviewing the potential credit.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"East Bay Charger Deletion\",\n  \"eventType\": \"potential_credit\",\n  \"shortSummary\": \"Revision F omits east bay charger positions 41 and 42, reducing the count from 42 to 40. An email confirms the deletion and requests procurement coordination and an associated credit for review.\",\n  \"projectId\": \"credit-reduction\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The deletion appears owner-directed based on the scope confirmation email. Sender authority and contractor receipt remain unverified.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"credit-reduction-1\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Charger count reduced from 42 to 40; omit east bay positions 41 and 42.\",\n      \"supports\": \"scope_reduction\",\n      \"explanation\": \"Identifies the reduced quantity and specific east bay positions omitted by Revision F.\"\n    },\n    {\n      \"sourceId\": \"credit-reduction-2\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Confirming the deletion of two chargers shown on Rev F. Please coordinate procurement and submit the associated credit for review.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Explicitly connects the confirmed deletion and procurement direction to Revision F.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original contract scope or accepted drawing establishing that all 42 chargers were included.\",\n    \"Confirmation of the email sender's authority and contractor receipt.\",\n    \"Procurement and installation status of the two deleted chargers.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the original charger scope, authorized direction and receipt, and procurement or installation status before reviewing the potential credit.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 19429,
+      "usage": {
+        "inputTokens": 11030,
+        "outputTokens": 431,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "unsupported-extra",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:32:23.045Z",
+      "completedAt": "2026-09-29T20:32:37.464Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "unsupported-extra-1"
+      ],
+      "inputHash": "3e0237e33067ca6516254f07195dc4f6edda0a075083032cf1ed8f25a2347081",
+      "promptHash": "80f8c68774c342281ef1186db624e96261ed33d3cbc6c40bddd319b78d8debd0",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "48ad3c6c9787e7c355117c0cdfd419f6594355256055e9f2ee6a4569d6e647ea",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Unverified Extra Conduit",
+        "eventType": "ambiguous",
+        "shortSummary": "The crew reported using approximately 70 ft more conduit than expected. The record does not establish whether this exceeds original scope, reflects planned work, or results from contractor rework.",
+        "projectId": "unsupported-extra",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "Responsibility is undetermined; no direction, verified baseline, or reason for the additional conduit is documented.",
+        "confidence": "low",
+        "evidenceReferences": [
+          {
+            "sourceId": "unsupported-extra-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached.",
+            "supports": "additional_work",
+            "explanation": "Reports additional conduit relative to crew expectations, but the quantity and scope variance remain unverified."
+          }
+        ],
+        "missingEvidence": [
+          "Original conduit scope, drawings, and quantity takeoff.",
+          "Measured installed quantity and work location.",
+          "Direction authorizing any changed routing or quantity.",
+          "Reason for increased conduit use and independent corroboration."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the location, measured quantity, baseline scope, and reason for increased conduit use, including whether any direction or rework was involved.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unverified Extra Conduit\",\n  \"eventType\": \"ambiguous\",\n  \"shortSummary\": \"The crew reported using approximately 70 ft more conduit than expected. The record does not establish whether this exceeds original scope, reflects planned work, or results from contractor rework.\",\n  \"projectId\": \"unsupported-extra\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"Responsibility is undetermined; no direction, verified baseline, or reason for the additional conduit is documented.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"unsupported-extra-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Reports additional conduit relative to crew expectations, but the quantity and scope variance remain unverified.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original conduit scope, drawings, and quantity takeoff.\",\n    \"Measured installed quantity and work location.\",\n    \"Direction authorizing any changed routing or quantity.\",\n    \"Reason for increased conduit use and independent corroboration.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the location, measured quantity, baseline scope, and reason for increased conduit use, including whether any direction or rework was involved.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 14415,
+      "usage": {
+        "inputTokens": 10914,
+        "outputTokens": 354,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "duplicate-direction",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:32:37.464Z",
+      "completedAt": "2026-09-29T20:32:54.124Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "duplicate-direction-1",
+        "duplicate-direction-2"
+      ],
+      "inputHash": "54fa957f0f5f4bcafd7f1538a43bc769a0edd4753c5544e12ac7aba12f130e39",
+      "promptHash": "6ff209ad13078ba763d650d8f6dca1cd1406a260ff01674dcb5acf65c1f32093",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "a3f0a79af621567a67ee74fc04745b92e7c42864d1f305e3d8c6e2f80e059c4e",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Island Shift per Rev C",
+        "eventType": "owner_directed_change",
+        "shortSummary": "An email requests shifting the island east of the transformer per Rev C and tracking additional work separately. The forwarded email repeats the same message, providing no independent corroboration. Original scope and performed work are unverified.",
+        "projectId": "duplicate-direction",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The request may originate from the owner, as the original record title suggests, but the sender's authority and contractor receipt are unconfirmed.",
+        "confidence": "low",
+        "evidenceReferences": [
+          {
+            "sourceId": "duplicate-direction-1",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+            "supports": "direction",
+            "explanation": "Documents the requested relocation and separate tracking; it does not establish a departure from original scope or completed work."
+          },
+          {
+            "sourceId": "duplicate-direction-2",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.",
+            "supports": "direction",
+            "explanation": "Repeats orig-102 and is not independent corroboration."
+          }
+        ],
+        "missingEvidence": [
+          "Original scope and baseline island location.",
+          "Rev C drawing and comparison with the original design.",
+          "Confirmation of requesting party authority and contractor receipt.",
+          "Independent field records documenting any work performed."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the request's origin and receipt, compare Rev C with the original scope, and identify any relocation work performed. Treat the recorded email time only as an observed event-time hypothesis.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Island Shift per Rev C\",\n  \"eventType\": \"owner_directed_change\",\n  \"shortSummary\": \"An email requests shifting the island east of the transformer per Rev C and tracking additional work separately. The forwarded email repeats the same message, providing no independent corroboration. Original scope and performed work are unverified.\",\n  \"projectId\": \"duplicate-direction\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The request may originate from the owner, as the original record title suggests, but the sender's authority and contractor receipt are unconfirmed.\",\n  \"confidence\": \"low\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"duplicate-direction-1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Documents the requested relocation and separate tracking; it does not establish a departure from original scope or completed work.\"\n    },\n    {\n      \"sourceId\": \"duplicate-direction-2\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Repeats orig-102 and is not independent corroboration.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Original scope and baseline island location.\",\n    \"Rev C drawing and comparison with the original design.\",\n    \"Confirmation of requesting party authority and contractor receipt.\",\n    \"Independent field records documenting any work performed.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the request's origin and receipt, compare Rev C with the original scope, and identify any relocation work performed. Treat the recorded email time only as an observed event-time hypothesis.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 16658,
+      "usage": {
+        "inputTokens": 11024,
+        "outputTokens": 454,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "unrelated-records",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:32:54.125Z",
+      "completedAt": "2026-09-29T20:33:11.994Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "unrelated-records-1",
+        "unrelated-records-2"
+      ],
+      "inputHash": "79a4c0d595d31a8b6c556abfa0e1ce4622cf1203f0cd7e28b17adf46f561ae46",
+      "promptHash": "ab38be6d985d1e337842059ba3d850ef3de8a690ea37f13e31436593da40e305",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "d98e8eaf92de991485aeadea13cd40aeedf8d60e08bf98c126fe50b97f55b971",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": false,
+        "title": "Scheduled South Stair Conduit Installation",
+        "eventType": "planned_work",
+        "shortSummary": "The daily log reports scheduled conduit installation per E-203 with no scope change. The north gate email concerns inspection access at a separate location and does not establish a change to the stair work.",
+        "projectId": "unrelated-records",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The installation appears to be the contractor's planned scope. Neither record establishes responsibility for changed work.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "unrelated-records-1",
+            "sourceType": "daily_log",
+            "fieldPath": "body",
+            "excerpt": "Installed the scheduled lighting conduits in the south stair, per E-203. No changes to scope.",
+            "supports": "additional_work",
+            "explanation": "Documents performed work explicitly described as scheduled; it does not establish additional scope."
+          },
+          {
+            "sourceId": "unrelated-records-2",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Please keep the north gate clear for the meter inspection on Thursday. No electrical work is being revised.",
+            "supports": "direction",
+            "explanation": "Directs access coordination only, with no shared drawing or location connecting it to a revision of the stair work."
+          }
+        ],
+        "missingEvidence": [
+          "E-203 and original scope documents to independently verify the reported baseline.",
+          "Independent corroboration of the south stair installation."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm the south stair installation remained within the original E-203 scope and that north gate access required no additional work.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": false,\n  \"title\": \"Scheduled South Stair Conduit Installation\",\n  \"eventType\": \"planned_work\",\n  \"shortSummary\": \"The daily log reports scheduled conduit installation per E-203 with no scope change. The north gate email concerns inspection access at a separate location and does not establish a change to the stair work.\",\n  \"projectId\": \"unrelated-records\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The installation appears to be the contractor's planned scope. Neither record establishes responsibility for changed work.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"unrelated-records-1\",\n      \"sourceType\": \"daily_log\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Installed the scheduled lighting conduits in the south stair, per E-203. No changes to scope.\",\n      \"supports\": \"additional_work\",\n      \"explanation\": \"Documents performed work explicitly described as scheduled; it does not establish additional scope.\"\n    },\n    {\n      \"sourceId\": \"unrelated-records-2\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Please keep the north gate clear for the meter inspection on Thursday. No electrical work is being revised.\",\n      \"supports\": \"direction\",\n      \"explanation\": \"Directs access coordination only, with no shared drawing or location connecting it to a revision of the stair work.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"E-203 and original scope documents to independently verify the reported baseline.\",\n    \"Independent corroboration of the south stair installation.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm the south stair installation remained within the original E-203 scope and that north gate access required no additional work.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 17866,
+      "usage": {
+        "inputTokens": 11031,
+        "outputTokens": 422,
+        "cachedInputTokens": 8576
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "caseId": "unconfirmed-credit",
+      "attempt": 1,
+      "startedAt": "2026-09-29T20:33:11.994Z",
+      "completedAt": "2026-09-29T20:33:28.626Z",
+      "cliVersion": "codex-cli 0.158.0",
+      "inputSourceIds": [
+        "unconfirmed-credit-1",
+        "unconfirmed-credit-2"
+      ],
+      "inputHash": "f5c6322aad8ebee5fccc4f193efb8bebf0afd24d2d8fc94a981735d9a9acd0a5",
+      "promptHash": "612d6d85df9482b0df59f4bfff1956257fea5d3ba82ea93f9bf0158c2f2746c5",
+      "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+      "responseHash": "2e8b3d92e243ba07ad00d51e5cdf7d33468d10e8d1f624ab73295d6ac864d96e",
+      "provider": "codex-cli",
+      "model": "gpt-6-astra",
+      "output": {
+        "possibleChange": true,
+        "title": "Unapproved East Charger Omission",
+        "eventType": "potential_credit",
+        "shortSummary": "Omitting two east chargers is proposed for pricing only. The current construction issue still includes 42 chargers, and no scope reduction is confirmed.",
+        "projectId": "unconfirmed-credit",
+        "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+        "responsiblePartyHypothesis": "The project team is exploring a reduction subject to owner approval. The records do not establish owner authorization or contractor responsibility for any changed work.",
+        "confidence": "medium",
+        "evidenceReferences": [
+          {
+            "sourceId": "unconfirmed-credit-1",
+            "sourceType": "email",
+            "fieldPath": "body",
+            "excerpt": "Could we omit the two east chargers? This is a pricing exercise only; do not revise procurement until owner approval.",
+            "supports": "scope_reduction",
+            "explanation": "Identifies a proposed omission while expressly withholding authorization to revise procurement."
+          },
+          {
+            "sourceId": "unconfirmed-credit-2",
+            "sourceType": "drawing",
+            "fieldPath": "body",
+            "excerpt": "Current construction issue still includes 42 chargers. No revised drawing issued.",
+            "supports": "scope_baseline",
+            "explanation": "Confirms the current issued scope retains all 42 chargers."
+          }
+        ],
+        "missingEvidence": [
+          "Owner approval and confirmed direction received by the contractor.",
+          "Original contractual scope confirming the east chargers are included.",
+          "Revised drawing or other documentation formalizing the omission.",
+          "Evidence of any procurement or performed-work changes."
+        ],
+        "recommendedNextStep": "Ask the superintendent to confirm whether the omission remains a pricing option and obtain any subsequent owner approval, contractor direction, or revised scope documentation.",
+        "relevantContract": null
+      },
+      "rawResponse": "{\n  \"possibleChange\": true,\n  \"title\": \"Unapproved East Charger Omission\",\n  \"eventType\": \"potential_credit\",\n  \"shortSummary\": \"Omitting two east chargers is proposed for pricing only. The current construction issue still includes 42 chargers, and no scope reduction is confirmed.\",\n  \"projectId\": \"unconfirmed-credit\",\n  \"estimatedEventTime\": \"2026-09-28T14:00:00-04:00\",\n  \"responsiblePartyHypothesis\": \"The project team is exploring a reduction subject to owner approval. The records do not establish owner authorization or contractor responsibility for any changed work.\",\n  \"confidence\": \"medium\",\n  \"evidenceReferences\": [\n    {\n      \"sourceId\": \"unconfirmed-credit-1\",\n      \"sourceType\": \"email\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Could we omit the two east chargers? This is a pricing exercise only; do not revise procurement until owner approval.\",\n      \"supports\": \"scope_reduction\",\n      \"explanation\": \"Identifies a proposed omission while expressly withholding authorization to revise procurement.\"\n    },\n    {\n      \"sourceId\": \"unconfirmed-credit-2\",\n      \"sourceType\": \"drawing\",\n      \"fieldPath\": \"body\",\n      \"excerpt\": \"Current construction issue still includes 42 chargers. No revised drawing issued.\",\n      \"supports\": \"scope_baseline\",\n      \"explanation\": \"Confirms the current issued scope retains all 42 chargers.\"\n    }\n  ],\n  \"missingEvidence\": [\n    \"Owner approval and confirmed direction received by the contractor.\",\n    \"Original contractual scope confirming the east chargers are included.\",\n    \"Revised drawing or other documentation formalizing the omission.\",\n    \"Evidence of any procurement or performed-work changes.\"\n  ],\n  \"recommendedNextStep\": \"Ask the superintendent to confirm whether the omission remains a pricing option and obtain any subsequent owner approval, contractor direction, or revised scope documentation.\",\n  \"relevantContract\": null\n}",
+      "latencyMs": 16629,
+      "usage": {
+        "inputTokens": 11020,
+        "outputTokens": 424,
+        "cachedInputTokens": 0
+      },
+      "toolCalls": 0,
+      "error": null,
+      "schemaValidation": {
+        "valid": true,
+        "errors": []
+      },
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  ],
+  "summary": {
+    "scoringVersion": "phase3-v1",
+    "casesInDataset": 10,
+    "attempted": 10,
+    "scored": 10,
+    "providerErrors": 0,
+    "malformedOutputs": 0,
+    "boundaryViolations": 0,
+    "detection": {
+      "truePositives": 7,
+      "falsePositives": 0,
+      "trueNegatives": 3,
+      "falseNegatives": 0,
+      "precision": {
+        "numerator": 7,
+        "denominator": 7,
+        "value": 1
+      },
+      "recall": {
+        "numerator": 7,
+        "denominator": 7,
+        "value": 1
+      }
+    },
+    "eventTypeAccuracy": {
+      "numerator": 10,
+      "denominator": 10,
+      "value": 1
+    },
+    "evidence": {
+      "recall": {
+        "numerator": 17,
+        "denominator": 17,
+        "value": 1
+      },
+      "unexpectedSourceCount": 1,
+      "unsupportedSourceCount": 0,
+      "invalidCitationCount": 0,
+      "citationCount": 18
+    },
+    "abstention": {
+      "expectedAbstentions": 4,
+      "correctAbstentions": 4,
+      "missedAbstentions": 0,
+      "unnecessaryAbstentions": 4,
+      "accuracy": {
+        "numerator": 6,
+        "denominator": 10,
+        "value": 0.6
+      }
+    },
+    "reports": [
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "owner_directed_change",
+          "expectedEvidenceSourceIds": [
+            "owner-bollards-1",
+            "owner-bollards-2"
+          ],
+          "noticeLikelyRequired": true,
+          "expectedAbstention": false
+        },
+        "caseId": "owner-bollards",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": false
+        },
+        "failures": [
+          "unnecessary_abstention"
+        ],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "owner_directed_change",
+          "confidence": "medium",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "owner-bollards-1",
+            "owner-bollards-2"
+          ],
+          "actualIds": [
+            "owner-bollards-1",
+            "owner-bollards-2"
+          ],
+          "matchedIds": [
+            "owner-bollards-1",
+            "owner-bollards-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "owner-bollards-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "owner-bollards-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": true,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "differing_site_condition",
+          "expectedEvidenceSourceIds": [
+            "rock-condition-1",
+            "rock-condition-2"
+          ],
+          "noticeLikelyRequired": true,
+          "expectedAbstention": false
+        },
+        "caseId": "rock-condition",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": false
+        },
+        "failures": [
+          "unnecessary_abstention"
+        ],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "differing_site_condition",
+          "confidence": "medium",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "rock-condition-1",
+            "rock-condition-2"
+          ],
+          "actualIds": [
+            "rock-condition-1",
+            "rock-condition-2"
+          ],
+          "matchedIds": [
+            "rock-condition-1",
+            "rock-condition-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "rock-condition-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "rock-condition-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": true,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": false,
+          "expectedEventType": "planned_work",
+          "expectedEvidenceSourceIds": [
+            "planned-trenching-1",
+            "planned-trenching-2"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": false
+        },
+        "caseId": "planned-trenching",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": false,
+          "eventType": "planned_work",
+          "confidence": "high",
+          "abstains": false
+        },
+        "evidence": {
+          "expectedIds": [
+            "planned-trenching-1",
+            "planned-trenching-2"
+          ],
+          "actualIds": [
+            "planned-trenching-1",
+            "planned-trenching-2"
+          ],
+          "matchedIds": [
+            "planned-trenching-1",
+            "planned-trenching-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "planned-trenching-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "planned-trenching-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": false,
+          "expectedEventType": "contractor_rework",
+          "expectedEvidenceSourceIds": [
+            "contractor-rework-1",
+            "contractor-rework-2"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": false
+        },
+        "caseId": "contractor-rework",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": false,
+          "eventType": "contractor_rework",
+          "confidence": "high",
+          "abstains": false
+        },
+        "evidence": {
+          "expectedIds": [
+            "contractor-rework-1",
+            "contractor-rework-2"
+          ],
+          "actualIds": [
+            "contractor-rework-1",
+            "contractor-rework-2"
+          ],
+          "matchedIds": [
+            "contractor-rework-1",
+            "contractor-rework-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "contractor-rework-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "contractor-rework-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "ambiguous",
+          "expectedEvidenceSourceIds": [
+            "ambiguous-note-1"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": true
+        },
+        "caseId": "ambiguous-note",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "ambiguous",
+          "confidence": "low",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "ambiguous-note-1"
+          ],
+          "actualIds": [
+            "ambiguous-note-1"
+          ],
+          "matchedIds": [
+            "ambiguous-note-1"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "ambiguous-note-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "potential_credit",
+          "expectedEvidenceSourceIds": [
+            "credit-reduction-1",
+            "credit-reduction-2"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": false
+        },
+        "caseId": "credit-reduction",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": false
+        },
+        "failures": [
+          "unnecessary_abstention"
+        ],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "potential_credit",
+          "confidence": "medium",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "credit-reduction-1",
+            "credit-reduction-2"
+          ],
+          "actualIds": [
+            "credit-reduction-1",
+            "credit-reduction-2"
+          ],
+          "matchedIds": [
+            "credit-reduction-1",
+            "credit-reduction-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "credit-reduction-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "credit-reduction-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "ambiguous",
+          "expectedEvidenceSourceIds": [
+            "unsupported-extra-1"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": true
+        },
+        "caseId": "unsupported-extra",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "ambiguous",
+          "confidence": "low",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "unsupported-extra-1"
+          ],
+          "actualIds": [
+            "unsupported-extra-1"
+          ],
+          "matchedIds": [
+            "unsupported-extra-1"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "unsupported-extra-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "owner_directed_change",
+          "expectedEvidenceSourceIds": [
+            "duplicate-direction-1",
+            "duplicate-direction-2"
+          ],
+          "noticeLikelyRequired": true,
+          "expectedAbstention": true
+        },
+        "caseId": "duplicate-direction",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "owner_directed_change",
+          "confidence": "low",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "duplicate-direction-1",
+            "duplicate-direction-2"
+          ],
+          "actualIds": [
+            "duplicate-direction-1",
+            "duplicate-direction-2"
+          ],
+          "matchedIds": [
+            "duplicate-direction-1",
+            "duplicate-direction-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "duplicate-direction-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "duplicate-direction-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": true,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": false,
+          "expectedEventType": "planned_work",
+          "expectedEvidenceSourceIds": [
+            "unrelated-records-1"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": false
+        },
+        "caseId": "unrelated-records",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": false,
+          "abstention": false
+        },
+        "failures": [
+          "unexpected_evidence",
+          "unnecessary_abstention"
+        ],
+        "predicted": {
+          "possibleChange": false,
+          "eventType": "planned_work",
+          "confidence": "medium",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "unrelated-records-1"
+          ],
+          "actualIds": [
+            "unrelated-records-1",
+            "unrelated-records-2"
+          ],
+          "matchedIds": [
+            "unrelated-records-1"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [
+            "unrelated-records-2"
+          ],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "unrelated-records-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "unrelated-records-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      },
+      {
+        "expected": {
+          "shouldFlag": true,
+          "expectedEventType": "potential_credit",
+          "expectedEvidenceSourceIds": [
+            "unconfirmed-credit-1",
+            "unconfirmed-credit-2"
+          ],
+          "noticeLikelyRequired": false,
+          "expectedAbstention": true
+        },
+        "caseId": "unconfirmed-credit",
+        "scoringVersion": "phase3-v1",
+        "scorable": true,
+        "providerError": null,
+        "schemaValidation": {
+          "valid": true,
+          "errors": []
+        },
+        "groundingError": null,
+        "checks": {
+          "shouldFlag": true,
+          "eventType": true,
+          "evidenceIds": true,
+          "abstention": true
+        },
+        "failures": [],
+        "predicted": {
+          "possibleChange": true,
+          "eventType": "potential_credit",
+          "confidence": "medium",
+          "abstains": true
+        },
+        "evidence": {
+          "expectedIds": [
+            "unconfirmed-credit-1",
+            "unconfirmed-credit-2"
+          ],
+          "actualIds": [
+            "unconfirmed-credit-1",
+            "unconfirmed-credit-2"
+          ],
+          "matchedIds": [
+            "unconfirmed-credit-1",
+            "unconfirmed-credit-2"
+          ],
+          "missedIds": [],
+          "unexpectedIds": [],
+          "unsupportedIds": [],
+          "invalidCitationCount": 0,
+          "referenceChecks": [
+            {
+              "index": 0,
+              "sourceId": "unconfirmed-credit-1",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            },
+            {
+              "index": 1,
+              "sourceId": "unconfirmed-credit-2",
+              "fieldPath": "body",
+              "valid": true,
+              "issue": null,
+              "fieldEvidence": true
+            }
+          ]
+        },
+        "noticeLikelihood": {
+          "expected": false,
+          "scored": false,
+          "reason": "Contract/policy fixtures are insufficient. Detection does not decide legal notice obligations."
+        }
+      }
+    ]
+  }
+}

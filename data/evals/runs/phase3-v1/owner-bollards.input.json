@@ -1,0 +1,26 @@
+[
+  {
+    "id": "owner-bollards-1",
+    "projectId": "owner-bollards",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "Owner direction",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Please add six steel bollards at the west dock. These are in addition to the four on the issued plan. Submit a notice and estimate before installation. — Owner representative"
+    }
+  },
+  {
+    "id": "owner-bollards-2",
+    "projectId": "owner-bollards",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "Site walk record",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Owner rep requested six extra bollards at west dock. Issued plan has four; marked six new positions with the rep. Awaiting PM release."
+    }
+  }
+]

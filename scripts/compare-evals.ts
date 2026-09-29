@@ -1,27 +1,32 @@
 import { readFileSync } from "node:fs";
+import { z } from "zod";
 import dataset from "../data/evals/cases.json";
 import {
-  compareEvaluation,
+  aggregateEvaluation,
   evaluationCaseSchema,
 } from "../src/lib/evaluation/compare";
-
 const path = process.argv[2];
 if (!path)
   throw new Error(
-    "Usage: npm run eval:compare -- path/to/outputs.json (array of {caseId, output}); no live provider calls",
+    "Usage: npm run eval:compare -- path/to/outputs.json (array of {caseId, output, error?, toolCalls?}); no live provider calls",
   );
-const inputs: Array<{ caseId: string; output: unknown }> = JSON.parse(
-  readFileSync(path, "utf8"),
-);
-if (!Array.isArray(inputs))
-  throw new Error("Expected an array of actual provider outputs");
-const reports = inputs.map((input) => {
-  const testCase = dataset.cases.find(
-    (testCase) => testCase.id === input.caseId,
-  );
-  if (!testCase) throw new Error(`Unknown evaluation case ${input.caseId}`);
-  return compareEvaluation(evaluationCaseSchema.parse(testCase), input.output);
-});
+const observations = z
+  .array(
+    z.object({
+      caseId: z.string(),
+      output: z.unknown(),
+      error: z.string().nullable().default(null),
+      toolCalls: z.number().int().nonnegative().default(0),
+    }),
+  )
+  .parse(JSON.parse(readFileSync(path, "utf8")));
 console.log(
-  JSON.stringify({ casesCompared: reports.length, reports }, null, 2),
+  JSON.stringify(
+    aggregateEvaluation(
+      dataset.cases.map((item) => evaluationCaseSchema.parse(item)),
+      observations,
+    ),
+    null,
+    2,
+  ),
 );

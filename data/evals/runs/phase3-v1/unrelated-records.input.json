@@ -1,0 +1,26 @@
+[
+  {
+    "id": "unrelated-records-1",
+    "projectId": "unrelated-records",
+    "sourceType": "daily_log",
+    "system": "Synthetic evaluation fixture",
+    "title": "South stair work",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Installed the scheduled lighting conduits in the south stair, per E-203. No changes to scope."
+    }
+  },
+  {
+    "id": "unrelated-records-2",
+    "projectId": "unrelated-records",
+    "sourceType": "email",
+    "system": "Synthetic evaluation fixture",
+    "title": "North gate access",
+    "author": "Fictional project team",
+    "recordedAt": "2026-09-28T14:00:00-04:00",
+    "fields": {
+      "body": "Please keep the north gate clear for the meter inspection on Thursday. No electrical work is being revised."
+    }
+  }
+]

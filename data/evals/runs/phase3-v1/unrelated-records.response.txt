@@ -1,0 +1,34 @@
+{
+  "possibleChange": false,
+  "title": "Scheduled South Stair Conduit Installation",
+  "eventType": "planned_work",
+  "shortSummary": "The daily log reports scheduled conduit installation per E-203 with no scope change. The north gate email concerns inspection access at a separate location and does not establish a change to the stair work.",
+  "projectId": "unrelated-records",
+  "estimatedEventTime": "2026-09-28T14:00:00-04:00",
+  "responsiblePartyHypothesis": "The installation appears to be the contractor's planned scope. Neither record establishes responsibility for changed work.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "unrelated-records-1",
+      "sourceType": "daily_log",
+      "fieldPath": "body",
+      "excerpt": "Installed the scheduled lighting conduits in the south stair, per E-203. No changes to scope.",
+      "supports": "additional_work",
+      "explanation": "Documents performed work explicitly described as scheduled; it does not establish additional scope."
+    },
+    {
+      "sourceId": "unrelated-records-2",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Please keep the north gate clear for the meter inspection on Thursday. No electrical work is being revised.",
+      "supports": "direction",
+      "explanation": "Directs access coordination only, with no shared drawing or location connecting it to a revision of the stair work."
+    }
+  ],
+  "missingEvidence": [
+    "E-203 and original scope documents to independently verify the reported baseline.",
+    "Independent corroboration of the south stair installation."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the south stair installation remained within the original E-203 scope and that north gate access required no additional work.",
+  "relevantContract": null
+}

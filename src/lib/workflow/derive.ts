@@ -10,6 +10,7 @@ import {
   type DeadlineCalculation,
 } from "../calculations/deadline";
 import type { Detection } from "../ai/schemas";
+import { assessReliability } from "./reliability";
 
 export interface WorkflowResult {
   analysis: Detection;
@@ -19,6 +20,7 @@ export interface WorkflowResult {
   noticeEligible: boolean;
   blockers: string[];
   reviewQuestions: string[];
+  reliability: ReturnType<typeof assessReliability>;
 }
 
 export function deriveWorkflow(
@@ -30,6 +32,9 @@ export function deriveWorkflow(
 ): WorkflowResult {
   const analysis = validateDetection(input, sources);
   const blockers: string[] = [];
+  const reliability = assessReliability(analysis, sources);
+  if (reliability.disposition !== "pm_review")
+    blockers.push(...reliability.reasons);
   const reviewQuestions = [...analysis.missingEvidence];
   if (!analysis.possibleChange) blockers.push("No potential change identified");
   if (analysis.confidence === "low")
@@ -121,6 +126,7 @@ export function deriveWorkflow(
   const draftEligible = blockers.length === 0 && !!deadline && !!cost;
   return {
     analysis,
+    reliability,
     deadline,
     cost,
     blockers: [...new Set(blockers)],
