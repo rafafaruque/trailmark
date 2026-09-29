@@ -1,0 +1,22 @@
+{
+  "id": "cc-log",
+  "projectId": "clover-court",
+  "sourceType": "daily_log",
+  "system": "FieldBook",
+  "title": "Daily report 061 · Garage level P1",
+  "author": "Jamie Brooks · Superintendent",
+  "recordedAt": "2026-09-28T16:20:00-04:00",
+  "data": {
+    "projectReference": "BBI-2415 / Clover Court / Apartment Garage",
+    "reportDate": "2026-09-28",
+    "entries": [
+      "07:00 — Garage access delayed twenty minutes while concrete trucks cleared the ramp.",
+      "11:30 — Rerouted the conduit around an obstruction above P1 bay 14. Used extra bends and longer conduit runs than the crew expected. Need to check which sketch the original route came from. Didn’t get the name of the person who asked us to move it.",
+      "15:15 — Completed planned lighting rough-in in the west stair. Materials for level P2 staged at the north entrance."
+    ],
+    "fieldAllowanceCents": 1130000,
+    "allowanceNote": "Unverified field allowance only. No quantities, timecards or rate breakdown submitted.",
+    "attachments": [],
+    "followUp": "Find out who directed the reroute, confirm the original scope and get the direction in writing. No RFI response, revised drawing or owner email on file."
+  }
+}

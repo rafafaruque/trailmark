@@ -29,7 +29,7 @@ export function EventCard({ event }: { event: ChangeEvent }) {
   const project = getProject(event.projectId);
   const state = useDemoState();
   const status = state[event.id]?.status;
-  const resolved = status === "sent" || status === "dismissed";
+  const resolved = status === "approved" || status === "dismissed";
   const ready = event.status === "ready";
   const href =
     ready && !resolved ? `/notices/${event.id}` : `/events/${event.id}`;
@@ -96,10 +96,10 @@ export function EventCard({ event }: { event: ChangeEvent }) {
         <div
           className={`event-status ${resolved ? "ready" : ready ? "ready" : event.noticeHours ? "urgent" : "neutral"}`}
         >
-          {status === "sent" ? (
+          {status === "approved" ? (
             <>
               <Check size={13} />
-              Notice sent · demo
+              Approved · not sent
             </>
           ) : status === "dismissed" ? (
             <>
@@ -124,7 +124,7 @@ export function EventCard({ event }: { event: ChangeEvent }) {
           ) : event.status === "no-action" ? (
             <>
               <Minus size={13} />
-              No action needed
+              No notice indicated
             </>
           ) : (
             <>
@@ -170,10 +170,11 @@ export function EventQueue({
       (!deadlineOnly ||
         (!!event.noticeHours &&
           event.noticeHours < 24 &&
-          !["sent", "dismissed"].includes(state[event.id]?.status || ""))),
+          state[event.id]?.status !== "dismissed")),
   );
   const active = relevant.filter(
-    (event) => !["sent", "dismissed"].includes(state[event.id]?.status || ""),
+    (event) =>
+      !["approved", "dismissed"].includes(state[event.id]?.status || ""),
   );
   const review = active.filter((event) => event.status !== "ready");
   const ready = active.filter((event) => event.status === "ready");
@@ -214,10 +215,10 @@ export function EventQueue({
               Potential change events{" "}
               <span className="heading-count">{active.length}</span>
             </h2>
-            <p>A little attention now. A lot of margin protected.</p>
+            <p>Review the evidence and choose the next action.</p>
           </div>
           <div className="source-status">
-            <span className="live-dot" /> All sources up to date
+            <span className="live-dot" /> Records through Sept 29
           </div>
         </div>
       )}
@@ -313,9 +314,7 @@ export function EventQueue({
       </div>
       <div className="queue-footnote">
         <Sparkles size={13} />
-        <span>
-          Connected evidence. Suggested next steps. You make the call.
-        </span>
+        <span>Source records are linked to each event.</span>
         <span className="snapshot-label">Snapshot · Sept 29, 2026</span>
       </div>
     </section>
@@ -350,9 +349,7 @@ export function ProjectTable({ projectId = "all" }: { projectId?: string }) {
               const active = projectEvents.filter(
                 (event) => state[event.id]?.status !== "dismissed",
               );
-              const noticePending = active.some(
-                (event) => state[event.id]?.status !== "sent",
-              );
+              const noticePending = active.length > 0;
               const value =
                 active.reduce((sum, event) => sum + event.exposure, 0) +
                 project.pendingExposure;

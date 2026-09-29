@@ -3,7 +3,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import type { DemoState, SavedEvent } from "./types";
 
-const key = "trailmark-demo-v1";
+const key = "trailmark-review-v2";
 const changeEvent = "trailmark:change";
 let memory = "{}";
 

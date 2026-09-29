@@ -1,0 +1,22 @@
+{
+  "id": "sf-contract",
+  "projectId": "strawberry-fields",
+  "sourceType": "contract",
+  "system": "Executed agreement register",
+  "title": "BBI-2401 · Electrical subcontract excerpts",
+  "author": "Bob Builder Infrastructure · Contract administration",
+  "recordedAt": "2026-08-03T09:00:00-04:00",
+  "data": {
+    "agreementId": "BBI-2401-SC-01",
+    "executedDate": "2026-08-03",
+    "timezone": "America/New_York",
+    "clauses": [
+      { "id": "4.2", "title": "Coordination", "text": "The Contractor shall coordinate daily access, deliveries and temporary works with the Owner’s site representative. Coordination meetings do not waive written notice requirements." },
+      { "id": "7.1", "title": "Submittals", "text": "Shop drawings and equipment schedules shall be submitted at least ten business days before procurement. Review of a submittal does not authorize changes to the contract sum." },
+      { "id": "12.4", "title": "Change Notification", "text": "The Contractor shall provide written notice to the Owner’s representative within forty-eight (48) elapsed hours of receiving direction, or becoming aware of a condition, giving rise to additional cost or time. The notice shall identify the direction or condition, describe the affected work, and state the preliminary cost and schedule impact if known. An unanswered request for clarification or a coordination drawing awaiting field confirmation is not itself direction to proceed. Notice preserves the request for review and does not establish entitlement to an adjustment.", "noticePeriodHours": 48, "clock": "elapsed_hours" },
+      { "id": "12.6", "title": "Pricing of additional work", "text": "Additional work shall be priced using the approved project rate schedule. Apply a 12.5 percent overhead and profit markup to eligible direct costs. Permit and access fees reimbursed at cost are excluded from the markup base.", "markupBasisPoints": 1250, "excludedCategories": ["pass_through_fee"] },
+      { "id": "16.3", "title": "Closeout", "text": "As-built drawings, test records and warranties shall be delivered with the application for substantial completion. Maintain electronic copies of field records through final settlement." }
+    ],
+    "recipient": { "name": "Morgan Ellis", "role": "Owner representative", "email": "morgan.ellis@example.com" }
+  }
+}

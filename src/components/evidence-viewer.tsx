@@ -28,7 +28,9 @@ export function EvidenceViewer({
       <div className="source-document">{item.content}</div>
       <div className="evidence-document-footer">
         <span>{item.author}</span>
-        <span className="badge neutral-badge">Demo source record</span>
+        <span className="badge neutral-badge">
+          {item.system || "Source record"}
+        </span>
       </div>
     </Modal>
   );

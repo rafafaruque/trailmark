@@ -25,16 +25,29 @@ test("overview connects to evidence, editable notice, approval, and persisted po
     page.getByRole("heading", { name: "Evidence timeline" }),
   ).toBeVisible();
   await expect(page.locator(".timeline-item")).toHaveCount(4);
-  await page.getByRole("button", { name: /Utility email received/ }).click();
+  await expect(
+    page.getByRole("heading", { name: "Why Trailmark flagged this" }),
+  ).toBeVisible();
+  await expect(page.locator(".flagged-source")).toHaveCount(4);
+  await expect(
+    page.getByText("Medium confidence", { exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("AI identified", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText("Code calculated", { exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Open source: Utility email" })
+    .click();
   await expect(page.getByRole("dialog")).toContainText(
-    "please relocate the charger islands",
+    "Please relocate the charger islands",
   );
   await page.getByRole("button", { name: "Close dialog" }).click();
   await page.getByRole("link", { name: "Review notice" }).click();
   await expect(page).toHaveURL(`/notices/${hero}`);
   await expect(page.locator(".letter-body")).toContainText("$18,420");
   await expect(page.locator(".letter-body")).toContainText(
-    "reserves all rights",
+    "reserves its contractual rights",
   );
   await page.getByRole("button", { name: "Edit draft" }).click();
   const original = await page
@@ -55,7 +68,19 @@ test("overview connects to evidence, editable notice, approval, and persisted po
   );
   await page.getByRole("button", { name: "Approve & send" }).click();
   await expect(page.getByRole("dialog")).toContainText("no email will be sent");
-  await page.getByRole("button", { name: "Confirm demo send" }).click();
+  await expect(
+    page.getByRole("button", { name: "Approve notice", exact: true }),
+  ).toBeDisabled();
+  await page
+    .getByRole("checkbox", { name: /I have reviewed the recipient/ })
+    .check();
+  await expect(
+    page.getByRole("button", { name: "Approve notice", exact: true }),
+  ).toBeDisabled();
+  await page.getByRole("checkbox", { name: /unresolved scope/ }).check();
+  await page
+    .getByRole("button", { name: "Approve notice", exact: true })
+    .click();
   await expect(
     page.getByRole("heading", { name: "Notice approved" }),
   ).toBeVisible();
@@ -64,9 +89,11 @@ test("overview connects to evidence, editable notice, approval, and persisted po
     "$71.8K",
   );
   await expect(page.locator(".event-card").first()).toContainText(
-    "Notice sent · demo",
+    "Approved · not sent",
   );
   await expect(page.locator(".event-card")).toHaveCount(5);
+  await page.getByRole("link", { name: /Notice due <24h/ }).click();
+  await expect(page.locator(".event-card")).toHaveCount(2);
   expect(errors).toEqual([]);
 });
 
@@ -96,7 +123,7 @@ test("filters, sorting, global search, and sidebar routes work", async ({
     .fill("transformer");
   await page
     .getByRole("dialog")
-    .getByRole("link", { name: /Transformer relocation/ })
+    .getByRole("link", { name: /Strawberry Fields/ })
     .click();
   await expect(page).toHaveURL(`/events/${hero}`);
   for (const route of [
@@ -134,11 +161,11 @@ test("insufficient evidence abstains, clarification is saved, dismissal can be u
     .getByRole("button", { name: "Save clarification request" })
     .click();
   await expect(page.getByRole("status")).toContainText(
-    "Clarification requested in demo",
+    "Clarification request prepared",
   );
   await page.reload();
   await expect(page.getByRole("status")).toContainText(
-    "Clarification requested in demo",
+    "Clarification request prepared",
   );
   await page
     .getByRole("button", { name: "Mark not a change", exact: true })
@@ -167,8 +194,10 @@ test("source records open from the evidence library and unknown records show the
   await page
     .getByLabel("Filter evidence by project")
     .selectOption("strawberry-fields");
-  await expect(page.locator(".evidence-library-card")).toHaveCount(4);
-  await page.getByLabel("Search evidence").fill("rfi");
+  await expect(page.locator(".evidence-library-card")).toHaveCount(6);
+  await page
+    .getByLabel("Search evidence")
+    .fill("Installation in this area is on hold");
   await expect(page.locator(".evidence-library-card")).toHaveCount(1);
   await page.goto("/events/not-a-real-event");
   await expect(
@@ -210,4 +239,22 @@ test("mobile layout has no page overflow and navigation reaches the notice flow"
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
+});
+
+test("technical inspection reports the real run and does not claim unrun evaluation accuracy", async ({
+  page,
+}) => {
+  await page.goto("/system/analysis");
+  await expect(
+    page.getByRole("heading", { name: "Recorded analysis" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("gpt-6-astra", { exact: false }).first(),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Original failure retained · revalidated"),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Dataset status: not run", { exact: false }),
+  ).toBeVisible();
 });

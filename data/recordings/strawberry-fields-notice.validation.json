@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-29T19:51:16.073Z",
+  "originalRunId": "strawberry-fields-notice",
+  "originalValidation": {
+    "valid": false,
+    "errors": [
+      "Notice cites evidence not linked to this event"
+    ]
+  },
+  "correction": "Fixed validator omission: the separately retrieved contract source is part of the linked evidence set for notice drafting. The model correctly cited sf-contract; no output was changed and no model call was repeated.",
+  "responseSha256": "153a16d9fb4ca61bf766b4471533d5316ea9ad6dad599ec8c64ca49b5a7da9c3",
+  "validation": {
+    "valid": true,
+    "errors": []
+  }
+}

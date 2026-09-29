@@ -24,10 +24,14 @@ export function Overview() {
   const relevant = events.filter(
     (event) =>
       (projectId === "all" || event.projectId === projectId) &&
-      !["sent", "dismissed"].includes(state[event.id]?.status || ""),
+      !["approved", "dismissed"].includes(state[event.id]?.status || ""),
   );
-  const due = relevant.filter(
-    (event) => event.noticeHours && event.noticeHours < 24,
+  const due = events.filter(
+    (event) =>
+      (projectId === "all" || event.projectId === projectId) &&
+      state[event.id]?.status !== "dismissed" &&
+      event.noticeHours &&
+      event.noticeHours < 24,
   ).length;
   const pending = projects
     .filter((project) => projectId === "all" || project.id === projectId)
@@ -43,14 +47,13 @@ export function Overview() {
         <div>
           <div className="greeting-eyebrow">
             <Sun size={16} />
-            <span>A CLEAR START TO YOUR DAY</span>
+            <span>TUESDAY · PROJECT REVIEW</span>
           </div>
           <h1>
             Good morning, Jordan<span className="greeting-period">.</span>
           </h1>
           <p>
-            You have <strong>{relevant.length} potential changes</strong> to
-            keep an eye on. Let’s get ahead of them.
+            <strong>{relevant.length} potential changes</strong> need review.
           </p>
         </div>
         <div className="intro-date">
@@ -132,7 +135,7 @@ export function Overview() {
             <span className="metric-pill amber-pill">Time sensitive</span>
           </div>
           <div className="metric-footer">
-            <span>Keep your right to recover</span>
+            <span>Written notice approaching</span>
             <ArrowUpRight size={15} />
           </div>
         </Link>
@@ -144,7 +147,7 @@ export function Overview() {
             {(relevant.length - ready).toString().padStart(2, "0")}
           </div>
           <div className="metric-footer">
-            <span>A little clarity goes a long way</span>
+            <span>Awaiting your decision</span>
             <ArrowUpRight size={15} />
           </div>
         </Link>
@@ -160,7 +163,7 @@ export function Overview() {
             </span>
           </div>
           <div className="metric-footer">
-            <span>Reviewed evidence. Next step ready.</span>
+            <span>Draft awaiting approval</span>
             <ArrowUpRight size={15} />
           </div>
         </Link>
@@ -175,7 +178,7 @@ export function Overview() {
                 {projectId === "all" ? 5 : 1}
               </span>
             </h2>
-            <p>The bigger picture, at a glance.</p>
+            <p>Open changes and upcoming deadlines.</p>
           </div>
           <Link href="/projects" className="text-link">
             View all projects <ArrowRight size={15} />

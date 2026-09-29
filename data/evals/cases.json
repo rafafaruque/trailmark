@@ -1,0 +1,390 @@
+{
+  "version": 1,
+  "synthetic": true,
+  "status": "not_run",
+  "cases": [
+    {
+      "id": "owner-bollards",
+      "description": "Written request for additional protection corroborated by site record",
+      "sources": [
+        {
+          "id": "owner-bollards-1",
+          "projectId": "owner-bollards",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "Owner direction",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Please add six steel bollards at the west dock. These are in addition to the four on the issued plan. Submit a notice and estimate before installation. \u2014 Owner representative"
+          }
+        },
+        {
+          "id": "owner-bollards-2",
+          "projectId": "owner-bollards",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Site walk record",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Owner rep requested six extra bollards at west dock. Issued plan has four; marked six new positions with the rep. Awaiting PM release."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "owner_directed_change",
+        "expectedEvidenceSourceIds": [
+          "owner-bollards-1",
+          "owner-bollards-2"
+        ],
+        "noticeLikelyRequired": true,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "rock-condition",
+      "description": "Unexpected subsurface rock compared with geotechnical baseline",
+      "sources": [
+        {
+          "id": "rock-condition-1",
+          "projectId": "rock-condition",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Trench condition",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Continuous rock encountered at 4 ft below grade. Excavation stopped and engineer called before disturbing further."
+          }
+        },
+        {
+          "id": "rock-condition-2",
+          "projectId": "rock-condition",
+          "sourceType": "rfi",
+          "system": "Synthetic evaluation fixture",
+          "title": "Geotechnical review",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Boring report B-03 indicates sand and clay through 8 ft, with no refusal. Engineer confirms the continuous rock was not shown in the baseline investigation."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "differing_site_condition",
+        "expectedEvidenceSourceIds": [
+          "rock-condition-1",
+          "rock-condition-2"
+        ],
+        "noticeLikelyRequired": true,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "planned-trenching",
+      "description": "Crew performs the contracted trench allowance",
+      "sources": [
+        {
+          "id": "planned-trenching-1",
+          "projectId": "planned-trenching",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Daily production",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Installed 70 ft of trench and conduit on east run per original E-104 Rev B. This is within the 400 ft measured contract quantity. No added direction or rerouting."
+          }
+        },
+        {
+          "id": "planned-trenching-2",
+          "projectId": "planned-trenching",
+          "sourceType": "drawing",
+          "system": "Synthetic evaluation fixture",
+          "title": "Issued scope",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "E-104 Rev B includes 400 linear ft trench and conduit on east run."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": false,
+        "expectedEventType": "planned_work",
+        "expectedEvidenceSourceIds": [
+          "planned-trenching-1",
+          "planned-trenching-2"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "contractor-rework",
+      "description": "Rework caused by crew installation error",
+      "sources": [
+        {
+          "id": "contractor-rework-1",
+          "projectId": "contractor-rework",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Quality correction",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Crew placed conduit on wrong side of footing despite correct issued drawing. Removed and reinstalled to original location; no owner direction or design revision."
+          }
+        },
+        {
+          "id": "contractor-rework-2",
+          "projectId": "contractor-rework",
+          "sourceType": "rfi",
+          "system": "Synthetic evaluation fixture",
+          "title": "Quality clarification",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Issued dimensions are unchanged. Original installation did not match E-104; contractor to correct its work."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": false,
+        "expectedEventType": "contractor_rework",
+        "expectedEvidenceSourceIds": [
+          "contractor-rework-1",
+          "contractor-rework-2"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "ambiguous-note",
+      "description": "Additional work with no identified direction",
+      "sources": [
+        {
+          "id": "ambiguous-note-1",
+          "projectId": "ambiguous-note",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Field note",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Moved conduit around obstruction at bay 14. Someone on site said the route should change, but name and authority not recorded. Original sketch not available."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "ambiguous",
+        "expectedEvidenceSourceIds": [
+          "ambiguous-note-1"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": true
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "credit-reduction",
+      "description": "Written scope reduction with matching drawing",
+      "sources": [
+        {
+          "id": "credit-reduction-1",
+          "projectId": "credit-reduction",
+          "sourceType": "drawing",
+          "system": "Synthetic evaluation fixture",
+          "title": "Revision F",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Charger count reduced from 42 to 40; omit east bay positions 41 and 42."
+          }
+        },
+        {
+          "id": "credit-reduction-2",
+          "projectId": "credit-reduction",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "Owner scope confirmation",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Confirming the deletion of two chargers shown on Rev F. Please coordinate procurement and submit the associated credit for review."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "potential_credit",
+        "expectedEvidenceSourceIds": [
+          "credit-reduction-1",
+          "credit-reduction-2"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "unsupported-extra",
+      "description": "Extra quantity without baseline or authorization",
+      "sources": [
+        {
+          "id": "unsupported-extra-1",
+          "projectId": "unsupported-extra",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "Material note",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Used more conduit than expected today. Crew thinks about 70 ft extra. No sketch, measured baseline, direction or takeoff attached."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "ambiguous",
+        "expectedEvidenceSourceIds": [
+          "unsupported-extra-1"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": true
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "duplicate-direction",
+      "description": "Forwarded correspondence is not independent evidence of performed work",
+      "sources": [
+        {
+          "id": "duplicate-direction-1",
+          "projectId": "duplicate-direction",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "Owner request",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately."
+          }
+        },
+        {
+          "id": "duplicate-direction-2",
+          "projectId": "duplicate-direction",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "Forwarded request",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Forwarded message ID orig-102: Please shift island east of transformer per Rev C. Track additional work separately."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "owner_directed_change",
+        "expectedEvidenceSourceIds": [
+          "duplicate-direction-1",
+          "duplicate-direction-2"
+        ],
+        "noticeLikelyRequired": true,
+        "expectedAbstention": true
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "unrelated-records",
+      "description": "Records share a project but concern different locations",
+      "sources": [
+        {
+          "id": "unrelated-records-1",
+          "projectId": "unrelated-records",
+          "sourceType": "daily_log",
+          "system": "Synthetic evaluation fixture",
+          "title": "South stair work",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Installed the scheduled lighting conduits in the south stair, per E-203. No changes to scope."
+          }
+        },
+        {
+          "id": "unrelated-records-2",
+          "projectId": "unrelated-records",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "North gate access",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Please keep the north gate clear for the meter inspection on Thursday. No electrical work is being revised."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": false,
+        "expectedEventType": "planned_work",
+        "expectedEvidenceSourceIds": [
+          "unrelated-records-1"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": false
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    },
+    {
+      "id": "unconfirmed-credit",
+      "description": "Potential deletion remains a review proposal",
+      "sources": [
+        {
+          "id": "unconfirmed-credit-1",
+          "projectId": "unconfirmed-credit",
+          "sourceType": "email",
+          "system": "Synthetic evaluation fixture",
+          "title": "Value engineering option",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Could we omit the two east chargers? This is a pricing exercise only; do not revise procurement until owner approval."
+          }
+        },
+        {
+          "id": "unconfirmed-credit-2",
+          "projectId": "unconfirmed-credit",
+          "sourceType": "drawing",
+          "system": "Synthetic evaluation fixture",
+          "title": "Current issued plan",
+          "author": "Fictional project team",
+          "recordedAt": "2026-09-28T14:00:00-04:00",
+          "data": {
+            "body": "Current construction issue still includes 42 chargers. No revised drawing issued."
+          }
+        }
+      ],
+      "expected": {
+        "shouldFlag": true,
+        "expectedEventType": "potential_credit",
+        "expectedEvidenceSourceIds": [
+          "unconfirmed-credit-1",
+          "unconfirmed-credit-2"
+        ],
+        "noticeLikelyRequired": false,
+        "expectedAbstention": true
+      },
+      "evaluationNote": "Human-authored expectations; not a model result. Notice likelihood is a scenario label, not a legal conclusion."
+    }
+  ]
+}

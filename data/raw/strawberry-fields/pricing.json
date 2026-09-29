@@ -1,0 +1,28 @@
+{
+  "id": "sf-pricing",
+  "projectId": "strawberry-fields",
+  "currency": "USD",
+  "scheduleReference": "BBI-2401 · Rate schedule A, approved Aug 3",
+  "preparedBy": "Jordan Lee · Senior Project Manager",
+  "preparedAt": "2026-09-29T09:00:00-04:00",
+  "estimateBasis": "Preliminary quantity survey and forecast labor for the island reroute. Includes completed work and remaining terminations; not a final timecard or invoice.",
+  "rates": [
+    { "id": "trenching", "label": "Additional trenching", "unit": "ft", "unitRateCents": 8500 },
+    { "id": "conduit", "label": "Conduit and bedding", "unit": "ft", "unitRateCents": 5000 },
+    { "id": "fittings", "label": "Fittings package", "unit": "lot", "unitRateCents": 110000 },
+    { "id": "electrician", "label": "Electrician", "unit": "h", "unitRateCents": 11000 },
+    { "id": "operator", "label": "Operator", "unit": "h", "unitRateCents": 8500 },
+    { "id": "excavator", "label": "Excavator", "unit": "h", "unitRateCents": 14000 },
+    { "id": "access-fee", "label": "Municipal access fee", "unit": "fee", "unitRateCents": 6000 }
+  ],
+  "quantities": [
+    { "id": "trench", "group": "Additional trenching", "rateId": "trenching", "quantityMilli": 70000, "sourceId": "sf-log", "sourceField": "quantities.additionalConduitFeet", "basis": "70 ft reroute takeoff, using the installed conduit length for trench allowance", "markupEligible": true },
+    { "id": "conduit", "group": "Conduit / material", "rateId": "conduit", "quantityMilli": 70000, "sourceId": "sf-log", "sourceField": "quantities.additionalConduitFeet", "basis": "70 ft additional conduit recorded by Marcus Reed", "markupEligible": true },
+    { "id": "fittings", "group": "Conduit / material", "rateId": "fittings", "quantityMilli": 1000, "sourceId": "sf-pricing", "sourceField": "quantities.2", "basis": "PM allowance for one fittings package", "markupEligible": true },
+    { "id": "electricians", "group": "Crew labor", "rateId": "electrician", "quantityMilli": 34000, "sourceId": "sf-pricing", "sourceField": "quantities.3", "basis": "2 electricians × 17 forecast hours each, including remaining terminations", "markupEligible": true },
+    { "id": "operator", "group": "Crew labor", "rateId": "operator", "quantityMilli": 14000, "sourceId": "sf-pricing", "sourceField": "quantities.4", "basis": "1 operator × 14 forecast hours, including remaining backfill", "markupEligible": true },
+    { "id": "excavator", "group": "Equipment", "rateId": "excavator", "quantityMilli": 6000, "sourceId": "sf-pricing", "sourceField": "quantities.5", "basis": "6 forecast excavator hours", "markupEligible": true },
+    { "id": "access-fee", "group": "Equipment", "rateId": "access-fee", "quantityMilli": 1000, "sourceId": "sf-pricing", "sourceField": "quantities.6", "basis": "One pass-through access fee; no markup", "markupEligible": false }
+  ],
+  "markup": { "basisPoints": 1250, "sourceId": "sf-contract", "clauseId": "12.6", "basis": "Eligible direct costs only; exclude pass-through fees" }
+}

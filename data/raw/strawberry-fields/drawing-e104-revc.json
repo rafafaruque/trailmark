@@ -1,0 +1,26 @@
+{
+  "id": "sf-drawing",
+  "projectId": "strawberry-fields",
+  "sourceType": "drawing",
+  "system": "Drawing register",
+  "title": "E-104 Rev C · Electrical site plan",
+  "author": "Taylor Reed · Design coordinator",
+  "recordedAt": "2026-09-28T08:12:00-04:00",
+  "data": {
+    "drawingNumber": "E-104",
+    "revision": "C",
+    "previousRevision": "B",
+    "revisionDate": "2026-09-28",
+    "uploadedAt": "2026-09-28T08:12:00-04:00",
+    "projectReference": "BBI-2401",
+    "coordinateSystem": "Local site grid, feet; eastings increase east",
+    "originalIslandCoordinates": { "easting": 120, "northing": 84 },
+    "revisedIslandCoordinates": { "easting": 145, "northing": 84 },
+    "revisionNotes": [
+      "Cloud C1: charger island centerline shifted 25 ft east to accommodate the revised utility transformer pad and service clearance. Reroute the trench approach shown dashed.",
+      "Cloud C2: replace panel label LP-2 with LCP-2; no change to panel rating or circuit count.",
+      "Meter crew access through north gate remains as shown on Rev B."
+    ],
+    "issueNote": "Coordination issue for utility review. Await utility field confirmation before moving installed work."
+  }
+}

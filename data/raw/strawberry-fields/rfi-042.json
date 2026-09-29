@@ -1,0 +1,20 @@
+{
+  "id": "sf-rfi",
+  "projectId": "strawberry-fields",
+  "sourceType": "rfi",
+  "system": "Project document control",
+  "title": "RFI-042 · Transformer clearance conflict",
+  "author": "Taylor Reed · Design coordinator",
+  "recordedAt": "2026-09-28T11:06:00-04:00",
+  "data": {
+    "number": "RFI-042",
+    "projectReference": "BBI-2401 · Fleet Depot Expansion",
+    "openedAt": "2026-09-27T15:24:00-04:00",
+    "respondedAt": "2026-09-28T11:06:00-04:00",
+    "status": "Answered",
+    "question": "Required transformer clearance cannot be maintained at the current charger location shown on E-104 Rev B after the utility’s pad revision. Please confirm island position and whether the trench approach should move east. Installation in this area is on hold pending direction; no additional work has been instructed as of this query.",
+    "response": "Use the east island position shown on E-104 Rev C and shift the trench approach to suit. This confirms the utility’s field direction issued to Bob Builder this morning. Maintain the service aisle shown on the revised plan. Submit the revised installed route with the as-built package.",
+    "drawingReferences": ["E-104 Rev B", "E-104 Rev C"],
+    "distribution": ["Jordan Lee", "Marcus Reed", "Chris Patel"]
+  }
+}

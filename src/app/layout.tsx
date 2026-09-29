@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Trailmark — Your work, accounted for.",
+    default: "Trailmark — Project overview",
     template: "%s · Trailmark",
   },
   description:

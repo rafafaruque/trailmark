@@ -35,9 +35,9 @@ export function ProjectsPage() {
     <>
       <div className="page-intro secondary-intro">
         <div>
-          <span className="eyebrow">KEEP THE BIGGER PICTURE IN VIEW</span>
+          <span className="eyebrow">PROJECT PORTFOLIO</span>
           <h1>Projects</h1>
-          <p>Five active sites. One place to keep work accounted for.</p>
+          <p>Five active projects across two regions.</p>
         </div>
         <label className="select-control">
           <FolderKanban size={15} />
@@ -114,10 +114,10 @@ export function ProjectsPage() {
                   </div>
                 </div>
                 <div className="project-card-deadline">
-                  {active.some((event) => state[event.id]?.status !== "sent")
+                  {active.length > 0
                     ? project.nextDeadline
                       ? `Next notice · ${project.nextDeadline}`
-                      : "No confirmed notice deadline"
+                      : "Notice window not established"
                     : "No open notice deadline"}
                 </div>
               </Link>
@@ -187,21 +187,23 @@ export function NoticesPage() {
   const state = useDemoState();
   const [tab, setTab] = useState("drafts");
   const visible = notices.filter((notice) =>
-    tab === "sent"
-      ? state[notice.eventId]?.status === "sent"
-      : !["sent", "dismissed"].includes(state[notice.eventId]?.status || ""),
+    tab === "approved"
+      ? state[notice.eventId]?.status === "approved"
+      : !["approved", "dismissed"].includes(
+          state[notice.eventId]?.status || "",
+        ),
   );
   return (
     <>
       <div className="page-intro secondary-intro">
         <div>
-          <span className="eyebrow">MAKE THE NEXT STEP OFFICIAL</span>
+          <span className="eyebrow">NOTICE REGISTER</span>
           <h1>Notices</h1>
-          <p>Thoughtfully prepared. Ready for your review.</p>
+          <p>Drafts, approvals and delivery status.</p>
         </div>
         <span className="demo-label">
           <ShieldCheck size={15} />
-          All sends are simulated
+          Delivery not connected
         </span>
       </div>
       <div className="library-tabs queue-tabs">
@@ -214,7 +216,7 @@ export function NoticesPage() {
             {
               notices.filter(
                 (notice) =>
-                  !["sent", "dismissed"].includes(
+                  !["approved", "dismissed"].includes(
                     state[notice.eventId]?.status || "",
                   ),
               ).length
@@ -222,14 +224,14 @@ export function NoticesPage() {
           </span>
         </button>
         <button
-          className={tab === "sent" ? "selected" : ""}
-          onClick={() => setTab("sent")}
+          className={tab === "approved" ? "selected" : ""}
+          onClick={() => setTab("approved")}
         >
-          Approved & sent{" "}
+          Approved · not sent{" "}
           <span>
             {
               notices.filter(
-                (notice) => state[notice.eventId]?.status === "sent",
+                (notice) => state[notice.eventId]?.status === "approved",
               ).length
             }
           </span>
@@ -259,10 +261,10 @@ export function NoticesPage() {
               </div>
               <div className="notice-list-status">
                 <span
-                  className={`badge ${status === "sent" || event.status === "ready" ? "priority-medium" : "neutral-badge"}`}
+                  className={`badge ${status === "approved" || event.status === "ready" ? "priority-medium" : "neutral-badge"}`}
                 >
-                  {status === "sent"
-                    ? "Sent · demo"
+                  {status === "approved"
+                    ? "Approved · not sent"
                     : status === "saved"
                       ? "Saved for later"
                       : event.status === "ready"
@@ -278,13 +280,13 @@ export function NoticesPage() {
         {!visible.length && (
           <EmptyState
             title={
-              tab === "sent"
+              tab === "approved"
                 ? "Your first notice starts with a review"
                 : "You’re all caught up"
             }
             description={
-              tab === "sent"
-                ? "Approved notices will appear here after a simulated send."
+              tab === "approved"
+                ? "Notices appear here after explicit PM approval. Delivery remains pending."
                 : "No open drafts are waiting for review."
             }
           />
@@ -318,9 +320,9 @@ export function EvidencePage({ initialItem }: { initialItem?: string }) {
     <>
       <div className="page-intro secondary-intro">
         <div>
-          <span className="eyebrow">EVERY CHANGE HAS A STORY</span>
+          <span className="eyebrow">PROJECT SOURCE RECORDS</span>
           <h1>Evidence library</h1>
-          <p>The source records that keep your project’s story connected.</p>
+          <p>Daily logs, correspondence, RFIs and drawings.</p>
         </div>
         <span className="page-count">{evidence.length} connected records</span>
       </div>

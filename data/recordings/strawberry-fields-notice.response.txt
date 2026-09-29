@@ -1,0 +1,46 @@
+{
+  "eventNarrative": "Bob Builder Infrastructure identifies the charger island relocation and trench reroute as a potential change requiring review. E-104 Rev C depicts a 25-foot eastward relocation for revised transformer pad and service clearance. The utility coordinator’s email directs relocation to that position, and the RFI-042 response confirms the utility’s morning field direction. The superintendent’s daily report records eastward trench realignment and installation of approximately 70 additional feet of conduit; this quantity remains preliminary. The original contractual scope, direction authority, direct owner approval, and contractual responsibility remain unverified. The timing of earlier field direction or awareness of impacts also remains unresolved. Additional cost and time remain subject to review, including verification of installed quantities, labor allocation, pricing, and schedule effects.",
+  "reservationOfRights": "Bob Builder Infrastructure reserves its contractual rights to request adjustments to the contract sum and time to the extent supported by further review and documentation. This provisional notice preserves the request for review and does not establish entitlement or represent owner approval of payment. We reserve the right to supplement the notice as scope, authority, quantities, costs, and schedule impacts are verified.",
+  "evidenceReferences": [
+    {
+      "sourceId": "sf-drawing",
+      "sourceType": "drawing",
+      "fieldPath": "revisionNotes.0",
+      "excerpt": "Cloud C1: charger island centerline shifted 25 ft east to accommodate the revised utility transformer pad and service clearance. Reroute the trench approach shown dashed.",
+      "supports": "design_change",
+      "explanation": "Documents the depicted relocation, clearance reason, and trench revision."
+    },
+    {
+      "sourceId": "sf-email",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Please relocate the charger islands east of the revised transformer pad to the position on E-104 Rev C. Keep the access aisle clear while your team shifts the trench.",
+      "supports": "direction",
+      "explanation": "Records utility direction tied to the revised drawing without establishing contractual authority or owner approval."
+    },
+    {
+      "sourceId": "sf-rfi",
+      "sourceType": "rfi",
+      "fieldPath": "response",
+      "excerpt": "Use the east island position shown on E-104 Rev C and shift the trench approach to suit. This confirms the utility’s field direction issued to Bob Builder this morning.",
+      "supports": "direction",
+      "explanation": "Confirms the utility’s reported morning field direction without resolving its exact time."
+    },
+    {
+      "sourceId": "sf-log",
+      "sourceType": "daily_log",
+      "fieldPath": "entries.2",
+      "excerpt": "10:50 — Utility requested charger island relocation due to transformer clearance. Crew shifted trench alignment east and installed approximately 70 additional feet of conduit.",
+      "supports": "additional_work",
+      "explanation": "Supports the attributed account of performed work and preliminary conduit quantity."
+    },
+    {
+      "sourceId": "sf-contract",
+      "sourceType": "contract",
+      "fieldPath": "clauses.2.text",
+      "excerpt": "Notice preserves the request for review and does not establish entitlement to an adjustment.",
+      "supports": "contract_terms",
+      "explanation": "Supports the provisional preservation-of-rights purpose of the notice."
+    }
+  ]
+}

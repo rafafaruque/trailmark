@@ -1,0 +1,83 @@
+{
+  "possibleChange": true,
+  "title": "Charger Island Relocation and Trench Reroute",
+  "eventType": "owner_directed_change",
+  "shortSummary": "Records link E-104 Rev C and RFI-042 to a utility-directed charger island relocation 25 feet east for transformer clearance. The superintendent reports trench realignment and approximately 70 additional feet of conduit. This supports review as potential additional scope, subject to confirmation of the original scope and direction authority.",
+  "projectId": "strawberry-fields",
+  "estimatedEventTime": "2026-09-28T10:43:00-04:00",
+  "responsiblePartyHypothesis": "The utility’s revised transformer pad appears to have caused the relocation. The utility coordinator reports owner representative alignment, and the RFI confirms direction to Bob Builder. Owner-side responsibility is plausible, but authorization and contractual allocation remain unverified.",
+  "confidence": "medium",
+  "evidenceReferences": [
+    {
+      "sourceId": "sf-drawing",
+      "sourceType": "drawing",
+      "fieldPath": "revisionNotes.0",
+      "excerpt": "Cloud C1: charger island centerline shifted 25 ft east to accommodate the revised utility transformer pad and service clearance. Reroute the trench approach shown dashed.",
+      "supports": "design_change",
+      "explanation": "Identifies the relocation distance, clearance reason and associated trench revision."
+    },
+    {
+      "sourceId": "sf-drawing",
+      "sourceType": "drawing",
+      "fieldPath": "issueNote",
+      "excerpt": "Coordination issue for utility review. Await utility field confirmation before moving installed work.",
+      "supports": "direction",
+      "explanation": "Limits the drawing’s authority: its upload alone was not direction to move installed work."
+    },
+    {
+      "sourceId": "sf-email",
+      "sourceType": "email",
+      "fieldPath": "body",
+      "excerpt": "Please relocate the charger islands east of the revised transformer pad to the position on E-104 Rev C. Keep the access aisle clear while your team shifts the trench.",
+      "supports": "direction",
+      "explanation": "Provides explicit utility direction to the contractor tied to the revised drawing."
+    },
+    {
+      "sourceId": "sf-rfi",
+      "sourceType": "rfi",
+      "fieldPath": "question",
+      "excerpt": "Required transformer clearance cannot be maintained at the current charger location shown on E-104 Rev B after the utility’s pad revision.",
+      "supports": "scope_baseline",
+      "explanation": "Identifies the prior drawing location and attributes the conflict to the utility pad revision; original contractual scope remains unverified."
+    },
+    {
+      "sourceId": "sf-rfi",
+      "sourceType": "rfi",
+      "fieldPath": "response",
+      "excerpt": "Use the east island position shown on E-104 Rev C and shift the trench approach to suit. This confirms the utility’s field direction issued to Bob Builder this morning.",
+      "supports": "direction",
+      "explanation": "The answered RFI confirms the utility direction and links island relocation to trench realignment."
+    },
+    {
+      "sourceId": "sf-log",
+      "sourceType": "daily_log",
+      "fieldPath": "entries.2",
+      "excerpt": "10:50 — Utility requested charger island relocation due to transformer clearance. Crew shifted trench alignment east and installed approximately 70 additional feet of conduit.",
+      "supports": "additional_work",
+      "explanation": "Independently documents performed work and a preliminary additional conduit quantity."
+    }
+  ],
+  "missingEvidence": [
+    "Original contractual scope and E-104 Rev B to verify the included island location and trench route.",
+    "Confirmation of the utility coordinator’s authority and direct owner approval.",
+    "Superintendent confirmation of the morning field-direction time and any earlier awareness of additional impacts.",
+    "Final installed conduit takeoff, timecard allocation and schedule impact documentation."
+  ],
+  "recommendedNextStep": "Ask the superintendent to confirm the original layout, who authorized the relocation, when field direction was received, and the measured additional work; reconcile these with the original scope for change review.",
+  "relevantContract": {
+    "clauseId": "12.4",
+    "reference": {
+      "sourceId": "sf-contract",
+      "sourceType": "contract",
+      "fieldPath": "clauses.2.text",
+      "excerpt": "An unanswered request for clarification or a coordination drawing awaiting field confirmation is not itself direction to proceed. Notice preserves the request for review and does not establish entitlement to an adjustment.",
+      "supports": "contract_terms",
+      "explanation": "The Change Notification clause distinguishes preliminary coordination from direction and reserves entitlement for review."
+    },
+    "trigger": {
+      "sourceId": "sf-email",
+      "fieldPath": "receivedAt",
+      "explanation": "2026-09-28T10:43:00-04:00 documents contractor receipt of explicit relocation direction. It supports an observed direction-receipt event; the exact time of earlier morning field direction or awareness is unresolved."
+    }
+  }
+}

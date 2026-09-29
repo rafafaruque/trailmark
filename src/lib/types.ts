@@ -1,3 +1,5 @@
+import type { WorkflowResult } from "./workflow/derive";
+
 export type Priority = "high" | "medium" | "needs-evidence" | "low";
 export type EvidenceKind =
   "log" | "email" | "rfi" | "drawing" | "photo" | "report" | "notes" | "order";
@@ -27,6 +29,7 @@ export interface EvidenceItem {
   summary: string;
   content: string;
   author: string;
+  system?: string;
 }
 
 export interface ContractMetadata {
@@ -59,6 +62,8 @@ export interface ChangeEvent {
   contract?: ContractMetadata;
   costs: CostItem[];
   recommendation: string;
+  workflow?: WorkflowResult;
+  analysisRecordId?: string;
 }
 
 export interface DraftNotice {
@@ -71,11 +76,13 @@ export interface DraftNotice {
 }
 
 export type ReviewStatus =
-  "sent" | "dismissed" | "clarification-requested" | "saved";
+  "approved" | "dismissed" | "clarification-requested" | "saved";
 export interface SavedEvent {
   status?: ReviewStatus;
   body?: string;
   recipient?: string;
   note?: string;
+  approvedBy?: string;
+  approvedAt?: string;
 }
 export type DemoState = Record<string, SavedEvent>;

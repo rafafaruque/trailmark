@@ -1,0 +1,23 @@
+{
+  "id": "sf-log",
+  "projectId": "strawberry-fields",
+  "sourceType": "daily_log",
+  "system": "FieldBook",
+  "title": "Daily report 137 · Sept 28",
+  "author": "Marcus Reed · Superintendent",
+  "recordedAt": "2026-09-28T18:05:00-04:00",
+  "data": {
+    "projectReference": "BBI-2401 / Strawberry Fields / Fleet Depot Expansion",
+    "reportDate": "2026-09-28",
+    "weather": "Clear, 64–73°F. No weather delays.",
+    "entries": [
+      "06:45 — Toolbox talk: trench access and spotter requirements. Six electricians, one operator and one foreman checked in.",
+      "08:00 — West service room rough-in continued per E-201. Panel delivery checked; one carton of bonding bushings short. Procurement notified.",
+      "10:50 — Utility requested charger island relocation due to transformer clearance. Crew shifted trench alignment east and installed approximately 70 additional feet of conduit. Two electricians and one operator remained onsite until 5:30 PM. See RFI-042 and E-104 Rev C. Track these hours separately from the west service room work.",
+      "14:15 — Grounding electrode inspection passed for the maintenance building. Inspector requested updated as-built photos for the next visit.",
+      "17:45 — Trenches barricaded, stockpile covered, and equipment secured. No injuries or near misses. Tomorrow: continue conduit terminations and backfill after inspection."
+    ],
+    "quantities": { "additionalConduitFeet": 70, "measurementBasis": "Preliminary tape measure along east reroute; final installed takeoff pending." },
+    "crewNote": "Two electricians and one operator were assigned to the island reroute after utility direction. Final timecard coding is pending."
+  }
+}

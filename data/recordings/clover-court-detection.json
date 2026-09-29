@@ -1,0 +1,58 @@
+{
+  "id": "clover-court-detection",
+  "stage": "detection",
+  "attempt": 1,
+  "startedAt": "2026-09-29T19:46:56.161Z",
+  "completedAt": "2026-09-29T19:48:07.556Z",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "cc-log"
+  ],
+  "inputHash": "a23ac501a4ca75a7ed2936b101a744eb7cf470be64506bfa8765703e7bf0cb01",
+  "promptHash": "22cf2252344c433d334f3c489163ffacbf459d830f00e9a1361212ab783bd300",
+  "schemaHash": "340cbb85a31c684223ec025247beb17f983484cf4c830b7d3182e44fbff92b0a",
+  "latencyMs": 71392,
+  "usage": {
+    "inputTokens": 11108,
+    "outputTokens": 475,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "output": {
+    "possibleChange": true,
+    "title": "P1 Bay 14 Conduit Reroute",
+    "eventType": "ambiguous",
+    "shortSummary": "The crew rerouted conduit around an obstruction above P1 bay 14 and reported extra bends and longer runs. This may represent additional scope, but the original route and directing party are unverified; planned coordination or contractor rework cannot be excluded.",
+    "projectId": "clover-court",
+    "estimatedEventTime": "2026-09-28T11:30:00-04:00",
+    "responsiblePartyHypothesis": "Responsibility is unresolved. An unidentified person reportedly requested the reroute, but the record does not establish owner direction, a design change, or whether routing around the obstruction was already the contractor’s responsibility.",
+    "confidence": "low",
+    "evidenceReferences": [
+      {
+        "sourceId": "cc-log",
+        "sourceType": "daily_log",
+        "fieldPath": "entries.1",
+        "excerpt": "11:30 — Rerouted the conduit around an obstruction above P1 bay 14. Used extra bends and longer conduit runs than the crew expected. Need to check which sketch the original route came from. Didn’t get the name of the person who asked us to move it.",
+        "supports": "additional_work",
+        "explanation": "Documents performed rerouting at a specific location and reported extra materials, while leaving the baseline route and directing party unresolved. Crew expectations alone do not establish additional contractual scope."
+      }
+    ],
+    "missingEvidence": [
+      "Original scope documents and the sketch establishing the conduit route.",
+      "Identity and authority of the person requesting the reroute, with written confirmation of direction.",
+      "Details of the obstruction and whether it was shown or reasonably anticipated.",
+      "Independent corroboration through an RFI response, revised drawing, correspondence, or site photographs.",
+      "Verified quantities and labor records for the reroute."
+    ],
+    "recommendedNextStep": "Ask the superintendent to identify who requested the reroute, confirm the original route against scope documents, and obtain written clarification and supporting field records before classifying the work.",
+    "relevantContract": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": []
+  },
+  "error": null,
+  "context": null
+}

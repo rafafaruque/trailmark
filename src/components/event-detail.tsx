@@ -21,6 +21,9 @@ import { resetEvent, updateEvent, useDemoState } from "@/lib/demo-store";
 import type { ChangeEvent, EvidenceItem } from "@/lib/types";
 import { EvidenceIcon, Modal, PriorityBadge, ProjectIcon } from "./ui";
 import { EvidenceViewer } from "./evidence-viewer";
+import { AnalysisEvidence } from "./analysis-evidence";
+import { evidence } from "@/lib/fixtures";
+import { moneyFromCents } from "@/lib/calculations/cost";
 
 export function EventDetail({ event }: { event: ChangeEvent }) {
   const project = getProject(event.projectId);
@@ -35,9 +38,12 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
   const note =
     editedNote ??
     state[event.id]?.note ??
+    (event.workflow?.reviewQuestions.length
+      ? `Please confirm the following for ${project.name}:\n\n${event.workflow.reviewQuestions.map((question) => `• ${question}`).join("\n")}`
+      : null) ??
     "Please confirm who directed the conduit reroute and share the written direction, email, or RFI response. We also need confirmation of responsibility for the obstruction.";
   const status = state[event.id]?.status;
-  const resolved = status === "sent" || status === "dismissed";
+  const resolved = status === "approved" || status === "dismissed";
   return (
     <>
       <Link href="/events" className="back-link">
@@ -79,16 +85,16 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
           <CheckCheck size={19} />
           <div>
             <strong>
-              {status === "sent"
-                ? "Notice approved and sent in demo"
+              {status === "approved"
+                ? "Notice approved · not sent"
                 : status === "dismissed"
                   ? "Marked as not a change"
                   : status === "clarification-requested"
-                    ? "Clarification requested in demo"
+                    ? "Clarification request prepared"
                     : "Notice draft saved for later"}
             </strong>
             <span>
-              {status === "sent"
+              {status === "approved"
                 ? "Your approval is saved in this browser. No email was sent."
                 : status === "dismissed"
                   ? "This event is excluded from the active review queue and exposure."
@@ -116,10 +122,10 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
           <strong
             className={event.contract && !resolved ? "deadline-text" : ""}
           >
-            {resolved
-              ? "Review complete"
+            {status === "dismissed"
+              ? "Not a change"
               : event.contract
-                ? `Tomorrow · ${event.contract.deadline.split(", ")[1]}`
+                ? event.contract.deadline
                 : event.status === "insufficient"
                   ? "Evidence needed"
                   : "No action required"}
@@ -128,7 +134,7 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
         <div>
           <span>Supporting evidence</span>
           <strong>
-            {items.length} connected records{" "}
+            {items.length} sources linked{" "}
             <span className="connected-dots">
               <i />
               <i />
@@ -163,13 +169,18 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
               Based on {items.length} project records · PM verification required
             </div>
           </section>
+          <AnalysisEvidence
+            event={event}
+            items={items}
+            onOpen={setSelectedEvidence}
+          />
           <section className="panel timeline-panel">
             <div className="panel-heading">
               <h2>Evidence timeline</h2>
               <span className="small-muted">Sept 28, 2026</span>
             </div>
             <p className="panel-description">
-              The story behind the change, in the order it happened.
+              Source records in chronological order.
             </p>
             <div className="timeline">
               {items
@@ -199,7 +210,7 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
             </div>
             <div className="timeline-bottom">
               <ShieldCheck size={14} />
-              Every finding links back to its source.
+              Open a record to verify the source.
             </div>
           </section>
           <section className="recommendation">
@@ -207,7 +218,7 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
               <Sparkles size={21} />
             </span>
             <div>
-              <span className="eyebrow">A CLEAR NEXT STEP</span>
+              <span className="eyebrow">NEXT ACTION</span>
               <h2>Recommended action</h2>
               <p>{event.recommendation}</p>
               <div className="recommendation-actions">
@@ -245,7 +256,17 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                     Mark not a change
                   </button>
                 )}
-                {status === "sent" && (
+                {!resolved &&
+                  event.workflow?.draftEligible &&
+                  event.workflow.reviewQuestions.length > 0 && (
+                    <button
+                      className="button secondary"
+                      onClick={() => setClarificationOpen(true)}
+                    >
+                      Request clarification
+                    </button>
+                  )}
+                {status === "approved" && (
                   <Link
                     href={`/notices/${event.id}`}
                     className="button primary"
@@ -278,8 +299,8 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                 </span>
                 <div>
                   <strong>
-                    {resolved
-                      ? "Review complete"
+                    {status === "dismissed"
+                      ? "Not a change"
                       : `${event.noticeHours} hours to give notice`}
                   </strong>
                   <span>{event.contract.deadline}</span>
@@ -287,10 +308,12 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
               </div>
               <dl className="contract-facts">
                 <div>
-                  <dt>Notice required</dt>
+                  <dt>
+                    {event.workflow ? "Notice indicated" : "Notice required"}
+                  </dt>
                   <dd>
                     <span className="yes-dot" />
-                    Yes
+                    {event.workflow ? "Likely · verify" : "Yes"}
                   </dd>
                 </div>
                 <div>
@@ -298,6 +321,36 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                   <dd>{event.contract.clause}</dd>
                 </div>
               </dl>
+              {event.workflow?.deadline && (
+                <div className="calculation-origin">
+                  <p>
+                    <span>AI identified</span>§
+                    {event.workflow.analysis.relevantContract!.clauseId} ·
+                    likely relevant clause
+                  </p>
+                  <p>
+                    <span>Code calculated</span>
+                    {event.workflow.deadline.triggerLabel} +{" "}
+                    {event.workflow.deadline.periodHours} elapsed hours
+                  </p>
+                  <p>
+                    <span>Source timestamp</span>
+                    {
+                      event.workflow.analysis.relevantContract!.trigger!
+                        .sourceId
+                    }{" "}
+                    ·{" "}
+                    {
+                      event.workflow.analysis.relevantContract!.trigger!
+                        .fieldPath
+                    }
+                  </p>
+                  <p className="trigger-assumption">
+                    Provisional trigger: email receipt. Confirm whether earlier
+                    verbal direction or awareness starts the window sooner.
+                  </p>
+                </div>
+              )}
               <div className="contract-excerpt">
                 <div>
                   <FileCheck2 size={14} />
@@ -306,12 +359,31 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                   </strong>
                 </div>
                 <blockquote>“{event.contract.excerpt}”</blockquote>
-                <span>Bob Builder subcontract · Demo excerpt</span>
+                {event.workflow ? (
+                  <button
+                    className="text-link"
+                    onClick={() =>
+                      setSelectedEvidence(
+                        evidence.find(
+                          (item) =>
+                            item.id ===
+                            event.workflow!.analysis.relevantContract!.reference
+                              .sourceId,
+                        )!,
+                      )
+                    }
+                  >
+                    Open contract <ArrowUpRight size={13} />
+                  </button>
+                ) : (
+                  <span>Bob Builder subcontract</span>
+                )}
               </div>
               <div className="contract-note">
                 <InfoMark />
-                Calculated from the first confirmed field direction. Verify
-                against the executed agreement.
+                {event.workflow
+                  ? "Calculated from the documented receipt timestamp, not a definitive legal determination. Confirm the trigger and executed agreement."
+                  : "Calculated from the first confirmed field direction. Verify against the executed agreement."}
               </div>
             </section>
           ) : (
@@ -358,11 +430,61 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
                 : "An estimate for review, subject to final quantities and contract terms."}
             </p>
           </section>
+          {event.workflow?.cost && (
+            <details className="panel calculation-details">
+              <summary>View quantity and rate sources</summary>
+              <p>{event.workflow.cost.scheduleReference}</p>
+              {event.workflow.cost.lines.map((line) => (
+                <div className="rate-source" key={line.id}>
+                  <strong>
+                    {line.label}
+                    <span>{moneyFromCents(line.amountCents)}</span>
+                  </strong>
+                  <span>{line.formula}</span>
+                  <p>{line.basis}</p>
+                  <button
+                    className="text-link"
+                    onClick={() =>
+                      setSelectedEvidence(
+                        evidence.find((item) => item.id === line.sourceId)!,
+                      )
+                    }
+                  >
+                    {line.sourceId === "sf-pricing"
+                      ? "PM estimate worksheet"
+                      : "Field quantity record"}{" "}
+                    <ArrowUpRight size={12} />
+                  </button>
+                </div>
+              ))}
+              <div className="rate-source">
+                <strong>
+                  Contract markup{" "}
+                  <span>{moneyFromCents(event.workflow.cost.markupCents)}</span>
+                </strong>
+                <p>
+                  {event.workflow.cost.markupBasisPoints / 100}% ×{" "}
+                  {moneyFromCents(event.workflow.cost.markupBaseCents)}.
+                  Excludes the $60 pass-through fee under §12.6.
+                </p>
+                <button
+                  className="text-link"
+                  onClick={() =>
+                    setSelectedEvidence(
+                      evidence.find((item) => item.id === "sf-contract")!,
+                    )
+                  }
+                >
+                  Contract pricing rule <ArrowUpRight size={12} />
+                </button>
+              </div>
+            </details>
+          )}
           <div className="reviewer-note">
             <span className="avatar small">JL</span>
             <div>
-              <strong>You’re in the driver’s seat.</strong>
-              <p>Trailmark connects the dots. You decide what happens next.</p>
+              <strong>Assigned to Jordan Lee</strong>
+              <p>PM review is required before a notice is approved.</p>
             </div>
           </div>
         </aside>
@@ -379,7 +501,11 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
           onClose={() => setClarificationOpen(false)}
         >
           <p className="modal-description">
-            To Jamie Brooks · Superintendent
+            To{" "}
+            {event.projectId === "strawberry-fields"
+              ? "Marcus Reed"
+              : "Jamie Brooks"}{" "}
+            · Superintendent
             <br />
             {project.name}
           </p>
@@ -392,8 +518,8 @@ export function EventDetail({ event }: { event: ChangeEvent }) {
             />
           </label>
           <div className="callout subtle">
-            Demo action: the request will be saved in this browser. No message
-            will be sent.
+            This request is saved in this browser. Messaging is not connected;
+            no message will be sent.
           </div>
           <button
             className="button primary modal-done"

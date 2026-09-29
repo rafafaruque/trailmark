@@ -18,6 +18,7 @@ import { formatMoney, getProject } from "@/lib/fixtures";
 import type { ChangeEvent, DraftNotice } from "@/lib/types";
 import { updateEvent, useDemoState } from "@/lib/demo-store";
 import { Modal, ProjectIcon } from "./ui";
+import { authorizeApproval } from "@/lib/workflow/approval";
 
 export function NoticeReview({
   event,
@@ -34,9 +35,12 @@ export function NoticeReview({
   const [editing, setEditing] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [feedback, setFeedback] = useState("");
+  const [humanConfirmed, setHumanConfirmed] = useState(false);
+  const [uncertaintyAcknowledged, setUncertaintyAcknowledged] = useState(false);
+  const [approvalError, setApprovalError] = useState("");
   const currentBody = body ?? saved?.body ?? draft.body;
   const currentRecipient = recipient ?? saved?.recipient ?? draft.email;
-  const sent = saved?.status === "sent";
+  const approved = saved?.status === "approved";
   const valid =
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(currentRecipient) &&
     currentBody.trim().length > 0;
@@ -51,7 +55,7 @@ export function NoticeReview({
       "Draft saved in this browser. You can come back to it anytime.",
     );
   }
-  if (saved?.status === "dismissed")
+  if (saved?.status === "dismissed" || event.workflow?.draftEligible === false)
     return (
       <>
         <Link className="back-link" href={`/events/${event.id}`}>
@@ -61,7 +65,11 @@ export function NoticeReview({
         <div className="page-intro secondary-intro">
           <div>
             <span className="eyebrow">REVIEW CLOSED</span>
-            <h1>This event was marked not a change</h1>
+            <h1>
+              {saved?.status === "dismissed"
+                ? "This event was marked not a change"
+                : "More evidence is required"}
+            </h1>
             <p>
               Reopen the event for review before editing or approving its
               notice.
@@ -81,31 +89,34 @@ export function NoticeReview({
       </Link>
       <div className="page-intro secondary-intro notice-intro">
         <div>
-          <span className="eyebrow">THE NEXT STEP, ALREADY STARTED</span>
-          <h1>{sent ? "Notice approved" : "Review your notice"}</h1>
+          <span className="eyebrow">CONTRACTUAL NOTICE</span>
+          <h1>{approved ? "Notice approved" : "Review your notice"}</h1>
           <p>
-            {sent
-              ? "A clear record of your review and approval."
-              : "The evidence is connected. Add your judgment, then make it official."}
+            {approved
+              ? "Approval recorded. Delivery is pending."
+              : "Review the recipient, supporting evidence and estimated impact."}
           </p>
         </div>
-        <span className={`badge ${sent ? "priority-medium" : "neutral-badge"}`}>
+        <span
+          className={`badge ${approved ? "priority-medium" : "neutral-badge"}`}
+        >
           <span className="badge-dot" />
-          {sent
-            ? "Sent in demo"
+          {approved
+            ? "Approved · not sent"
             : saved?.status === "saved"
               ? "Saved draft"
               : "Draft · needs approval"}
         </span>
       </div>
-      {sent && (
+      {approved && (
         <div className="status-banner" role="status">
           <CheckCheck size={22} />
           <div>
-            <strong>Notice approved and marked as sent</strong>
+            <strong>Notice approved for sending</strong>
             <span>
-              This was a simulated send. No email was delivered; your approved
-              notice is saved locally.
+              Your approval is recorded in this browser. Delivery is not
+              connected, so no email has been sent and the notice deadline
+              remains open.
             </span>
           </div>
           <Link className="text-link" href="/">
@@ -113,10 +124,35 @@ export function NoticeReview({
           </Link>
         </div>
       )}
-      {feedback && !sent && (
+      {feedback && !approved && (
         <div className="status-banner" role="status">
           <Check size={18} />
           <span>{feedback}</span>
+        </div>
+      )}
+      {!!event.workflow?.reviewQuestions.length && (
+        <div className="notice-review-warning">
+          <ShieldCheck size={19} />
+          <div>
+            <strong>
+              Provisional notice · {event.workflow.analysis.confidence}{" "}
+              confidence
+            </strong>
+            <p>
+              The original scope, direction authority and earliest trigger time
+              still need confirmation. This draft preserves those uncertainties.
+            </p>
+            <details>
+              <summary>
+                Review {event.workflow.reviewQuestions.length} open items
+              </summary>
+              <ul>
+                {event.workflow.reviewQuestions.map((question) => (
+                  <li key={question}>{question}</li>
+                ))}
+              </ul>
+            </details>
+          </div>
         </div>
       )}
       <div className="notice-grid">
@@ -218,7 +254,9 @@ export function NoticeReview({
               <Clock3 size={18} />
               <div>
                 <strong>Notice due {event.contract!.deadline}</strong>
-                <span>{event.noticeHours} hours remaining · demo snapshot</span>
+                <span>
+                  {event.noticeHours} hours remaining · Sept 29 snapshot
+                </span>
               </div>
             </div>
             <ul className="checklist">
@@ -242,11 +280,11 @@ export function NoticeReview({
             <div className="notice-demo-note">
               <ShieldCheck size={15} />
               <p>
-                You’re reviewing a demo draft. Approval saves the notice locally
-                and simulates sending.
+                PM approval is required. Delivery is not connected; approval
+                records your decision without sending an email.
               </p>
             </div>
-            {!sent && (
+            {!approved && (
               <div className="notice-buttons">
                 <button
                   className="button primary"
@@ -275,7 +313,7 @@ export function NoticeReview({
                 </button>
               </div>
             )}
-            {sent && (
+            {approved && (
               <Link className="button secondary" href={`/events/${event.id}`}>
                 View change record <ArrowRight size={16} />
               </Link>
@@ -287,9 +325,9 @@ export function NoticeReview({
             )}
           </section>
           <p className="notice-side-caption">
-            A prepared draft is a starting point.
+            Approval owner: Jordan Lee
             <br />
-            Your review makes it ready.
+            Delivery status: not connected
           </p>
         </aside>
       </div>
@@ -311,9 +349,35 @@ export function NoticeReview({
             reservation of rights.
           </p>
           <div className="callout subtle">
-            Demo only: no email will be sent. Your approval and the current
-            draft will be saved in this browser.
+            Delivery is not connected; no email will be sent. Approval is saved
+            locally and does not close the notice deadline.
           </div>
+          <label className="review-checkbox">
+            <input
+              type="checkbox"
+              checked={humanConfirmed}
+              onChange={(change) => setHumanConfirmed(change.target.checked)}
+            />
+            I have reviewed the recipient, notice and supporting records.
+          </label>
+          {event.workflow && !event.workflow.noticeEligible && (
+            <label className="review-checkbox">
+              <input
+                type="checkbox"
+                checked={uncertaintyAcknowledged}
+                onChange={(change) =>
+                  setUncertaintyAcknowledged(change.target.checked)
+                }
+              />
+              I have reviewed the unresolved scope, authority and trigger
+              assumptions and approve this as a provisional notice.
+            </label>
+          )}
+          {approvalError && (
+            <p className="field-error" role="alert">
+              {approvalError}
+            </p>
+          )}
           <div className="modal-actions">
             <button
               className="button secondary"
@@ -323,18 +387,44 @@ export function NoticeReview({
             </button>
             <button
               className="button primary"
+              disabled={
+                !humanConfirmed ||
+                (!!event.workflow &&
+                  !event.workflow.noticeEligible &&
+                  !uncertaintyAcknowledged)
+              }
               onClick={() => {
-                updateEvent(event.id, {
-                  status: "sent",
-                  body: currentBody,
-                  recipient: currentRecipient,
-                });
-                setConfirmOpen(false);
-                setEditing(false);
+                try {
+                  authorizeApproval({
+                    reviewerRole: "project_manager",
+                    eventStatus: saved?.status,
+                    draftEligible:
+                      event.workflow?.draftEligible ?? !!event.contract,
+                    noticeEligible:
+                      event.workflow?.noticeEligible ?? !!event.contract,
+                    humanConfirmed,
+                    uncertaintyAcknowledged,
+                    recipient: currentRecipient,
+                    body: currentBody,
+                  });
+                  updateEvent(event.id, {
+                    status: "approved",
+                    body: currentBody,
+                    recipient: currentRecipient,
+                    approvedBy: "Jordan Lee",
+                    approvedAt: new Date().toISOString(),
+                  });
+                  setConfirmOpen(false);
+                  setEditing(false);
+                } catch (error) {
+                  setApprovalError(
+                    error instanceof Error ? error.message : String(error),
+                  );
+                }
               }}
             >
               <CheckCheck size={16} />
-              Confirm demo send
+              Approve notice
             </button>
           </div>
         </Modal>

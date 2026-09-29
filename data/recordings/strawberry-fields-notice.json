@@ -1,0 +1,212 @@
+{
+  "id": "strawberry-fields-notice",
+  "stage": "notice",
+  "attempt": 1,
+  "startedAt": "2026-09-29T19:49:54.124Z",
+  "completedAt": "2026-09-29T19:50:19.994Z",
+  "provider": "codex-cli",
+  "model": "gpt-6-astra",
+  "cliVersion": "codex-cli 0.158.0",
+  "inputSourceIds": [
+    "sf-drawing",
+    "sf-email",
+    "sf-rfi",
+    "sf-log",
+    "sf-contract"
+  ],
+  "inputHash": "e65516b5000c18e5aa4b54db15a80956bedfccddf9c4fe4c53f9f52656318df8",
+  "promptHash": "fc3c82bb332e304b380ed9277fff7928b891c4afdde4ebb1faa3d453913125e0",
+  "schemaHash": "19fd9db726a0c33ac7afb1491b176d16f6aa19363828bce5a0db0e28555f9867",
+  "latencyMs": 25762,
+  "usage": {
+    "inputTokens": 14659,
+    "outputTokens": 716,
+    "cachedInputTokens": 0
+  },
+  "toolCalls": 0,
+  "output": {
+    "eventNarrative": "Bob Builder Infrastructure identifies the charger island relocation and trench reroute as a potential change requiring review. E-104 Rev C depicts a 25-foot eastward relocation for revised transformer pad and service clearance. The utility coordinator’s email directs relocation to that position, and the RFI-042 response confirms the utility’s morning field direction. The superintendent’s daily report records eastward trench realignment and installation of approximately 70 additional feet of conduit; this quantity remains preliminary. The original contractual scope, direction authority, direct owner approval, and contractual responsibility remain unverified. The timing of earlier field direction or awareness of impacts also remains unresolved. Additional cost and time remain subject to review, including verification of installed quantities, labor allocation, pricing, and schedule effects.",
+    "reservationOfRights": "Bob Builder Infrastructure reserves its contractual rights to request adjustments to the contract sum and time to the extent supported by further review and documentation. This provisional notice preserves the request for review and does not establish entitlement or represent owner approval of payment. We reserve the right to supplement the notice as scope, authority, quantities, costs, and schedule impacts are verified.",
+    "evidenceReferences": [
+      {
+        "sourceId": "sf-drawing",
+        "sourceType": "drawing",
+        "fieldPath": "revisionNotes.0",
+        "excerpt": "Cloud C1: charger island centerline shifted 25 ft east to accommodate the revised utility transformer pad and service clearance. Reroute the trench approach shown dashed.",
+        "supports": "design_change",
+        "explanation": "Documents the depicted relocation, clearance reason, and trench revision."
+      },
+      {
+        "sourceId": "sf-email",
+        "sourceType": "email",
+        "fieldPath": "body",
+        "excerpt": "Please relocate the charger islands east of the revised transformer pad to the position on E-104 Rev C. Keep the access aisle clear while your team shifts the trench.",
+        "supports": "direction",
+        "explanation": "Records utility direction tied to the revised drawing without establishing contractual authority or owner approval."
+      },
+      {
+        "sourceId": "sf-rfi",
+        "sourceType": "rfi",
+        "fieldPath": "response",
+        "excerpt": "Use the east island position shown on E-104 Rev C and shift the trench approach to suit. This confirms the utility’s field direction issued to Bob Builder this morning.",
+        "supports": "direction",
+        "explanation": "Confirms the utility’s reported morning field direction without resolving its exact time."
+      },
+      {
+        "sourceId": "sf-log",
+        "sourceType": "daily_log",
+        "fieldPath": "entries.2",
+        "excerpt": "10:50 — Utility requested charger island relocation due to transformer clearance. Crew shifted trench alignment east and installed approximately 70 additional feet of conduit.",
+        "supports": "additional_work",
+        "explanation": "Supports the attributed account of performed work and preliminary conduit quantity."
+      },
+      {
+        "sourceId": "sf-contract",
+        "sourceType": "contract",
+        "fieldPath": "clauses.2.text",
+        "excerpt": "Notice preserves the request for review and does not establish entitlement to an adjustment.",
+        "supports": "contract_terms",
+        "explanation": "Supports the provisional preservation-of-rights purpose of the notice."
+      }
+    ]
+  },
+  "validation": {
+    "valid": false,
+    "errors": [
+      "Notice cites evidence not linked to this event"
+    ]
+  },
+  "error": null,
+  "context": {
+    "detectionRecord": "strawberry-fields-detection",
+    "detectionOutputHash": "1e5ac441cd26e3d2a02cdcb4d78d0cfff6e6f9e64f50c72b31c87091c4403137",
+    "pricingHash": "2cff384cf9cbfe010b4ac92ac96dc25905b10210fb67f4c7786f435355483bb6",
+    "deadline": {
+      "triggerTime": "2026-09-28T10:43:00-04:00",
+      "periodHours": 48,
+      "deadline": "2026-09-30T14:43:00.000Z",
+      "timezone": "America/New_York",
+      "deadlineLabel": "Sept 30, 10:43 AM",
+      "triggerLabel": "Sept 28, 10:43 AM",
+      "hoursRemaining": 18,
+      "overdue": false
+    },
+    "cost": {
+      "lines": [
+        {
+          "id": "trench",
+          "label": "Additional trenching",
+          "group": "Additional trenching",
+          "quantity": 70,
+          "unit": "ft",
+          "unitRateCents": 8500,
+          "amountCents": 595000,
+          "formula": "70 ft × $85",
+          "sourceId": "sf-log",
+          "sourceField": "quantities.additionalConduitFeet",
+          "basis": "70 ft reroute takeoff, using the installed conduit length for trench allowance",
+          "markupEligible": true
+        },
+        {
+          "id": "conduit",
+          "label": "Conduit and bedding",
+          "group": "Conduit / material",
+          "quantity": 70,
+          "unit": "ft",
+          "unitRateCents": 5000,
+          "amountCents": 350000,
+          "formula": "70 ft × $50",
+          "sourceId": "sf-log",
+          "sourceField": "quantities.additionalConduitFeet",
+          "basis": "70 ft additional conduit recorded by Marcus Reed",
+          "markupEligible": true
+        },
+        {
+          "id": "fittings",
+          "label": "Fittings package",
+          "group": "Conduit / material",
+          "quantity": 1,
+          "unit": "lot",
+          "unitRateCents": 110000,
+          "amountCents": 110000,
+          "formula": "1 lot × $1,100",
+          "sourceId": "sf-pricing",
+          "sourceField": "quantities.2",
+          "basis": "PM allowance for one fittings package",
+          "markupEligible": true
+        },
+        {
+          "id": "electricians",
+          "label": "Electrician",
+          "group": "Crew labor",
+          "quantity": 34,
+          "unit": "h",
+          "unitRateCents": 11000,
+          "amountCents": 374000,
+          "formula": "34 h × $110",
+          "sourceId": "sf-pricing",
+          "sourceField": "quantities.3",
+          "basis": "2 electricians × 17 forecast hours each, including remaining terminations",
+          "markupEligible": true
+        },
+        {
+          "id": "operator",
+          "label": "Operator",
+          "group": "Crew labor",
+          "quantity": 14,
+          "unit": "h",
+          "unitRateCents": 8500,
+          "amountCents": 119000,
+          "formula": "14 h × $85",
+          "sourceId": "sf-pricing",
+          "sourceField": "quantities.4",
+          "basis": "1 operator × 14 forecast hours, including remaining backfill",
+          "markupEligible": true
+        },
+        {
+          "id": "excavator",
+          "label": "Excavator",
+          "group": "Equipment",
+          "quantity": 6,
+          "unit": "h",
+          "unitRateCents": 14000,
+          "amountCents": 84000,
+          "formula": "6 h × $140",
+          "sourceId": "sf-pricing",
+          "sourceField": "quantities.5",
+          "basis": "6 forecast excavator hours",
+          "markupEligible": true
+        },
+        {
+          "id": "access-fee",
+          "label": "Municipal access fee",
+          "group": "Equipment",
+          "quantity": 1,
+          "unit": "fee",
+          "unitRateCents": 6000,
+          "amountCents": 6000,
+          "formula": "1 fee × $60",
+          "sourceId": "sf-pricing",
+          "sourceField": "quantities.6",
+          "basis": "One pass-through access fee; no markup",
+          "markupEligible": false
+        }
+      ],
+      "directCostCents": 1638000,
+      "markupBaseCents": 1632000,
+      "markupCents": 204000,
+      "totalCents": 1842000,
+      "markupBasisPoints": 1250,
+      "pricingSourceId": "sf-pricing",
+      "scheduleReference": "BBI-2401 · Rate schedule A, approved Aug 3"
+    },
+    "prerequisitesPassed": true,
+    "unresolvedReviewQuestions": [
+      "Original contractual scope and E-104 Rev B to verify the included island location and trench route.",
+      "Confirmation of the utility coordinator’s authority and direct owner approval.",
+      "Superintendent confirmation of the morning field-direction time and any earlier awareness of additional impacts.",
+      "Final installed conduit takeoff, timecard allocation and schedule impact documentation."
+    ],
+    "policy": "Provisional draft only; PM must explicitly review unresolved scope, authority and trigger assumptions before approval. No delivery adapter."
+  }
+}

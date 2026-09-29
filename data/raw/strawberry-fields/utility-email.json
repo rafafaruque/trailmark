@@ -1,0 +1,20 @@
+{
+  "id": "sf-email",
+  "projectId": "strawberry-fields",
+  "sourceType": "email",
+  "system": "Project mailbox",
+  "title": "RE: BBI-2401 — island layout at transformer",
+  "author": "Chris Patel · Utility coordinator",
+  "recordedAt": "2026-09-28T10:43:00-04:00",
+  "data": {
+    "messageId": "sf-2401-0928-1043@utility.example.com",
+    "from": "Chris Patel <chris.patel@utility.example.com>",
+    "to": "Jordan Lee <jordan.lee@bobbuilder.example.com>",
+    "cc": "Marcus Reed <marcus.reed@bobbuilder.example.com>",
+    "sentAt": "2026-09-28T10:41:00-04:00",
+    "receivedAt": "2026-09-28T10:43:00-04:00",
+    "subject": "RE: BBI-2401 — island layout at transformer",
+    "body": "Jordan,\n\nThanks for walking the pad with us this morning. We checked the revised transformer footprint against the island stakes and the west side is too tight for our service clearance. Please relocate the charger islands east of the revised transformer pad to the position on E-104 Rev C. Keep the access aisle clear while your team shifts the trench.\n\nI spoke with the owner’s site rep and they are aligned on the location. Please keep a separate record of the extra trench and conduit work so we can review it with Morgan. We still need the north gate open for the meter crew on Thursday; no change to that visit.\n\nChris\nUtility Project Coordinator",
+    "attachments": ["E-104_RevC.pdf"]
+  }
+}

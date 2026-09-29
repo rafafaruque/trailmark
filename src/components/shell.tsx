@@ -40,10 +40,14 @@ export function Shell({ children }: { children: ReactNode }) {
   const [helpOpen, setHelpOpen] = useState(false);
   const state = useDemoState();
   const openEvents = events.filter(
-    (event) => !["sent", "dismissed"].includes(state[event.id]?.status || ""),
+    (event) =>
+      !["approved", "dismissed"].includes(state[event.id]?.status || ""),
   );
-  const due = openEvents.filter(
-    (event) => event.noticeHours && event.noticeHours < 24,
+  const due = events.filter(
+    (event) =>
+      state[event.id]?.status !== "dismissed" &&
+      event.noticeHours &&
+      event.noticeHours < 24,
   );
   const page = nav.find((item) =>
     item.href === "/" ? pathname === "/" : pathname.startsWith(item.href),
@@ -94,7 +98,6 @@ export function Shell({ children }: { children: ReactNode }) {
             <strong>Bob Builder</strong>
             <span>Infrastructure</span>
           </div>
-          <span className="workspace-tag">PRO</span>
         </div>
         <div className="nav-label">WORKSPACE</div>
         <nav aria-label="Main navigation">
@@ -128,7 +131,7 @@ export function Shell({ children }: { children: ReactNode }) {
               <Sparkles size={17} />
             </span>
             <strong>Every change. A clear trail.</strong>
-            <p>Your field evidence, connected to the bigger picture.</p>
+
             <div className="mini-trail" aria-hidden="true">
               <span />
               <i />
@@ -149,7 +152,7 @@ export function Shell({ children }: { children: ReactNode }) {
               <strong>Jordan Lee</strong>
               <span>Senior Project Manager</span>
             </div>
-            <span className="online-dot" title="Demo workspace" />
+            <span className="online-dot" title="Jordan Lee · Project manager" />
           </div>
         </div>
       </aside>
@@ -178,9 +181,6 @@ export function Shell({ children }: { children: ReactNode }) {
             )}
           </div>
           <div className="topbar-actions">
-            <span className="demo-label">
-              <span /> Demo workspace
-            </span>
             <button
               className="search-trigger"
               onClick={() => setSearchOpen(true)}
@@ -206,9 +206,9 @@ export function Shell({ children }: { children: ReactNode }) {
         </main>
         <footer className="app-footer">
           <span>
-            <span className="live-dot" /> Field to office. Nothing lost.
+            <span className="live-dot" /> Bob Builder Infrastructure
           </span>
-          <span>Trailmark · Phase 1 demo</span>
+          <Link href="/system/analysis">Analysis record</Link>
         </footer>
       </div>
       {searchOpen && (
@@ -261,7 +261,7 @@ export function Shell({ children }: { children: ReactNode }) {
           onClose={() => setNotificationsOpen(false)}
         >
           <p className="modal-description">
-            Notice deadlines in the next 24 hours · demo snapshot
+            Notice deadlines in the next 24 hours · Sept 29 snapshot
           </p>
           <div className="search-results">
             {due
@@ -292,7 +292,7 @@ export function Shell({ children }: { children: ReactNode }) {
       )}
       {helpOpen && (
         <Modal
-          title="A clear trail, from change to notice"
+          title="Reviewing project changes"
           onClose={() => setHelpOpen(false)}
         >
           <div className="help-steps">
@@ -310,9 +310,9 @@ export function Shell({ children }: { children: ReactNode }) {
             </p>
           </div>
           <div className="callout subtle">
-            This demo uses fictional records and a fixed Sept 29, 2026 snapshot.
-            Actions are saved in this browser. Sending a notice or requesting
-            clarification is simulated.
+            This workspace uses synthetic records and a fixed Sept 29, 2026
+            snapshot. Reviews are saved in this browser. Email delivery is not
+            connected; approval does not send a notice.
           </div>
           <button
             className="button primary modal-done"

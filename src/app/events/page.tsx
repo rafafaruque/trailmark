@@ -11,11 +11,9 @@ export default async function EventsPage({
     <>
       <div className="page-intro secondary-intro">
         <div>
-          <span className="eyebrow">FROM THE FIELD, WITH CONTEXT</span>
+          <span className="eyebrow">CHANGE REGISTER</span>
           <h1>Change events</h1>
-          <p>
-            Follow the evidence. Protect the work that’s outside your scope.
-          </p>
+          <p>Review potential scope changes and their supporting records.</p>
         </div>
         <span className="page-count">5 tracked events</span>
       </div>
